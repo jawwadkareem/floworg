@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
@@ -26,7 +24,7 @@ import ChatBar from "./ChatBar";
 
 function DashboardLayout() {
   const theme = useTheme();
-  const { isMobile } = useResponsive();
+  const { isMobile } = useResponsive()
   const { sidebarCollapsed, chatVisible, setSidebarCollapsed, setChatVisible } =
     useAppStore();
   const { t, changeLanguage, i18n, dir } = useTranslation();
@@ -136,8 +134,8 @@ function DashboardLayout() {
               ? "80px"
               : "280px"
             : chatVisible
-            ? "320px"
-            : "60px",
+              ? "320px"
+              : "60px",
           transition: "margin 0.3s ease",
           direction: dir,
           backgroundColor: theme.palette.background.default,

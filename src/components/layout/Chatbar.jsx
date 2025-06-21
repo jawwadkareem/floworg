@@ -1,4 +1,3 @@
-"use client";
 
 import { useState } from "react";
 import {
@@ -308,8 +307,8 @@ const ChatBar = ({ collapsed, onToggle, isRTL, t }) => {
                           ? "flex-start"
                           : "flex-end"
                         : isRTL
-                        ? "flex-end"
-                        : "flex-start",
+                          ? "flex-end"
+                          : "flex-start",
                       mb: 2,
                     }}
                   >
