@@ -19,7 +19,7 @@ import {
 import useAppStore from "@/store/appStore";
 import { useResponsive } from "@/utils";
 import useTranslation from "@/hooks/useTranslation";
-import Sidebar from "./Sidebar.jsx";
+import Sidebar from "./SideBar.jsx";
 import ChatBar from "./ChatBar.jsx";
 
 function DashboardLayout() {
