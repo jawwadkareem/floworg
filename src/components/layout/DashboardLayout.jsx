@@ -20,7 +20,7 @@ import useAppStore from "@/store/appStore";
 import { useResponsive } from "@/utils";
 import useTranslation from "@/hooks/useTranslation";
 import Sidebar from "./SideBar.jsx";
-import ChatBar from "./ChatBar.jsx";
+import ChatBar from "./Chatbar.jsx";
 
 function DashboardLayout() {
   const theme = useTheme();
