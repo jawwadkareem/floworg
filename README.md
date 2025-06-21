@@ -19,7 +19,7 @@ A modern frontend web application built with [React 19](https://react.dev/), [Vi
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/floworg360.git
+git clone [https://github.com/your-username/floworg360.](https://github.com/tehreemfarax/floworg.git)
 cd floworg360
 
 # Install dependencies
