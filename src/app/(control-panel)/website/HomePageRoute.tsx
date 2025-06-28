@@ -3,11 +3,10 @@
 import { lazy } from 'react';
 import { FuseRouteItemType } from '@fuse/utils/FuseUtils';
 
-const Home = lazy(() => import('./HomePage'));
-
-const HomeRoute: FuseRouteItemType = {
-  path: 'home', // this means "/home"
-  element: <Home />
+const HomePage = lazy(() => import('./HomePage'));
+const HomePageRoute: FuseRouteItemType = {
+  path: 'home', 
+  element: <HomePage />
 };
 
-export default HomeRoute;
+export default HomePageRoute;

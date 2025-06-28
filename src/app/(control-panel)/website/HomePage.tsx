@@ -1,10 +1,41 @@
-import * as React from 'react';
-const Home = ()=>{
-    return (
-        <>
-        My Name is Muhammad Asad
-        </>
-    );
+import React from 'react';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Homepage from './components/Homepage';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#00D4AA',
+    },
+    secondary: {
+      main: '#1976d2',
+    },
+    background: {
+      default: '#ffffff',
+    },
+  },
+  typography: {
+    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontWeight: 700,
+    },
+    h2: {
+      fontWeight: 600,
+    },
+    h3: {
+      fontWeight: 600,
+    },
+  },
+});
+
+const HomePage = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Homepage />
+    </ThemeProvider>
+  );
 }
 
-export default Home;
+export default HomePage;
