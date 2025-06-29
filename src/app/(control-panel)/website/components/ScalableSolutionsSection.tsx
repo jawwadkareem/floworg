@@ -33,7 +33,7 @@ const ScalableSolutionsSection: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={8} alignItems="center">
           {/* Left Side - Content */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <Box sx={{ pr: { md: 4 } }}>
               <Typography
                 variant="h2"
@@ -107,7 +107,7 @@ const ScalableSolutionsSection: React.FC = () => {
           </Grid>
           
           {/* Right Side - 3-Step Process */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <Box
               sx={{
                 position: 'relative',

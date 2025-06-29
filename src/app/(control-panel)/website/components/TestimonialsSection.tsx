@@ -155,7 +155,7 @@ const TestimonialsSection: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
           {/* Left Side - Header and Navigation */}
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={5} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -249,10 +249,10 @@ const TestimonialsSection: React.FC = () => {
           </Grid>
 
           {/* Right Side - Testimonials */}
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={7} {...({} as any)}>
             <Grid container spacing={3}>
               {testimonials.map((testimonial, index) => (
-                <Grid item xs={12} sm={6} key={index}>
+                <Grid item xs={12} sm={6} key={index} {...({} as any)}>
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}

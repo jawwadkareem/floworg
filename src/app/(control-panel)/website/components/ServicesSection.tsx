@@ -288,7 +288,7 @@ const ServicesSection: React.FC = () => {
         {/* Services Grid */}
         <Grid container spacing={3}>
           {services.map((service, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid item xs={12} sm={6} md={4} key={index} {...({} as any)}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

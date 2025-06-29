@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
     >
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, py: 8 }}>
         <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -159,7 +159,7 @@ const Hero: React.FC = () => {
             </motion.div>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

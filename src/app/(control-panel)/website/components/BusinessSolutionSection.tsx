@@ -10,7 +10,7 @@ const BusinessSolutionSection: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="flex-start">
           {/* Left Side - Main Content */}
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={8} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -104,7 +104,7 @@ const BusinessSolutionSection: React.FC = () => {
           </Grid>
 
           {/* Right Side - Navigation Links */}
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}

@@ -282,7 +282,7 @@ const NewsSection: React.FC = () => {
         {/* Articles Grid */}
         <Grid container spacing={4}>
           {articles.map((article, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid item xs={12} md={4} key={index} {...({} as any)}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

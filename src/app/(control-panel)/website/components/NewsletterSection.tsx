@@ -162,7 +162,7 @@ const NewsletterSection: React.FC = () => {
         {/* Top Section with Badges and Newsletter */}
         <Grid container spacing={4} alignItems="center" sx={{ mb: 6 }}>
           {/* Compliance Badges */}
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={3} {...({} as any)}>
             <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
               {/* HIPAA Badge */}
               <Box
@@ -212,7 +212,7 @@ const NewsletterSection: React.FC = () => {
           </Grid>
 
           {/* Newsletter Text */}
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={5} {...({} as any)}>
             <Typography
               variant="h4"
               sx={{
@@ -229,7 +229,7 @@ const NewsletterSection: React.FC = () => {
           </Grid>
 
           {/* Email Input */}
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} {...({} as any)}>
             <Box
               component="form"
               onSubmit={handleSubmit}
@@ -312,7 +312,7 @@ const NewsletterSection: React.FC = () => {
         {/* Bottom Links Section */}
         <Grid container spacing={4}>
           {/* Contact */}
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={3} {...({} as any)}>
             <Typography
               variant="h6"
               sx={{
@@ -346,7 +346,7 @@ const NewsletterSection: React.FC = () => {
           </Grid>
 
           {/* Quick Link */}
-          <Grid item xs={12} sm={6} md={2}>
+          <Grid item xs={12} sm={6} md={2} {...({} as any)}>
             <Typography
               variant="h6"
               sx={{
@@ -376,7 +376,7 @@ const NewsletterSection: React.FC = () => {
           </Grid>
 
           {/* More Link */}
-          <Grid item xs={12} sm={6} md={2}>
+          <Grid item xs={12} sm={6} md={2} {...({} as any)}>
             <Typography
               variant="h6"
               sx={{
@@ -406,7 +406,7 @@ const NewsletterSection: React.FC = () => {
           </Grid>
 
           {/* UpSoft Section */}
-          <Grid item xs={12} sm={6} md={5}>
+          <Grid item xs={12} sm={6} md={5} {...({} as any)}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
               <Box
                 sx={{

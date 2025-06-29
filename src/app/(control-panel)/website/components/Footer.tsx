@@ -247,7 +247,7 @@ const Footer: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           {/* Left Section - Newsletter Signup */}
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={3} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -457,7 +457,7 @@ const Footer: React.FC = () => {
 
           {/* Footer Columns */}
           {footerColumns.map((column, index) => (
-            <Grid item xs={12} sm={6} md={2.25} key={index}>
+            <Grid item xs={12} sm={6} md={2.25} key={index} {...({} as any)}> 
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

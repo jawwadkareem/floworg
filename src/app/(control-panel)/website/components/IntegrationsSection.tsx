@@ -213,7 +213,7 @@ const IntegrationsSection: React.FC = () => {
         {/* Header Section */}
         <Grid container spacing={6} alignItems="flex-start" sx={{ mb: 6 }}>
           {/* Left Side - Headings */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -249,7 +249,7 @@ const IntegrationsSection: React.FC = () => {
           </Grid>
 
           {/* Right Side - Description and Button */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}

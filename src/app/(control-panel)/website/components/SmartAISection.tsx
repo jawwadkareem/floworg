@@ -232,7 +232,7 @@ const SmartAISection: React.FC = () => {
         {/* Feature Cards */}
         <Grid container spacing={3}>
           {/* Multi-Language Support */}
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -319,7 +319,7 @@ const SmartAISection: React.FC = () => {
           </Grid>
 
           {/* AI Training Center */}
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -416,7 +416,7 @@ const SmartAISection: React.FC = () => {
           </Grid>
 
           {/* Personal Customer Insights */}
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

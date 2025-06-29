@@ -417,7 +417,7 @@ const GlobalAutomationSection: React.FC = () => {
 
           <Grid container spacing={2} sx={{ mb: 6 }}>
             {stats.map((stat, index) => (
-              <Grid item xs={6} sm={4} md={2.4} key={index}>
+              <Grid item xs={6} sm={4} md={2.4} key={index} {...({} as any)}>
                 <StatCard number={stat.number} label={stat.label} delay={index * 0.1} />
               </Grid>
             ))}

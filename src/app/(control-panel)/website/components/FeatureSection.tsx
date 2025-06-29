@@ -132,7 +132,7 @@ const FeaturesSection: React.FC = () => {
         {/* Screen Sharing Content */}
         <Grid container spacing={6} alignItems="center">
           {/* Left Side - Content */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -226,7 +226,7 @@ const FeaturesSection: React.FC = () => {
           </Grid>
 
           {/* Right Side - Video Conference Mockup */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}

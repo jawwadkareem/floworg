@@ -31,7 +31,7 @@ const ScreenSharingSection: React.FC = () => {
     <Box sx={{ py: 8, backgroundColor: 'white' }}>
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -82,10 +82,10 @@ const ScreenSharingSection: React.FC = () => {
             </motion.div>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <Grid container spacing={3}>
               {features.map((feature, index) => (
-                <Grid item xs={12} sm={6} key={index}>
+                <Grid item xs={12} sm={6} key={index} {...({} as any)}>
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}

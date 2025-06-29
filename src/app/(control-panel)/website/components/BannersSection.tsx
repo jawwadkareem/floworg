@@ -44,7 +44,7 @@ const BannersSection: React.FC = () => {
 
         <Grid container spacing={4} justifyContent="center">
           {['Instant Jobs', 'Screen Sharing', 'Team Chat', 'HR Audit & Visits'].map((item, index) => (
-            <Grid item xs={6} sm={3} key={index}>
+            <Grid item xs={6} sm={3} key={index} {...({} as any)}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

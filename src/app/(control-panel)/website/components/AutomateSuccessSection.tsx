@@ -396,8 +396,8 @@ const AutomateSuccessSection: React.FC = () => {
           </Box>
         </motion.div>
 
-        <Grid container spacing={6}>
-          <Grid item xs={12} md={6}>
+        <Grid container spacing={6} {...({} as any)}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <Box>
               {leftFeatures.map((feature, index) => (
                 <motion.div
@@ -465,7 +465,7 @@ const AutomateSuccessSection: React.FC = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} {...({} as any)}>
             <Box>
               {rightFeatures.map((feature, index) => (
                 <motion.div
