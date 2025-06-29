@@ -6,7 +6,6 @@ import Navigation from 'src/components/theme-layouts/components/navigation/Navig
 import UserMenu from 'src/components/theme-layouts/components/UserMenu';
 import { Divider } from '@mui/material';
 import NavbarPinToggleButton from 'src/components/theme-layouts/components/navbar/NavbarPinToggleButton';
-import Logo from '../../../../components/Logo';
 import GoToDocBox from '@/components/theme-layouts/components/GoToDocBox';
 
 const Root = styled('div')(({ theme }) => ({
@@ -49,7 +48,6 @@ function NavbarStyle2Content(props: NavbarStyle2ContentProps) {
 	return (
 		<Root className={clsx('flex h-full flex-auto flex-col overflow-hidden', className)}>
 			<div className="flex h-12 shrink-0 flex-row items-center px-3 md:h-19 gap-1.5">
-				<Logo />
 				<NavbarPinToggleButton className="h-8 w-8 p-0" />
 			</div>
 

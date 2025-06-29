@@ -115,11 +115,7 @@ export function useActiveListIcon(editor: Editor | null, filteredLists: typeof l
 	return React.useCallback(() => {
 		const activeOption = filteredLists.find((option) => isListActive(editor, option.type));
 
-		return activeOption ? (
-			<activeOption.icon className="tiptap-button-icon" />
-		) : (
-			<ListIcon className="tiptap-button-icon" />
-		);
+		return (<></>);
 	}, [editor, filteredLists]);
 }
 

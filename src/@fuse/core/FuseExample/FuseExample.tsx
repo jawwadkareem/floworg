@@ -63,32 +63,7 @@ function FuseExample(props: FuseExampleProps) {
 					)}
 				</Tabs>
 			</Box>
-			<div className="relative flex max-w-full justify-center">
-				<div className={currentTab === 0 ? 'flex max-w-full flex-1' : 'hidden'}>
-					{Component &&
-						(iframe ? (
-							<DemoFrame name={name}>
-								<Component />
-							</DemoFrame>
-						) : (
-							<div className="flex max-w-full flex-1 justify-center p-6">
-								<Component />
-							</div>
-						))}
-				</div>
-				<div className={currentTab === 1 ? 'flex flex-1' : 'hidden'}>
-					{raw && (
-						<div className="flex flex-1">
-							<FuseHighlight
-								component="pre"
-								className="language-javascript w-full"
-							>
-								{raw}
-							</FuseHighlight>
-						</div>
-					)}
-				</div>
-			</div>
+			
 		</Card>
 	);
 }

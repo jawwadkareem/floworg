@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const ListIcon = React.memo(({ className, ...props }: React.SVGProps<SVGSVGElement>) => {
+export const ListIcon = React.memo(({ className, ...props }: any) => {
 	return (
 		<svg
 			width="24"

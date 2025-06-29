@@ -81,12 +81,7 @@ function FuseHighlight(props: FuseHighlightProps) {
 				</Tooltip>
 			)}
 
-			<Wrapper
-				className="m-0"
-				ref={innerRef}
-			>
-				{source}
-			</Wrapper>
+			
 		</div>
 	);
 }
