@@ -1,67 +1,131 @@
-// import React from 'react';
-// import { Box, Typography, Container, Grid, Card, CardContent } from '@mui/material';
-// import { 
-//   Security, 
-//   VoiceChat, 
-//   Api, 
-//   AccountTree,
-//   Speed,
-//   CloudSync
-// } from '@mui/icons-material';
-// import { motion } from 'framer-motion';
+
+// "use client"
+
+// import type React from "react"
+// import { Box, Typography, Container, Grid } from "@mui/material"
+// import {
+//   LightbulbOutlined,
+//   NotificationsOutlined,
+//   DescriptionOutlined,
+//   LocalFireDepartmentOutlined,
+// } from "@mui/icons-material"
+// import { motion } from "framer-motion"
 
 // const ServicesSection: React.FC = () => {
 //   const services = [
 //     {
-//       icon: <Security sx={{ fontSize: 40, color: '#FF6B6B' }} />,
-//       title: 'Authentication',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <LightbulbOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "Authentication",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: true,
+//       decorationPosition: "top-left",
 //     },
 //     {
-//       icon: <VoiceChat sx={{ fontSize: 40, color: '#4ECDC4' }} />,
-//       title: 'Voice',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <NotificationsOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "Voice",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: true,
+//       decorationPosition: "top-right",
 //     },
 //     {
-//       icon: <VoiceChat sx={{ fontSize: 40, color: '#45B7D1' }} />,
-//       title: 'Voice',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <NotificationsOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "Voice",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: false,
 //     },
 //     {
-//       icon: <Api sx={{ fontSize: 40, color: '#96CEB4' }} />,
-//       title: 'API',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <DescriptionOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "API",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: true,
+//       decorationPosition: "bottom-left",
 //     },
 //     {
-//       icon: <AccountTree sx={{ fontSize: 40, color: '#FFEAA7' }} />,
-//       title: 'Guided Flow',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "Gated Flow",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: false,
 //     },
 //     {
-//       icon: <AccountTree sx={{ fontSize: 40, color: '#DDA0DD' }} />,
-//       title: 'Guided Flow',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "Gated Flow",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: false,
 //     },
 //     {
-//       icon: <Speed sx={{ fontSize: 40, color: '#FF7675' }} />,
-//       title: 'Guided Flow',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "Gated Flow",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: false,
 //     },
 //     {
-//       icon: <CloudSync sx={{ fontSize: 40, color: '#74B9FF' }} />,
-//       title: 'Guided Flow',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "Gated Flow",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: false,
 //     },
 //     {
-//       icon: <AccountTree sx={{ fontSize: 40, color: '#00B894' }} />,
-//       title: 'Guided Flow',
-//       description: 'Many packages and web page editors now use Lorem Ipsum as their default model text.',
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       title: "Gated Flow",
+//       description: "Many packages and web page editors now Lorem.",
+//       hasDecoration: false,
 //     },
-//   ];
+//   ]
+
+//   const getDecorationElement = (position: string) => {
+//     const baseStyles = {
+//       position: "absolute" as const,
+//       width: 0,
+//       height: 0,
+//       zIndex: 0,
+//     }
+
+//     switch (position) {
+//       case "top-left":
+//         return (
+//           <Box
+//             sx={{
+//               ...baseStyles,
+//               top: 0,
+//               left: 0,
+//               borderTop: "40px solid #FF6B6B",
+//               borderRight: "40px solid transparent",
+//             }}
+//           />
+//         )
+//       case "top-right":
+//         return (
+//           <Box
+//             sx={{
+//               ...baseStyles,
+//               top: 0,
+//               right: 0,
+//               borderTop: "60px solid #FF6B6B",
+//               borderLeft: "60px solid transparent",
+//             }}
+//           />
+//         )
+//       case "bottom-left":
+//         return (
+//           <Box
+//             sx={{
+//               ...baseStyles,
+//               bottom: 0,
+//               left: 0,
+//               borderBottom: "50px solid #FF6B6B",
+//               borderRight: "50px solid transparent",
+//             }}
+//           />
+//         )
+//       default:
+//         return null
+//     }
+//   }
 
 //   return (
-//     <Box sx={{ py: 8, backgroundColor: '#f8f9fa' }}>
+//     <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
 //       <Container maxWidth="lg">
+//         {/* Header */}
 //         <motion.div
 //           initial={{ opacity: 0, y: 30 }}
 //           whileInView={{ opacity: 1, y: 0 }}
@@ -72,22 +136,23 @@
 //             variant="h2"
 //             align="center"
 //             sx={{
-//               mb: 2,
-//               fontSize: { xs: '2rem', md: '2.5rem' },
+//               mb: 6,
+//               fontSize: { xs: "2rem", md: "2.5rem" },
 //               fontWeight: 600,
-//               background: 'linear-gradient(45deg, #00D4AA, #1976d2)',
-//               backgroundClip: 'text',
-//               WebkitBackgroundClip: 'text',
-//               WebkitTextFillColor: 'transparent',
+//               color: "#2C3E50",
 //             }}
 //           >
-//             Floworg Services
+//             <Box component="span" sx={{ color: "#00D4AA" }}>
+//               Floworg
+//             </Box>{" "}
+//             Services
 //           </Typography>
 //         </motion.div>
 
-//         <Grid container spacing={4} sx={{ mt: 4 }}>
+//         {/* Services Grid */}
+//         <Grid container spacing={3}>
 //           {services.map((service, index) => (
-//             <Grid item xs={12} sm={6} md={4} key={index}>
+//             <Grid item xs={12} sm={6} md={4} key={index} {...({} as any)}>
 //               <motion.div
 //                 initial={{ opacity: 0, y: 30 }}
 //                 whileInView={{ opacity: 1, y: 0 }}
@@ -95,271 +160,232 @@
 //                 viewport={{ once: true }}
 //                 whileHover={{ y: -5 }}
 //               >
-//                 <Card
+//                 <Box
 //                   sx={{
-//                     height: '100%',
-//                     borderRadius: 3,
-//                     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-//                     transition: 'all 0.3s ease',
-//                     '&:hover': {
-//                       boxShadow: '0 8px 30px rgba(0, 0, 0, 0.15)',
+//                     backgroundColor: "white",
+//                     borderRadius: 2,
+//                     p: 4,
+//                     height: "100%",
+//                     position: "relative",
+//                     overflow: "hidden",
+//                     boxShadow: "0 2px 10px rgba(0, 0, 0, 0.08)",
+//                     transition: "all 0.3s ease",
+//                     "&:hover": {
+//                       boxShadow: "0 4px 20px rgba(0, 0, 0, 0.12)",
 //                     },
 //                   }}
 //                 >
-//                   <CardContent sx={{ p: 3, textAlign: 'center' }}>
-//                     <Box sx={{ mb: 2 }}>
+//                   {/* Decorative Elements */}
+//                   {service.hasDecoration && getDecorationElement(service.decorationPosition || "")}
+
+//                   {/* Content */}
+//                   <Box sx={{ position: "relative", zIndex: 1 }}>
+//                     {/* Icon */}
+//                     <Box
+//                       sx={{
+//                         mb: 3,
+//                         display: "flex",
+//                         alignItems: "flex-start",
+//                       }}
+//                     >
 //                       {service.icon}
 //                     </Box>
+
+//                     {/* Title */}
 //                     <Typography
 //                       variant="h6"
-//                       sx={{ mb: 2, fontWeight: 600 }}
+//                       sx={{
+//                         mb: 2,
+//                         fontWeight: 600,
+//                         color: "#2C3E50",
+//                         fontSize: "1.1rem",
+//                       }}
 //                     >
 //                       {service.title}
 //                     </Typography>
+
+//                     {/* Description */}
 //                     <Typography
 //                       variant="body2"
-//                       color="text.secondary"
-//                       sx={{ lineHeight: 1.6 }}
+//                       sx={{
+//                         color: "#6B7280",
+//                         lineHeight: 1.6,
+//                         fontSize: "0.9rem",
+//                       }}
 //                     >
 //                       {service.description}
 //                     </Typography>
-//                   </CardContent>
-//                 </Card>
+//                   </Box>
+//                 </Box>
 //               </motion.div>
 //             </Grid>
 //           ))}
 //         </Grid>
 //       </Container>
 //     </Box>
-//   );
-// };
+//   )
+// }
 
-// export default ServicesSection;
-"use client"
+// export default ServicesSection
 
-import type React from "react"
-import { Box, Typography, Container, Grid } from "@mui/material"
-import {
-  LightbulbOutlined,
-  NotificationsOutlined,
-  DescriptionOutlined,
-  LocalFireDepartmentOutlined,
-} from "@mui/icons-material"
-import { motion } from "framer-motion"
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Lightbulb, Bell, FileText, Flame } from 'lucide-react';
 
 const ServicesSection: React.FC = () => {
   const services = [
     {
-      icon: <LightbulbOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <Lightbulb className="w-8 h-8 text-red-500" />,
       title: "Authentication",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: true,
       decorationPosition: "top-left",
     },
     {
-      icon: <NotificationsOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <Bell className="w-8 h-8 text-red-500" />,
       title: "Voice",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: true,
       decorationPosition: "top-right",
     },
     {
-      icon: <NotificationsOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <Bell className="w-8 h-8 text-red-500" />,
       title: "Voice",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: false,
     },
     {
-      icon: <DescriptionOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <FileText className="w-8 h-8 text-red-500" />,
       title: "API",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: true,
       decorationPosition: "bottom-left",
     },
     {
-      icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <Flame className="w-8 h-8 text-red-500" />,
       title: "Gated Flow",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: false,
     },
     {
-      icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <Flame className="w-8 h-8 text-red-500" />,
       title: "Gated Flow",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: false,
     },
     {
-      icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <Flame className="w-8 h-8 text-red-500" />,
       title: "Gated Flow",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: false,
     },
     {
-      icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <Flame className="w-8 h-8 text-red-500" />,
       title: "Gated Flow",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: false,
     },
     {
-      icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+      icon: <Flame className="w-8 h-8 text-red-500" />,
       title: "Gated Flow",
       description: "Many packages and web page editors now Lorem.",
       hasDecoration: false,
     },
-  ]
+  ];
 
   const getDecorationElement = (position: string) => {
-    const baseStyles = {
-      position: "absolute" as const,
-      width: 0,
-      height: 0,
-      zIndex: 0,
-    }
-
     switch (position) {
       case "top-left":
         return (
-          <Box
-            sx={{
-              ...baseStyles,
-              top: 0,
-              left: 0,
+          <div 
+            className="absolute top-0 left-0 w-0 h-0 z-0"
+            style={{
               borderTop: "40px solid #FF6B6B",
               borderRight: "40px solid transparent",
             }}
           />
-        )
+        );
       case "top-right":
         return (
-          <Box
-            sx={{
-              ...baseStyles,
-              top: 0,
-              right: 0,
+          <div 
+            className="absolute top-0 right-0 w-0 h-0 z-0"
+            style={{
               borderTop: "60px solid #FF6B6B",
               borderLeft: "60px solid transparent",
             }}
           />
-        )
+        );
       case "bottom-left":
         return (
-          <Box
-            sx={{
-              ...baseStyles,
-              bottom: 0,
-              left: 0,
+          <div 
+            className="absolute bottom-0 left-0 w-0 h-0 z-0"
+            style={{
               borderBottom: "50px solid #FF6B6B",
               borderRight: "50px solid transparent",
             }}
           />
-        )
+        );
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   return (
-    <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-      <Container maxWidth="lg">
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="text-center mb-12"
         >
-          <Typography
-            variant="h2"
-            align="center"
-            sx={{
-              mb: 6,
-              fontSize: { xs: "2rem", md: "2.5rem" },
-              fontWeight: 600,
-              color: "#2C3E50",
-            }}
-          >
-            <Box component="span" sx={{ color: "#00D4AA" }}>
-              Floworg
-            </Box>{" "}
-            Services
-          </Typography>
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
+            <span className="text-teal-500">Floworg</span> Services
+          </h2>
         </motion.div>
 
         {/* Services Grid */}
-        <Grid container spacing={3}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index} {...({} as any)}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <Box
-                  sx={{
-                    backgroundColor: "white",
-                    borderRadius: 2,
-                    p: 4,
-                    height: "100%",
-                    position: "relative",
-                    overflow: "hidden",
-                    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.08)",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.12)",
-                    },
-                  }}
-                >
-                  {/* Decorative Elements */}
-                  {service.hasDecoration && getDecorationElement(service.decorationPosition || "")}
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+              className="h-full"
+            >
+              <div className="bg-white rounded-lg p-6 h-full relative overflow-hidden shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
+                {/* Decorative Elements */}
+                {service.hasDecoration && getDecorationElement(service.decorationPosition || "")}
 
-                  {/* Content */}
-                  <Box sx={{ position: "relative", zIndex: 1 }}>
-                    {/* Icon */}
-                    <Box
-                      sx={{
-                        mb: 3,
-                        display: "flex",
-                        alignItems: "flex-start",
-                      }}
-                    >
-                      {service.icon}
-                    </Box>
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="mb-6 flex items-start">
+                    {service.icon}
+                  </div>
 
-                    {/* Title */}
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        mb: 2,
-                        fontWeight: 600,
-                        color: "#2C3E50",
-                        fontSize: "1.1rem",
-                      }}
-                    >
-                      {service.title}
-                    </Typography>
+                  {/* Title */}
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                    {service.title}
+                  </h3>
 
-                    {/* Description */}
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: "#6B7280",
-                        lineHeight: 1.6,
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      {service.description}
-                    </Typography>
-                  </Box>
-                </Box>
-              </motion.div>
-            </Grid>
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           ))}
-        </Grid>
-      </Container>
-    </Box>
-  )
-}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default ServicesSection
+export default ServicesSection;
