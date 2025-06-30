@@ -29,4 +29,4 @@ const Supportpage: React.FC = () => {
   )
 }
 
-export default Supportpage
+export default Supportpage;
