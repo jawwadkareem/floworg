@@ -6,8 +6,10 @@ import NewFeaturesSection from "./new-features-section"
 import SupportBlogSection from "./support-blog-section"
 import IntegrationsSupportSection from "./integrations-support-section"
 import FAQSection from "./faq-section"
+import NewsSection from "./NewsSection"
 import LatestArticlesSection from "./latest-articles-section"
 import TestimonialsSupportSection from "./testimonials-support-section"
+import TestimonialsSection from "./TestimonialsSection"
 import NewsletterSection from "./NewsletterSection"
 import Footer from "./Footer"
 
@@ -21,8 +23,11 @@ const Supportpage: React.FC = () => {
       <SupportBlogSection />
       <IntegrationsSupportSection />
       <FAQSection />
-      <LatestArticlesSection />
-      <TestimonialsSupportSection />
+      <NewsSection />
+
+      {/* <LatestArticlesSection /> */}
+      <TestimonialsSection />
+      {/* <TestimonialsSupportSection /> */}
       <NewsletterSection />
       <Footer />
     </>
