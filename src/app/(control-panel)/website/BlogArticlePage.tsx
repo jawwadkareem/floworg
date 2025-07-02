@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import BlogArticlepage from './components/BlogArticlePage';
+import BlogArticlepage from './components/BlogArticlepage';
 const theme = createTheme({
   palette: {
     primary: {
