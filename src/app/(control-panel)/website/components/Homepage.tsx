@@ -18,6 +18,7 @@ import NewsSection from "./NewsSection";
 import TestimonialsSection from "./TestimonialsSection";
 import NewsletterSection from "./NewsletterSection";
 import Footer from "./Footer";
+import { useNavigate } from "react-router";
 
 // Sample integrations data
 const integrations: Integration[] = [
@@ -220,6 +221,7 @@ const pricingPlans: PricingPlan[] = [
 ];
 
 const Homepage: React.FC = () => {
+  const navigate = useNavigate();
   const handleIntegrationToggle = (integrationId: string, enabled: boolean) => {
     console.log(
       `Integration ${integrationId} ${enabled ? "enabled" : "disabled"}`
@@ -237,8 +239,13 @@ const Homepage: React.FC = () => {
     billingCycle: "monthly" | "yearly"
   ) => {
     console.log(`Selected plan: ${planId} with ${billingCycle} billing`);
+     // Optional: Save plan to state, context, or localStorage
+     localStorage.setItem("selectedPlanId", planId);
+     localStorage.setItem("selectedBillingCycle", billingCycle);
+ 
+     // Navigate to /payment route
+     navigate("/workspace");
     // Add your plan selection logic here (redirect to checkout, etc.)
-    alert(`You selected the ${planId} plan with ${billingCycle} billing!`);
   };
 
   const handleReadMore = (planId: string) => {
