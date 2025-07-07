@@ -39,7 +39,7 @@ const navigationConfig: FuseNavItemType[] = [
 				url:'/home'
 			},
 			{
-				id:'website.services',
+				id:'website.pricing',
 				title:'Pricing',
 				type:'item',
 				url:'/pricing'
