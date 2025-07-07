@@ -96,7 +96,7 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'apps.ai-image-generator',
 				title: 'FlowOrg OmniAi 360',
 				type: 'item',
-				url: '/apps/ai-image-generator',
+				url: '/service1',
 				
 			},
 			{
