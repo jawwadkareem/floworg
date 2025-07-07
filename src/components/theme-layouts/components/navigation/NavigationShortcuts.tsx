@@ -33,13 +33,7 @@ function NavigationShortcuts(props: NavigationShortcutsProps) {
 	}
 
 	return (
-		<FuseShortcuts
-			className={className}
-			variant={variant}
-			navigation={navigation}
-			shortcuts={userShortcuts}
-			onChange={handleShortcutsChange}
-		/>
+		<div></div>
 	);
 }
 

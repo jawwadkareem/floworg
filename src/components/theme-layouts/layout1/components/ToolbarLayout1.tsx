@@ -47,7 +47,7 @@ function ToolbarLayout1(props: ToolbarLayout1Props) {
 				sx={(theme) => ({
 					backgroundColor: toolbarTheme.palette.background.default,
 					...theme.applyStyles('light', {
-						backgroundColor: toolbarTheme.palette.background.paper
+						backgroundColor: "#1ad7ad"
 					})
 				})}
 				position="static"
@@ -74,7 +74,7 @@ function ToolbarLayout1(props: ToolbarLayout1Props) {
 							</>
 						)}
 
-						{!isMobile && <NavigationShortcuts />}
+						{!isMobile}
 					</div>
 
 					<div className="flex items-center overflow-x-auto px-2 md:px-4 space-x-1.5">
