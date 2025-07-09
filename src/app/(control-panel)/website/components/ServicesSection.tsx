@@ -231,65 +231,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Bell, FileText, Flame } from 'lucide-react';
-
+import HoverCard from './HoverCard';
 const ServicesSection: React.FC = () => {
   const services = [
+    
     {
-      icon: <Lightbulb className="w-8 h-8 text-red-500" />,
-      title: "Authentication",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: true,
-      decorationPosition: "top-left",
+      icon: <HoverCard />,
+      // title: "Authentication",
+      // description: "Many packages and web page editors now Lorem.",
+      // hasDecoration: false,
+      // decorationPosition: "top-left",
     },
     {
-      icon: <Bell className="w-8 h-8 text-red-500" />,
-      title: "Voice",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: true,
-      decorationPosition: "top-right",
+      icon:<HoverCard/>
     },
     {
-      icon: <Bell className="w-8 h-8 text-red-500" />,
-      title: "Voice",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: false,
+      icon:<HoverCard/>
+
     },
     {
-      icon: <FileText className="w-8 h-8 text-red-500" />,
-      title: "API",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: true,
-      decorationPosition: "bottom-left",
+      icon:<HoverCard/>
+
     },
     {
-      icon: <Flame className="w-8 h-8 text-red-500" />,
-      title: "Gated Flow",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: false,
+      icon:<HoverCard/>
+
     },
     {
-      icon: <Flame className="w-8 h-8 text-red-500" />,
-      title: "Gated Flow",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: false,
+      icon:<HoverCard/>
+
     },
     {
-      icon: <Flame className="w-8 h-8 text-red-500" />,
-      title: "Gated Flow",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: false,
+      icon:<HoverCard/>
+
     },
     {
-      icon: <Flame className="w-8 h-8 text-red-500" />,
-      title: "Gated Flow",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: false,
+      icon:<HoverCard/>
+
     },
     {
-      icon: <Flame className="w-8 h-8 text-red-500" />,
-      title: "Gated Flow",
-      description: "Many packages and web page editors now Lorem.",
-      hasDecoration: false,
+      icon:<HoverCard/>
+
     },
   ];
 
@@ -358,9 +340,7 @@ const ServicesSection: React.FC = () => {
               whileHover={{ y: -5 }}
               className="h-full"
             >
-              <div className="bg-white rounded-lg p-6 h-full relative overflow-hidden shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
-                {/* Decorative Elements */}
-                {service.hasDecoration && getDecorationElement(service.decorationPosition || "")}
+             
 
                 {/* Content */}
                 <div className="relative z-10">
@@ -369,17 +349,7 @@ const ServicesSection: React.FC = () => {
                     {service.icon}
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
                 </div>
-              </div>
             </motion.div>
           ))}
         </div>

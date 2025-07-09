@@ -15,6 +15,9 @@ import NewsletterSection from "./components/NewsletterSection";
 import LatestArticlesSection from "./components/latest-articles-section";
 import LeadsForumSection from "./components/LeadsForumSection";
 import ServicesSection from "./components/ServicesSection";
+import Header from "./components/Header";
+import HeroSection from "./components/HeroSection";
+import Navbar from "./components/Navbar";
 
 const Services = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -105,69 +108,8 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <span className="text-xl font-bold text-gray-900">
-                Flo<span className="text-teal-500">✓</span>org
-              </span>
-              <span className="text-xs text-gray-500 ml-2 hidden sm:inline">
-                Commerce and Service
-              </span>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-gray-700 hover:text-teal-600 transition-colors duration-200 text-sm font-medium"
-                >
-                  {item}
-                </a>
-              ))}
-              <button className="bg-teal-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-600 transition-colors duration-200">
-                Get Started
-              </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-gray-100 shadow-lg animate-fade-in z-50">
-              <div className="px-4 py-4 space-y-3">
-                {navItems.map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="block text-gray-700 hover:text-teal-600 transition-colors duration-200 py-2 text-sm font-medium"
-                  >
-                    {item}
-                  </a>
-                ))}
-                <button className="w-full bg-teal-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-600 transition-colors duration-200 mt-4">
-                  Get Started
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-
+      <Header/>
+      <Navbar/>
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-teal-500 via-cyan-500 to-emerald-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
