@@ -218,7 +218,7 @@ const Footer: React.FC = () => {
     {
       title: "Floworg",
       links: [
-        { text: "Home", url: "#", priority: 1 },
+        { text: "Home", url: "/home", priority: 1 },
         { text: "About", url: "#", priority: 2 },
         { text: "Timeline", url: "#", priority: 3 },
         { text: "Contact Us", url: "#", priority: 4 },
@@ -232,13 +232,13 @@ const Footer: React.FC = () => {
     {
       title: "Explore",
       links: [
-        { text: "Pricing", url: "#", priority: 1 },
+        { text: "Pricing", url: "/pricing", priority: 1 },
         { text: "Book a Demo", url: "#", priority: 2 },
         { text: "Floworg ProBuilder", url: "#", priority: 3 },
         { text: "Floworg Consulting", url: "#", priority: 4 },
-        { text: "Projects", url: "#", priority: 5 },
+        { text: "Projects", url: "/projects", priority: 5 },
         { text: "Academy", url: "#", priority: 6 },
-        { text: "Blog & News", url: "#", priority: 7 },
+        { text: "Blog & News", url: "/blog", priority: 7 },
         { text: "Newsletter", url: "#", priority: 8 },
         { text: "Loyalty Programs", url: "#", priority: 9 },
       ],
@@ -246,7 +246,7 @@ const Footer: React.FC = () => {
     {
       title: "Resources",
       links: [
-        { text: "Support", url: "#", priority: 1 },
+        { text: "Support", url: "/support", priority: 1 },
         { text: "Developers", url: "#", priority: 2 },
         { text: "Integration", url: "#", priority: 3 },
         { text: "Documentation & API", url: "#", priority: 4 },
@@ -260,7 +260,7 @@ const Footer: React.FC = () => {
     {
       title: "Services",
       links: [
-        { text: "Floworg OmniAI 360", url: "#", priority: 1 },
+        { text: "Floworg OmniAI 360", url: "/service1", priority: 1 },
         { text: "Floworg SYS 360 - All In One", url: "#", priority: 2 },
         { text: "Automate your Business (RPA)", url: "#", priority: 3 },
         { text: "Implementation of Systems & CRM", url: "#", priority: 4 },
@@ -327,7 +327,7 @@ const Footer: React.FC = () => {
                     <li key={link.text}>
                       <a
                         href={link.url}
-                        className="text-gray-600 hover:text-emerald-500 transition-colors duration-300 text-sm"
+                        className="text-gray-600 hover:text-emerald-500 transition-colors duration-300 text-sm no underline"
                       >
                         {link.text}
                       </a>
@@ -340,7 +340,7 @@ const Footer: React.FC = () => {
                       <li key={link.text}>
                         <a
                           href={link.url}
-                          className="text-gray-600 hover:text-emerald-500 transition-colors duration-300 text-sm"
+                          className="text-gray-600 hover:text-emerald-500 transition-colors duration-300 text-sm no underline"
                         >
                           {link.text}
                         </a>
@@ -352,7 +352,7 @@ const Footer: React.FC = () => {
                     <li>
                       <button
                         onClick={() => toggleColumn(column.title)}
-                        className="text-gray-600 hover:text-emerald-500 transition-colors duration-300 font-medium text-sm"
+                        className="text-gray-600 hover:text-emerald-500 transition-colors duration-300 font-medium text-sm no underline"
                       >
                         {expandedColumns[column.title] ? "Show less" : "Show more"}
                       </button>

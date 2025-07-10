@@ -123,6 +123,12 @@ Theme variables
 /**
 Print styles
 */
+a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 @import './print.css';
 
 /**

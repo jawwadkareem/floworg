@@ -265,6 +265,13 @@ const TestimonialsSection: React.FC = () => {
       quote:
         "Amet Minim Mollit Non Deserunt Ullamco Est Sit Aliqua Dolor Do Amet Sint. Velit Officia Consequat Duis Enim Velit Mollit.",
     },
+    {
+      name: 'Sarah Johnson',
+      role: 'CEO, TechStart Inc.',
+      avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2',
+      rating: 5,
+      content: 'Flowerq transformed our business operations completely. The automation workflows saved us countless hours and improved our efficiency by 250%. Highly recommended!',
+    }
   ];
 
   const handlePrevious = () => {
@@ -325,45 +332,40 @@ const TestimonialsSection: React.FC = () => {
           {/* Right Side - Testimonials */}
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="h-full"
-                >
-                  <div className="bg-white rounded-2xl p-6 h-full shadow-lg hover:shadow-xl transition-all duration-300 relative">
-                    {/* Quote Text */}
-                    <p className="text-gray-400 italic leading-relaxed mb-8 text-sm">
-                      "{testimonial.quote}"
-                    </p>
+            {testimonials
+  .slice(currentIndex, currentIndex + 2)
+  .map((testimonial, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      className="h-full"
+    >
+      <div className="bg-white rounded-2xl p-6 h-full shadow-lg hover:shadow-xl transition-all duration-300 relative">
+        <p className="text-gray-400 italic leading-relaxed mb-8 text-sm">
+          "{testimonial.quote || testimonial.content}"
+        </p>
+        <div className="flex items-center gap-3">
+          <img
+            src={testimonial.avatar}
+            alt={testimonial.name}
+            className="w-15 h-15 rounded-full border-3 border-gray-100"
+          />
+          <div className="flex-1">
+            <h4 className="font-semibold text-gray-800 text-lg mb-1">
+              {testimonial.name}
+            </h4>
+            <p className="text-gray-400 text-sm">{testimonial.role}</p>
+          </div>
+          <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+            <span className="text-white text-xl font-semibold">"</span>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+))}
 
-                    {/* Profile Section */}
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="w-15 h-15 rounded-full border-3 border-gray-100"
-                      />
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-gray-800 text-lg mb-1">
-                          {testimonial.name}
-                        </h4>
-                        <p className="text-gray-400 text-sm">
-                          {testimonial.role}
-                        </p>
-                      </div>
-
-                      {/* Quote Icon */}
-                      <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-white text-xl font-semibold">"</span>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </div>
