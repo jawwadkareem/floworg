@@ -250,14 +250,14 @@ const PricingSection: React.FC<PricingSectionProps> = ({
                     ))}
                   </div>
 
-                  {/* Read More Link */}
+                  {/* Read More Link
                   <button
                     onClick={() => handleReadMore(plan.id)}
                     className="w-full text-center font-semibold hover:opacity-75 transition-opacity"
                     style={{ color: plan.color }}
                   >
                     Read More
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </motion.div>
@@ -272,9 +272,9 @@ const PricingSection: React.FC<PricingSectionProps> = ({
           viewport={{ once: true }}
           className="text-center mt-8"
         >
-          <button className="text-gray-600 hover:text-gray-800 font-medium underline">
+          {/* <button className="text-gray-600 hover:text-gray-800 font-medium underline">
             Compare all plans in detail
-          </button>
+          </button> */}
         </motion.div>
       </div>
     </section>
