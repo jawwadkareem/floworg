@@ -6,7 +6,9 @@ const HoverCard = () => {
   return (
     <div className="relative w-64 h-40 group">
       {/* Orange background behind the card */}
-      <div className="absolute inset-0 rounded-lg bg-orange-500 transform -rotate-6 scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300 z-0"></div>
+      <div className="absolute inset-0 rounded-lg bg-orange-500 transform -rotate-6 scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300 z-0"
+        style={{ backgroundColor: '#1ad7ad' }}
+></div>
 
       {/* Foreground card */}
       <Card className="relative z-10 w-full h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-rotate-3 bg-white">

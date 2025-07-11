@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './Logo';
 
 const Navbar: React.FC = () => {
   const navItems = ["Home", "Services", "Pricing", "Projects", "Academy", "Blog", "Support"];
@@ -32,9 +33,7 @@ const Navbar: React.FC = () => {
         <div className="bg-gray-700 px-6 py-3 rounded-lg flex items-center gap-6 shadow-xl">
           {/* Logo */}
           <div className="text-white font-bold text-lg flex flex-col items-start">
-            <div className="flex items-center gap-1">
-              Flo<span className="text-teal-400 text-xl">✓</span>org
-            </div>
+            <Logo/>
             <span className="text-xs text-gray-300 -mt-1">Automate your Success</span>
           </div>
 
