@@ -14,58 +14,58 @@
 // const ServicesSection: React.FC = () => {
 //   const services = [
 //     {
-//       icon: <LightbulbOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <LightbulbOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "Authentication",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: true,
 //       decorationPosition: "top-left",
 //     },
 //     {
-//       icon: <NotificationsOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <NotificationsOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "Voice",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: true,
 //       decorationPosition: "top-right",
 //     },
 //     {
-//       icon: <NotificationsOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <NotificationsOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "Voice",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: false,
 //     },
 //     {
-//       icon: <DescriptionOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <DescriptionOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "API",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: true,
 //       decorationPosition: "bottom-left",
 //     },
 //     {
-//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "Gated Flow",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: false,
 //     },
 //     {
-//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "Gated Flow",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: false,
 //     },
 //     {
-//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "Gated Flow",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: false,
 //     },
 //     {
-//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "Gated Flow",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: false,
 //     },
 //     {
-//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#FF6B6B" }} />,
+//       icon: <LocalFireDepartmentOutlined sx={{ fontSize: 32, color: "#1ad7ad" }} />,
 //       title: "Gated Flow",
 //       description: "Many packages and web page editors now Lorem.",
 //       hasDecoration: false,
@@ -88,7 +88,7 @@
 //               ...baseStyles,
 //               top: 0,
 //               left: 0,
-//               borderTop: "40px solid #FF6B6B",
+//               borderTop: "40px solid #1ad7ad",
 //               borderRight: "40px solid transparent",
 //             }}
 //           />
@@ -100,7 +100,7 @@
 //               ...baseStyles,
 //               top: 0,
 //               right: 0,
-//               borderTop: "60px solid #FF6B6B",
+//               borderTop: "60px solid #1ad7ad",
 //               borderLeft: "60px solid transparent",
 //             }}
 //           />
@@ -112,7 +112,7 @@
 //               ...baseStyles,
 //               bottom: 0,
 //               left: 0,
-//               borderBottom: "50px solid #FF6B6B",
+//               borderBottom: "50px solid #1ad7ad",
 //               borderRight: "50px solid transparent",
 //             }}
 //           />
@@ -282,7 +282,7 @@ const ServicesSection: React.FC = () => {
           <div 
             className="absolute top-0 left-0 w-0 h-0 z-0"
             style={{
-              borderTop: "40px solid #FF6B6B",
+              borderTop: "40px solid #1ad7ad",
               borderRight: "40px solid transparent",
             }}
           />
@@ -292,7 +292,7 @@ const ServicesSection: React.FC = () => {
           <div 
             className="absolute top-0 right-0 w-0 h-0 z-0"
             style={{
-              borderTop: "60px solid #FF6B6B",
+              borderTop: "60px solid #1ad7ad",
               borderLeft: "60px solid transparent",
             }}
           />
@@ -302,7 +302,7 @@ const ServicesSection: React.FC = () => {
           <div 
             className="absolute bottom-0 left-0 w-0 h-0 z-0"
             style={{
-              borderBottom: "50px solid #FF6B6B",
+              borderBottom: "50px solid #1ad7ad",
               borderRight: "50px solid transparent",
             }}
           />
