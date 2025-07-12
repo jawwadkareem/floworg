@@ -22,9 +22,9 @@ const SupportBlogSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
+          {/* <div className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
             Floworg Tutorial Videos
-          </div>
+          </div> */}
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             <span className="text-teal-500">Support</span> Blog
           </h2>
