@@ -21,6 +21,7 @@ import Footer from "./Footer";
 import { useNavigate } from "react-router";
 import GlobalAutomationSection from "./GlobalAutomationSection";
 import BusinessSolutionsSection, { ProcessStep, SolutionOption } from "./pricingPage/business-solutions-section";
+import SupportBlogSection from "./support-blog-section";
 
 // Sample integrations data
 const integrations: Integration[] = [
@@ -346,7 +347,8 @@ const Homepage: React.FC = () => {
       <IntegrationsSection />
       {/* <BannersSection /> */}
       {/* <ScreenSharingSection /> */}
-      <FeaturesSection />
+      {/* <FeaturesSection /> */}
+      <SupportBlogSection/>
       <BenefitsSection />
       <SolutionsSection
         title="Solutions"
