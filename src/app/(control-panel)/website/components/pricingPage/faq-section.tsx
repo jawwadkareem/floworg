@@ -45,7 +45,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
 
   const handleTabChange = (categoryId: string) => {
     setActiveCategory(categoryId);
-    setOpenFAQ(null); // Reset to null instead of 0
+    setOpenFAQ(null);
   };
 
   const handleFAQToggle = (index: number) => {
@@ -82,7 +82,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
 
           {/* Category Tabs */}
           <div className="flex justify-center mb-8">
-            <div className="flex gap-8">
+            <div className="flex gap-8 flex-wrap">
               {categories.map((category) => (
                 <button
                   key={category.id}
@@ -99,54 +99,61 @@ const FAQSection: React.FC<FAQSectionProps> = ({
             </div>
           </div>
 
-          {/* FAQ Items */}
-          <div className="grid lg:grid-cols-2 gap-6">
-            {currentFAQs.map((faq, index) => (
-              <motion.div
-                key={`${activeCategory}-${index}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`rounded-lg p-6 cursor-pointer transition-all duration-300 ${
-                  openFAQ === index
-                    ? "bg-teal-500 text-white shadow-lg"
-                    : "bg-white shadow-sm hover:shadow-md"
-                }`}
-                onClick={() => handleFAQToggle(index)}
-              >
-                <div className="flex justify-between items-center">
-                  <h3
-                    className={`font-semibold ${openFAQ === index ? "text-white" : "text-gray-800"}`}
-                  >
-                    {faq.question}
-                  </h3>
-                  {openFAQ === index ? (
-                    <ChevronUp className="w-5 h-5 text-white flex-shrink-0 ml-4" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-600 flex-shrink-0 ml-4" />
-                  )}
-                </div>
+          {/* FAQ Items as Two-Column Flexbox */}
+          <div className="flex flex-wrap -mx-3">
+            {currentFAQs.map((faq, index) => {
+              const isOpen = openFAQ === index;
 
-                <motion.div
-                  initial={false}
-                  animate={{
-                    height: openFAQ === index ? "auto" : 0,
-                    opacity: openFAQ === index ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+              return (
+                <div
+                  key={`${activeCategory}-${index}`}
+                  className="w-full lg:basis-1/2 px-3 mb-6"
                 >
-                  {openFAQ === index && (
-                    <p
-                      className={`mt-4 ${openFAQ === index ? "text-white" : "text-gray-600"}`}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className={`rounded-lg p-6 cursor-pointer transition-all duration-300 overflow-hidden ${
+                      isOpen
+                        ? "bg-teal-500 text-white shadow-lg"
+                        : "bg-white shadow-sm hover:shadow-md"
+                    }`}
+                    onClick={() => handleFAQToggle(index)}
+                  >
+                    <div className="flex justify-between items-center">
+                      <h3
+                        className={`font-semibold ${
+                          isOpen ? "text-white" : "text-gray-800"
+                        }`}
+                      >
+                        {faq.question}
+                      </h3>
+                      {isOpen ? (
+                        <ChevronUp className="w-5 h-5 text-white flex-shrink-0 ml-4" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-gray-600 flex-shrink-0 ml-4" />
+                      )}
+                    </div>
+
+                    {/* Expandable Answer */}
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: isOpen ? "auto" : 0,
+                        opacity: isOpen ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
                     >
-                      {faq.answer}
-                    </p>
-                  )}
-                </motion.div>
-              </motion.div>
-            ))}
+                      {isOpen && (
+                        <p className="mt-4 text-white">{faq.answer}</p>
+                      )}
+                    </motion.div>
+                  </motion.div>
+                </div>
+              );
+            })}
           </div>
         </motion.div>
       </div>

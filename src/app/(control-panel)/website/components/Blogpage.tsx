@@ -9,21 +9,25 @@ import TestimonialsSection from './TestimonialsSection';
 import NewsletterSection from './NewsletterSection';
 import Footer from './Footer';
 import LeadsForumSection from './LeadsForumSection';
+import Navbar from './Navbar';
 const Blogpage: React.FC = () => {
   return (
     <>
-      <Header />
-      <BlogHeroSection />
+    <Header />
+    <Navbar />
+  
+    {/* Wrapper to add spacing after Navbar */}
+    <div className="mt-8"> {/* Tailwind: mt-8 = margin-top: 2rem */}
       <BlogNavigationSection />
       <BlogGridSection />
       <BlogNewsletterSection />
-      
       <LeadsForumSection />
       <NewsSection />
       <TestimonialsSection />
       <NewsletterSection />
       <Footer />
-    </>
+    </div>
+  </>
   );
 };
 

@@ -184,6 +184,7 @@
 
 import type React from "react"
 import { useState } from "react"
+import Logo from "./Logo"
 
 interface FooterLink {
   text: string
@@ -233,13 +234,13 @@ const Footer: React.FC = () => {
       title: "Explore",
       links: [
         { text: "Pricing", url: "/pricing", priority: 1 },
-        { text: "Book a Demo", url: "#", priority: 2 },
-        { text: "Floworg ProBuilder", url: "#", priority: 3 },
+        { text: "Book a Demo", url: "/bookademo", priority: 2 },
+        { text: "Floworg ProBuilder", url: "/probuilder", priority: 3 },
         { text: "Floworg Consulting", url: "#", priority: 4 },
         { text: "Projects", url: "/projects", priority: 5 },
-        { text: "Academy", url: "#", priority: 6 },
+        { text: "Academy", url: "/academy", priority: 6 },
         { text: "Blog & News", url: "/blog", priority: 7 },
-        { text: "Newsletter", url: "#", priority: 8 },
+        { text: "Newsletter", url: "/newsletter", priority: 8 },
         { text: "Loyalty Programs", url: "#", priority: 9 },
       ],
     },
@@ -248,9 +249,9 @@ const Footer: React.FC = () => {
       links: [
         { text: "Support", url: "/support", priority: 1 },
         { text: "Developers", url: "#", priority: 2 },
-        { text: "Integration", url: "#", priority: 3 },
+        { text: "Integration", url: "/integration", priority: 3 },
         { text: "Documentation & API", url: "#", priority: 4 },
-        { text: "Forum & Community", url: "#", priority: 5 },
+        { text: "Forum & Community", url: "/forum", priority: 5 },
         { text: "Website Terms", url: "#", priority: 6 },
         { text: "Refund Policy", url: "#", priority: 7 },
         { text: "Privacy Policy", url: "#", priority: 8 },
@@ -370,14 +371,15 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="flex flex-col lg:flex-row justify-between items-center">
             {/* Left - Logo and tagline */}
-            <div className="mb-6 lg:mb-0">
+            {/* <div className="mb-6 lg:mb-0">
               <div className="flex items-center mb-2">
                 <h1 className="text-3xl font-bold text-white">
                   Flo<span className="text-emerald-400">✓</span>org
                 </h1>
               </div>
               <p className="text-sm text-gray-300">Automate your Success</p>
-            </div>
+            </div> */}
+            <Logo/>
 
             {/* Center - Service badges */}
             <div className="flex gap-4 mb-6 lg:mb-0">

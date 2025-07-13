@@ -367,6 +367,7 @@ const ProjectsPage: React.FC = () => {
         defaultActiveCategory="general"
         defaultOpenFAQ={null}
       />
+      {/* <FAQSection/> */}
 
       <NewsSection />
       <TestimonialsSection />

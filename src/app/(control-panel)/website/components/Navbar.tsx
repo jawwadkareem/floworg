@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
             {navItems.map((item) => (
               <a
                 key={item}
-                href="#"
+                href={`/${item.toLowerCase()}`} // Adjust href as needed
                 className="text-white text-sm font-medium no-underline hover:text-teal-400 transition"
                 >
                 {item}
