@@ -143,7 +143,7 @@ const navigationConfig: FuseNavItemType[] = [
 						id:'dashboards.personal_area.my_knowledge_base',
 						title:'My Knowledge Base',
 						type:'item',
-						url:'/home'
+						url:'/knowledgebase'
 					},
 					{
 						id:'dashboards.personal_area.my_tutorial_videos',
