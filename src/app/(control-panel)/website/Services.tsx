@@ -18,6 +18,7 @@ import ServicesSection from "./components/ServicesSection";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
+import GlobalAutomationSection from "./components/GlobalAutomationSection";
 
 const Services = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -128,49 +129,7 @@ const Services = () => {
       <ServicesSection/>
 
       {/* AI Automation Section */}
-      <div className="bg-slate-800 text-white py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-              Floworg AI Powers Global Automation – Across Channels, Devices &
-              Data
-            </h2>
-            <p className="text-gray-300 text-lg max-w-4xl mx-auto">
-              Flowing 360 powers global automation – connecting systems,
-              channels, and data across platforms.
-            </p>
-          </div>
-
-          <div className="relative flex justify-center">
-            <div className="w-80 h-80 sm:w-96 sm:h-96 relative">
-              {/* Globe with orbiting elements */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400 to-cyan-600 opacity-20"></div>
-              <div className="absolute inset-4 rounded-full border border-teal-400 opacity-30"></div>
-              <div className="absolute inset-8 rounded-full border border-teal-400 opacity-50"></div>
-
-              {/* Orbiting icons */}
-              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm">📱</span>
-              </div>
-              <div className="absolute bottom-4 right-8 w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm">🌐</span>
-              </div>
-              <div className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm">📊</span>
-              </div>
-              <div className="absolute right-4 bottom-16 w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm">🔧</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <button className="bg-teal-500 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-teal-600 transition-colors duration-200">
-              Start Automating Now
-            </button>
-          </div>
-        </div>
-      </div>
+      <GlobalAutomationSection/>
 
       <LeadsForumSection/>
 

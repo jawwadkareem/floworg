@@ -34,7 +34,6 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="text-white font-bold text-lg flex flex-col items-start">
             <Logo/>
-            <span className="text-xs text-gray-300 -mt-1">Automate your Success</span>
           </div>
 
           {/* Nav Items */}

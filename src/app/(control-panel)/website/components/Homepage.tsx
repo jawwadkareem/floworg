@@ -19,6 +19,7 @@ import TestimonialsSection from "./TestimonialsSection";
 import NewsletterSection from "./NewsletterSection";
 import Footer from "./Footer";
 import { useNavigate } from "react-router";
+import GlobalAutomationSection from "./GlobalAutomationSection";
 
 // Sample integrations data
 const integrations: Integration[] = [
@@ -257,6 +258,7 @@ const Homepage: React.FC = () => {
       <Header />
       <HeroSection />
       <ScalableSolutionsSection />
+      <GlobalAutomationSection />/
       <AutomateSuccessSection />
       <ServicesSection />
       <ConnectSection />
