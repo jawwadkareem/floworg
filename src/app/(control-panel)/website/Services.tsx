@@ -1,5 +1,6 @@
 import * as React from "react";
 import Footer from './components/Footer';
+import TestimonialsSection from "./components/TestimonialsSection";
 
 import {
   Menu,
@@ -135,7 +136,7 @@ const Services = () => {
 
       <LatestArticlesSection/>
 
-    <Testimonials/>
+    <TestimonialsSection/>
 
       {/* Partner Logos Section */}
       <div className="bg-white py-12">

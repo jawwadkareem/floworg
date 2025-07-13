@@ -20,6 +20,7 @@ import NewsletterSection from "./NewsletterSection";
 import Footer from "./Footer";
 import { useNavigate } from "react-router";
 import GlobalAutomationSection from "./GlobalAutomationSection";
+import BusinessSolutionsSection, { ProcessStep, SolutionOption } from "./pricingPage/business-solutions-section";
 
 // Sample integrations data
 const integrations: Integration[] = [
@@ -221,6 +222,85 @@ const pricingPlans: PricingPlan[] = [
   },
 ];
 
+// Custom solution options
+const customSolutionOptions: SolutionOption[] = [
+  {
+    id: "tutorials",
+    title: "Watch Tutorials",
+    description:
+      "Learn at your own pace and implement automations on your own, no coding required.",
+    type: "primary",
+  },
+  {
+    id: "templates",
+    title: "Browse Templates & Mini Apps",
+    description:
+      "Choose from proven automation flows and customize them to fit your needs.",
+    type: "secondary",
+  },
+  {
+    id: "consultation",
+    title: "Schedule a Consultation",
+    description:
+      "Our experts will help you identify your needs, define a clear roadmap, and implement the right solution.",
+    type: "secondary",
+  },
+];
+
+// Custom process steps
+const customProcessSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Sign Up",
+    description: "Create your account in just a few clicks.",
+  },
+  {
+    number: "02",
+    title: "Customize Your Chatbot",
+    description: "Tailor the chatbot to meet your business needs.",
+  },
+  {
+    number: "03",
+    title: "Train Chatbot",
+    description: "Sync your resources and documentation, let AI learn it.",
+  },
+  {
+    number: "04",
+    title: "Deploy and Engage",
+    description:
+      "Activate your AI assistant and start conversing with customers.",
+  },
+];
+
+const handleSolutionOptionClick = (optionId: string) => {
+  switch (optionId) {
+    case "tutorials":
+      console.log("Redirecting to tutorials...");
+      // Add your navigation logic here
+      break;
+    case "templates":
+      console.log("Opening templates gallery...");
+      // Add your navigation logic here
+      break;
+    case "consultation":
+      console.log("Opening consultation booking...");
+      // Add your navigation logic here
+      break;
+    default:
+      console.log("Unknown option:", optionId);
+  }
+};
+
+const handleAiServicesPrimaryClick = () => {
+  console.log("Navigating to learn more page...");
+  // Add your navigation logic here
+};
+
+const handleAiServicesSecondaryClick = () => {
+  console.log("Opening sign up form...");
+  // Add your sign up logic here
+};
+
 const Homepage: React.FC = () => {
   const navigate = useNavigate();
   const handleIntegrationToggle = (integrationId: string, enabled: boolean) => {
@@ -278,7 +358,16 @@ const Homepage: React.FC = () => {
         showSearch={true}
         showCategoryFilter={true}
       />
-      <BusinessSolutionSection />
+      {/* <BusinessSolutionSection /> */}
+
+
+      <BusinessSolutionsSection
+        solutionOptions={customSolutionOptions}
+        processSteps={customProcessSteps}
+        onSolutionOptionClick={handleSolutionOptionClick}
+        onAiServicesPrimaryClick={handleAiServicesPrimaryClick}
+        onAiServicesSecondaryClick={handleAiServicesSecondaryClick}
+      />
       <GetStartedSection />
       {/* Pricing Section */}
       <PricingSection

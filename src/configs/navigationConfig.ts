@@ -66,13 +66,13 @@ const navigationConfig: FuseNavItemType[] = [
 				id:'website.demo',
 				title:'Book a Demo',
 				type:'item',
-				url:'/home'
+				url:'/bookademo'
 			},
 			{
 				id:'website.news',
 				title:'Newsletters',
 				type:'item',
-				url:'/home'
+				url:'/newsletter'
 			},
 			{
 				id:'website.support',
@@ -143,7 +143,7 @@ const navigationConfig: FuseNavItemType[] = [
 						id:'dashboards.personal_area.my_knowledge_base',
 						title:'My Knowledge Base',
 						type:'item',
-						url:'/home'
+						url:'/knowledgebase'
 					},
 					{
 						id:'dashboards.personal_area.my_tutorial_videos',
