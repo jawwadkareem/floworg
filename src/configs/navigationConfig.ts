@@ -54,7 +54,7 @@ const navigationConfig: FuseNavItemType[] = [
 				id:'website.academy',
 				title:'Academy',
 				type:'item',
-				url:'/dashboards/academy'
+				url:'/academy'
 			},
 			{
 				id:'website.blog',
@@ -66,13 +66,13 @@ const navigationConfig: FuseNavItemType[] = [
 				id:'website.demo',
 				title:'Book a Demo',
 				type:'item',
-				url:'/home'
+				url:'/bookademo'
 			},
 			{
 				id:'website.news',
 				title:'Newsletters',
 				type:'item',
-				url:'/home'
+				url:'/newsletter'
 			},
 			{
 				id:'website.support',

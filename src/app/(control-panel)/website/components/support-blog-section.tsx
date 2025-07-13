@@ -1,16 +1,65 @@
 "use client"
 
 import type React from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { Play, Users, Share2, Headphones } from "lucide-react"
+import { Play, Users, Share2, Headphones, MessageCircle } from "lucide-react"
 
 const SupportBlogSection: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState("Screen Sharing")
+
   const categories = [
-    { name: "Instant Join", active: false, icon: Users },
-    { name: "Screen Sharing", active: true, icon: Share2 },
-    { name: "Team Chat", active: false, icon: Users },
-    { name: "HD Audio & Video", active: false, icon: Headphones },
+    { 
+      name: "Instant Join", 
+      icon: Users,
+      content: {
+        title: "Instant Join",
+        description: "Join meetings instantly without any downloads or installations. Our seamless process allows you to connect with your team in seconds, making collaboration effortless and efficient.",
+        features: [
+          "No downloads required - join directly from your browser",
+          "One-click access to meetings and conferences"
+        ]
+      }
+    },
+    { 
+      name: "Screen Sharing", 
+      icon: Share2,
+      content: {
+        title: "Screen Sharing",
+        description: "Readability is of great importance but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
+        features: [
+          "Share multiple screens at a time and get amazing experience in your team meeting",
+          "No need for third-party plugins"
+        ]
+      }
+    },
+    { 
+      name: "Team Chat", 
+      icon: MessageCircle,
+      content: {
+        title: "Team Chat",
+        description: "Stay connected with your team through our integrated chat system. Send messages, share files, and collaborate in real-time while maintaining the context of your conversations.",
+        features: [
+          "Real-time messaging with file sharing capabilities",
+          "Integrated with video calls for seamless communication"
+        ]
+      }
+    },
+    { 
+      name: "HD Audio & Video", 
+      icon: Headphones,
+      content: {
+        title: "HD Audio & Video",
+        description: "Experience crystal-clear audio and high-definition video quality that makes remote meetings feel like in-person conversations. Our advanced technology ensures optimal performance.",
+        features: [
+          "Crystal clear HD video quality up to 1080p resolution",
+          "Advanced noise cancellation for professional audio"
+        ]
+      }
+    },
   ]
+
+  const activeContent = categories.find(cat => cat.name === activeCategory)?.content || categories[1].content
 
   return (
     <section className="py-16 bg-gray-50">
@@ -22,9 +71,6 @@ const SupportBlogSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          {/* <div className="inline-block bg-orange-500 text-white px-6 py-3 rounded-full text-sm font-semibold mb-6">
-            Floworg Tutorial Videos
-          </div> */}
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             <span className="text-teal-500">Support</span> Blog
           </h2>
@@ -41,45 +87,55 @@ const SupportBlogSection: React.FC = () => {
           {categories.map((category, index) => (
             <button
               key={index}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                category.active
-                  ? "bg-blue-500 text-white shadow-lg"
+              onClick={() => setActiveCategory(category.name)}
+              className={`relative flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 overflow-hidden ${
+                activeCategory === category.name
+                  ? "text-white shadow-lg"
                   : "bg-white text-gray-600 hover:bg-gray-100 shadow-md"
               }`}
             >
-              <category.icon className="w-4 h-4" />
-              {category.name}
+              {/* Animated Background */}
+              <motion.div
+                className="absolute inset-0 bg-teal-500 rounded-full"
+                initial={{ x: "-100%" }}
+                animate={{ 
+                  x: activeCategory === category.name ? "0%" : "-100%" 
+                }}
+                transition={{ 
+                  duration: 0.5, 
+                  ease: "easeInOut" 
+                }}
+              />
+              
+              {/* Content */}
+              <div className="relative z-10 flex items-center gap-2">
+                <category.icon className="w-4 h-4" />
+                {category.name}
+              </div>
             </button>
           ))}
         </motion.div>
 
-        {/* Screen Sharing Content */}
+        {/* Dynamic Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
+            key={activeCategory} // This ensures re-animation when content changes
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-gray-800 mb-6">Screen Sharing</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-6">{activeContent.title}</h3>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Readability is of great importance but because those who do not know how to pursue pleasure rationally
-              encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or
-              desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in
-              which toil and pain can procure him some great pleasure.
+              {activeContent.description}
             </p>
 
             <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-700">
-                  Share multiple screens at a time and get amazing experience in your team meeting
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-700">No need for third-party plugins</p>
-              </div>
+              {activeContent.features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700">{feature}</p>
+                </div>
+              ))}
             </div>
 
             <button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1">
@@ -88,10 +144,10 @@ const SupportBlogSection: React.FC = () => {
           </motion.div>
 
           <motion.div
+            key={`${activeCategory}-visual`} // Re-animate visual when content changes
             initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="relative"
           >
             <div className="bg-white rounded-2xl p-6 shadow-xl">
