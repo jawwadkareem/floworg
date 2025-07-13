@@ -25,6 +25,7 @@ const StyledList = styled(List)(({ theme }) => ({
 			minHeight: 36
 		},
 		'& .fuse-list-item-text': {
+			
 			padding: '0 0 0 8px'
 		}
 	},

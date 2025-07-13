@@ -64,13 +64,13 @@ function FuseNavVerticalGroup(props: FuseNavItemComponentProps) {
 							margin: 0,
 							'& > .MuiListItemText-primary': {
 								fontSize: 12,
-								color: 'secondary.main',
+								color: '#1ad7ad',
 								fontWeight: 600,
 								textTransform: 'uppercase',
 								letterSpacing: '.05em',
 								lineHeight: '20px',
 								...theme.applyStyles('dark', {
-									color: 'secondary.light'
+									color: '#1ad7ad'
 								})
 							},
 							'& > .MuiListItemText-secondary': {
