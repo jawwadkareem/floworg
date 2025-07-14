@@ -7,12 +7,12 @@ const BlogHeroSection: React.FC = () => {
   const socialIcons = ["🎵", "📘", "📷", "💬", "📺"];
 
   return (
-    <div className="bg-gradient-to-r from-teal-500 to-cyan-500 relative overflow-hidden">
+    <div className="bg-linear-to-r from-teal-800 to-teal-600 relative overflow-hidden">
       {/* Navigation Header */}
-      <nav className="bg-gray-800 shadow-none py-4">
-        <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
+      {/* <nav className="bg-gray-800 shadow-none py-4">
+        <div className="container mx-auto px-4 md:px-8 flex justify-between items-center"> */}
           {/* Social Icons */}
-          <div className="flex gap-2">
+          {/* <div className="flex gap-2">
             {socialIcons.map((icon, index) => (
               <div
                 key={index}
@@ -21,10 +21,10 @@ const BlogHeroSection: React.FC = () => {
                 <span className="text-base text-white">{icon}</span>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold text-white">
               Flo
               <span className="text-teal-400">✓</span>
@@ -33,10 +33,10 @@ const BlogHeroSection: React.FC = () => {
             <span className="text-xs text-gray-300 ml-2">
               Automate your Success
             </span>
-          </div>
+          </div> */}
 
           {/* Navigation Menu */}
-          <div className="hidden md:flex gap-6">
+          {/* <div className="hidden md:flex gap-6">
             {navItems.map((item) => (
               <a
                 key={item}
@@ -48,16 +48,16 @@ const BlogHeroSection: React.FC = () => {
                 {item}
               </a>
             ))}
-          </div>
+          </div> */}
 
           {/* Right side icons */}
-          <div className="flex items-center gap-4 text-white">
+          {/* <div className="flex items-center gap-4 text-white">
             <Search className="w-4 h-4" />
             <Globe className="w-4 h-4" />
             <Apple className="w-4 h-4" />
-          </div>
-        </div>
-      </nav>
+          </div> */}
+        {/* </div>
+      </nav> */}
 
       {/* Hero Content */}
       <div className="py-16 text-center text-white">

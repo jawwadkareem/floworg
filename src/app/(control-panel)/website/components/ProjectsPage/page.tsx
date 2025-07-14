@@ -19,6 +19,7 @@ import NewsSection from "../NewsSection";
 import TestimonialsSection from "../TestimonialsSection";
 import NewsletterSection from "../NewsletterSection";
 import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 const faqCategories: FAQCategory[] = [
   {
@@ -330,6 +331,7 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <main className="min-h-screen">
+      <Navbar/>
       {/* Project Stats Header */}
       <ProjectStatsSection stats={projectStats} />
 

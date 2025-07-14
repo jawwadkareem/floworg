@@ -9,10 +9,12 @@ import TestimonialsSection from './TestimonialsSection';
 import NewsletterSection from './NewsletterSection';
 import Footer from './Footer';
 import LeadsForumSection from './LeadsForumSection';
+import Navbar from './Navbar';
 const Blogpage: React.FC = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <Navbar/>
       <BlogHeroSection />
       <BlogNavigationSection />
       <BlogGridSection />

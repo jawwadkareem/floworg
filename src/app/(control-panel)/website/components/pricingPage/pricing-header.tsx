@@ -46,7 +46,7 @@ const PricingHeader: React.FC<PricingHeaderProps> = ({
   return (
     <header className={`relative overflow-hidden ${className}`}>
       {/* Hero Section with Gradient Background */}
-      <div className="bg-gradient-to-r from-teal-500 via-teal-600 to-green-200 relative">
+      <div className="bg-linear-to-r from-teal-800 to-teal-600  relative">
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 py-16 text-center">
           <motion.div

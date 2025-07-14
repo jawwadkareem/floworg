@@ -30,7 +30,7 @@ const ProjectStatsSection: React.FC<ProjectStatsSectionProps> = ({
   className = "",
 }) => {
   return (
-    <section className={`py-16 bg-gradient-to-r from-teal-500 to-teal-600 text-white ${className}`}>
+    <section className={`py-16 bg-linear-to-r from-teal-800 to-teal-600 text-white ${className}`}>
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <motion.div

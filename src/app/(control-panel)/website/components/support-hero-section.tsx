@@ -16,7 +16,7 @@ const SupportHeroSection: React.FC = () => {
   ]
 
   return (
-    <section className="bg-gradient-to-r from-teal-500 to-teal-600 text-white py-16">
+    <section className="bg-linear-to-r from-teal-800 to-teal-600  text-white py-16">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

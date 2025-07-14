@@ -11,10 +11,12 @@ import NewsSection from "./NewsSection"
 import TestimonialsSection from "./TestimonialsSection"
 import NewsletterSection from "./NewsletterSection"
 import Footer from "./Footer"
+import Navbar from "./Navbar"
 
 const Supportpage: React.FC = () => {
   return (
     <>
+    <Navbar/>
       <SupportHeroSection />
       <GettingStartedSection />
       <NewsUpdatesSection />

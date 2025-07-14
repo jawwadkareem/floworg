@@ -21,6 +21,7 @@ import PricingSection, { PricingPlan } from "./PricingSection";
 import PricingComparisonSection from "./PricingComparisonSection"
 import ProBuilderSection from "./ProBuilderSection"
 import EnterpriseSection from "./pricingPage/EnterpriseSection"
+import Navbar from "./Navbar"
 
 const integrations: Integration[] = [
   {
@@ -221,6 +222,7 @@ const pricingPlans: PricingPlan[] = [
 const Service1page: React.FC = () => {
   return (
     <>
+    <Navbar/>
       <Service1Header />
       <ScalableSolutionsSection />
       <AutomateSuccessSection />

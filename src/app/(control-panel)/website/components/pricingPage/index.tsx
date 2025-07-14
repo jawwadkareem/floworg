@@ -13,6 +13,7 @@ import BusinessSolutionsSection, {
 } from "./business-solutions-section";
 import SolutionsSection, { Integration } from "../SolutionsSection";
 import PricingPageSection from "./pricing-page";
+import Navbar from "../Navbar";
 
 const faqCategories: FAQCategory[] = [
   {
@@ -565,6 +566,7 @@ const PricingPage: React.FC = () => {
 
   return (
     <>
+    <Navbar/>
       <PricingPageSection />
       {/* Enterprise Section */}
       <EnterpriseSection

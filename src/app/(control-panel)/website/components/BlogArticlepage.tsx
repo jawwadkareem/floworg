@@ -6,9 +6,11 @@ import TestimonialsSection from './TestimonialsSection';
 import NewsletterSection from './NewsletterSection';
 import Footer from './Footer';
 import LeadsForumSection from './LeadsForumSection';
+import Navbar from './Navbar';
 const BlogArticlepage: React.FC = () => {
   return (
     <>
+    <Navbar/>
       <BlogArticleHeader />
       <BlogArticle />
       
