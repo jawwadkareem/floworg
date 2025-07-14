@@ -379,6 +379,7 @@
 
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import Logo1 from './Logo-black';
 
 const NewsletterSection: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -447,16 +448,10 @@ const NewsletterSection: React.FC = () => {
         </div>
 
         {/* Floworg Logo Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
-            Flo
-            <span className="text-teal-500">✓</span>
-            org
-          </h1>
-          <p className="text-xl text-gray-600 font-medium">
-            Automate your Success
-          </p>
+        <div className="flex justify-center mb-12">
+          <Logo1 />
         </div>
+
 
         {/* Bottom Links Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">

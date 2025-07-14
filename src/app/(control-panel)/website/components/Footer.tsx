@@ -280,7 +280,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16">
           <div className="mb-8 lg:mb-0">
             <h3 className="text-2xl font-medium text-gray-800 leading-relaxed">
-              Subscribe to <span className="text-emerald-500 font-medium">Floworg</span> Newsletters
+              Subscribe to <span className="text-teal-500 font-medium">Floworg</span> Newsletters
               <br />
               and get Exclusive Updates!
             </h3>
@@ -291,7 +291,7 @@ const Footer: React.FC = () => {
               placeholder="Email address"
               className="w-72 px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
             />
-            <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-r-lg transition-colors duration-300 flex items-center text-sm font-medium">
+            <button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-r-lg transition-colors duration-300 flex items-center text-sm font-medium">
               Submit
               <svg
                 xmlns="http://www.w3.org/2000/svg"
