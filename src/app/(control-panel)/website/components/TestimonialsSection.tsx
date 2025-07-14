@@ -285,7 +285,7 @@ const TestimonialsSection: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
           {/* Left Side - Header and Navigation */}
           <div>
             <motion.div
@@ -294,12 +294,12 @@ const TestimonialsSection: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <span className="text-purple-600 text-sm font-semibold tracking-wider uppercase mb-4 block">
+              <span className="text-[#1ad7ad] text-sm font-semibold tracking-wider uppercase mb-4 block">
                 TESTIMONIAL
               </span>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                <span className="text-purple-600">What</span>{" "}
+                <span className="text-[#1ad7ad]">What</span>{" "}
                 <span className="text-gray-800">
                   Our
                   <br />
@@ -315,13 +315,13 @@ const TestimonialsSection: React.FC = () => {
               <div className="flex gap-4">
                 <button
                   onClick={handlePrevious}
-                  className="w-12 h-12 border-2 border-gray-300 rounded-full text-gray-600 hover:border-purple-600 hover:text-purple-600 hover:bg-purple-50 transition-all duration-300 flex items-center justify-center"
+                  className="w-12 h-12 border-2 border-gray-300 rounded-full text-gray-600 hover:border-[#1ad7ad] hover:text-[#1ad7ad] hover:bg-purple-50 transition-all duration-300 flex items-center justify-center"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="w-12 h-12 border-2 border-gray-300 rounded-full text-gray-600 hover:border-purple-600 hover:text-purple-600 hover:bg-purple-50 transition-all duration-300 flex items-center justify-center"
+                  className="w-12 h-12 border-2 border-gray-300 rounded-full text-gray-600 hover:border-[#1ad7ad] hover:text-[#1ad7ad] hover:bg-purple-50 transition-all duration-300 flex items-center justify-center"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -332,39 +332,39 @@ const TestimonialsSection: React.FC = () => {
           {/* Right Side - Testimonials */}
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {testimonials
-  .slice(currentIndex, currentIndex + 2)
-  .map((testimonial, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.2 }}
-      className="h-full"
-    >
-      <div className="bg-white rounded-2xl p-6 h-full shadow-lg hover:shadow-xl transition-all duration-300 relative">
-        <p className="text-gray-400 italic leading-relaxed mb-8 text-sm">
-          "{testimonial.quote || testimonial.content}"
-        </p>
-        <div className="flex items-center gap-3">
-          <img
-            src={testimonial.avatar}
-            alt={testimonial.name}
-            className="w-15 h-15 rounded-full border-3 border-gray-100"
-          />
-          <div className="flex-1">
-            <h4 className="font-semibold text-gray-800 text-lg mb-1">
-              {testimonial.name}
-            </h4>
-            <p className="text-gray-400 text-sm">{testimonial.role}</p>
-          </div>
-          <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-            <span className="text-white text-xl font-semibold">"</span>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-))}
+              {testimonials
+                .slice(currentIndex, currentIndex + 2)
+                .map((testimonial, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    className="h-full"
+                  >
+                    <div className="bg-white rounded-2xl p-6 h-full shadow-lg hover:shadow-xl transition-all duration-300 relative">
+                      <p className="text-gray-400 italic leading-relaxed mb-8 text-sm">
+                        "{testimonial.quote || testimonial.content}"
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          className="w-15 h-15 rounded-full border-3 border-gray-100"
+                        />
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-800 text-lg mb-1">
+                            {testimonial.name}
+                          </h4>
+                          <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                        </div>
+                        <div className="w-10 h-10 bg-[#1ad7ad] rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-xl font-semibold">"</span>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
 
 
             </div>
