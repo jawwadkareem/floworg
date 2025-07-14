@@ -10,7 +10,8 @@ const Layout3Config = {
 		navbar: {
 			display: true,
 			style: 'fixed',
-			folded: true
+			folded: true,
+			open: false
 		},
 		toolbar: {
 			display: true,

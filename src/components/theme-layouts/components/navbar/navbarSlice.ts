@@ -1,5 +1,6 @@
 import { createSlice, type WithSlice } from '@reduxjs/toolkit';
 import rootReducer from '@/store/rootReducer';
+import Layout1Config from 'src/components/theme-layouts/layout1/Layout1Config';
 
 /**
  * The type definition for the initial state of the navbar slice.
@@ -14,7 +15,7 @@ type initialStateProps = {
  * The initial state of the navbar slice.
  */
 const initialState: initialStateProps = {
-	open: true,
+	open: false,
 	mobileOpen: false,
 	foldedOpen: false
 };

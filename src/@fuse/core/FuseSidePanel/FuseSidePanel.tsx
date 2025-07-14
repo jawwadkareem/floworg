@@ -176,7 +176,7 @@ type FuseSidePanelProps = {
  * The component is memoized to prevent unnecessary re-renders.
  */
 function FuseSidePanel(props: FuseSidePanelProps) {
-	const { position = 'left', opened = true, className, children } = props;
+	const { position = 'left', opened = false, className, children } = props;
 	const isMobile = useThemeMediaQuery((theme) => theme.breakpoints.down('lg'));
 
 	const [panelOpened, setPanelOpened] = useState(Boolean(opened));

@@ -1,7 +1,13 @@
 import Drawer from '@mui/material/Drawer';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import clsx from 'clsx';
-import { useCallback, useEffect, useImperativeHandle, useState, ReactNode } from 'react';
+import {
+	useCallback,
+	useEffect,
+	useImperativeHandle,
+	useState,
+	ReactNode
+} from 'react';
 import { SwipeableDrawerProps } from '@mui/material/SwipeableDrawer';
 import FusePageCardedSidebarContent from './FusePageCardedSidebarContent';
 import useThemeMediaQuery from '../../hooks/useThemeMediaQuery';
@@ -23,9 +29,18 @@ type FusePageCardedSidebarProps = {
  * The FusePageCardedSidebar component is a sidebar for the FusePageCarded component.
  */
 function FusePageCardedSidebar(props: FusePageCardedSidebarProps) {
-	const { open = true, position, variant, onClose = () => {}, ref } = props;
+	const {
+		open = false, // ✅ Default to closed
+		position,
+		variant,
+		onClose = () => {},
+		ref,
+		width = 280, // fallback width if not passed
+	} = props;
 
-	const isMobile = useThemeMediaQuery((theme) => theme.breakpoints.down('lg'));
+	const isMobile = useThemeMediaQuery((theme) =>
+		theme.breakpoints.down('lg')
+	);
 
 	const [isOpen, setIsOpen] = useState(open);
 
@@ -49,18 +64,20 @@ function FusePageCardedSidebar(props: FusePageCardedSidebarProps) {
 					anchor={position}
 					open={isOpen}
 					onOpen={() => {}}
-					onClose={() => onClose()}
+					onClose={onClose}
 					disableSwipeToOpen
 					classes={{
 						root: clsx('FusePageCarded-sidebarWrapper', variant),
 						paper: clsx(
 							'FusePageCarded-sidebar',
 							variant,
-							position === 'left' ? 'FusePageCarded-leftSidebar' : 'FusePageCarded-rightSidebar'
+							position === 'left'
+								? 'FusePageCarded-leftSidebar'
+								: 'FusePageCarded-rightSidebar'
 						)
 					}}
 					ModalProps={{
-						keepMounted: true // Better open performance on mobile.
+						keepMounted: true
 					}}
 					slotProps={{
 						backdrop: {
@@ -69,11 +86,15 @@ function FusePageCardedSidebar(props: FusePageCardedSidebarProps) {
 							}
 						}
 					}}
-					sx={{ position: 'absolute', '& .MuiPaper-root': { width: `${props.width}px` } }}
+					sx={{
+						position: 'absolute',
+						'& .MuiPaper-root': { width: `${width}px` }
+					}}
 				>
 					<FusePageCardedSidebarContent {...props} />
 				</SwipeableDrawer>
 			)}
+
 			{variant === 'permanent' && !isMobile && (
 				<Drawer
 					variant="permanent"
@@ -82,14 +103,18 @@ function FusePageCardedSidebar(props: FusePageCardedSidebarProps) {
 						'FusePageCarded-sidebarWrapper',
 						variant,
 						isOpen ? 'opened' : 'closed',
-						position === 'left' ? 'FusePageCarded-leftSidebar' : 'FusePageCarded-rightSidebar'
+						position === 'left'
+							? 'FusePageCarded-leftSidebar'
+							: 'FusePageCarded-rightSidebar'
 					)}
 					open={isOpen}
 					onClose={onClose}
 					classes={{
 						paper: clsx('FusePageCarded-sidebar', variant)
 					}}
-					sx={{ '& .MuiPaper-root': { width: `${props.width}px` } }}
+					sx={{
+						'& .MuiPaper-root': { width: `${width}px` }
+					}}
 				>
 					<FusePageCardedSidebarContent {...props} />
 				</Drawer>

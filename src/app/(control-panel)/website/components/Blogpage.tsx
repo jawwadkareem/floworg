@@ -13,19 +13,22 @@ import Navbar from './Navbar';
 const Blogpage: React.FC = () => {
   return (
     <>
-      {/* <Header /> */}
-      <Navbar/>
-      <BlogHeroSection />
+    <Header />
+    
+    <Navbar />
+    <BlogHeroSection />
+    {/* Wrapper to add spacing after Navbar */}
+    <div className="mt-8"> {/* Tailwind: mt-8 = margin-top: 2rem */}
       <BlogNavigationSection />
       <BlogGridSection />
       <BlogNewsletterSection />
-      
       <LeadsForumSection />
       <NewsSection />
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />
-    </>
+    </div>
+  </>
   );
 };
 

@@ -23,6 +23,7 @@ import GlobalAutomationSection from "./GlobalAutomationSection";
 import BusinessSolutionsSection, { ProcessStep, SolutionOption } from "./pricingPage/business-solutions-section";
 import SupportBlogSection from "./support-blog-section";
 import Navbar from "./Navbar";
+import StatsSection from "./StatsSection";
 
 // Sample integrations data
 const integrations: Integration[] = [
@@ -341,6 +342,7 @@ const Homepage: React.FC = () => {
      <Navbar/>
       <HeroSection />
       <ScalableSolutionsSection />
+      <StatsSection/>
       <GlobalAutomationSection />/
       <AutomateSuccessSection />
       <ServicesSection />

@@ -38,13 +38,13 @@ const Navbar: React.FC = () => {
               <Logo />
             </div>
 
-            {/* Nav Items */}
-            <div className="hidden md:flex gap-4 ml-8">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-white text-sm font-medium no-underline hover:text-teal-400 transition"
+          {/* Nav Items */}
+          <div className="hidden md:flex gap-4 ml-8">
+            {navItems.map((item) => (
+              <a
+                key={item}
+                href={`/${item.toLowerCase()}`}
+                className="text-white text-sm font-medium no-underline hover:text-teal-400 transition"
                 >
                   {item}
                 </a>

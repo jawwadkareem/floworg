@@ -30,7 +30,9 @@ function NavbarWrapperLayout1() {
 	}, [dispatch, pathname, isMobile]);
 
 	const navbarTheme = useNavbarTheme();
-
+	console.log(config.navbar.style);
+	console.log(config.navbar.folded);
+	console.log(config.navbar);
 	return (
 		<>
 			<ThemeProvider theme={navbarTheme}>

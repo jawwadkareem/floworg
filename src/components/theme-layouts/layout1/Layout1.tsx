@@ -49,6 +49,7 @@ function Layout1(props: Layout1Props) {
 	const settings = useFuseLayoutSettings();
 	const config = settings.config as Layout1ConfigDefaultsType;
 
+	
 	return (
 		<Root
 			id="fuse-layout"

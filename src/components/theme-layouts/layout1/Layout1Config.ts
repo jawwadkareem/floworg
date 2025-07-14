@@ -8,10 +8,10 @@ const Layout1Config = {
 		containerWidth: 1120,
 		navbar: {
 			display: true,
-			style: 'style-1',
+			style: 'style-2',
 			folded: false,
 			position: 'left',
-			open: true
+			open: false
 		},
 		toolbar: {
 			display: true,
@@ -22,7 +22,7 @@ const Layout1Config = {
 			style: 'fixed'
 		},
 		leftSidePanel: {
-			display: true
+			display: false
 		},
 		rightSidePanel: {
 			display: true
