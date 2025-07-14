@@ -29,7 +29,7 @@ const Supportpage: React.FC = () => {
       {/* <LatestArticlesSection /> */}
       <TestimonialsSection />
       {/* <TestimonialsSupportSection /> */}
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </>
   )

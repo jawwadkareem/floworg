@@ -40,7 +40,7 @@ const Featurepage: React.FC = () => {
 
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
       </div>
     </>

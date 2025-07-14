@@ -22,6 +22,7 @@ import { useNavigate } from "react-router";
 import GlobalAutomationSection from "./GlobalAutomationSection";
 import BusinessSolutionsSection, { ProcessStep, SolutionOption } from "./pricingPage/business-solutions-section";
 import SupportBlogSection from "./support-blog-section";
+import Navbar from "./Navbar";
 
 // Sample integrations data
 const integrations: Integration[] = [
@@ -337,6 +338,7 @@ const Homepage: React.FC = () => {
   return (
     <>
       <Header />
+     <Navbar/>
       <HeroSection />
       <ScalableSolutionsSection />
       <GlobalAutomationSection />/
@@ -382,7 +384,7 @@ const Homepage: React.FC = () => {
       />
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </>
   );

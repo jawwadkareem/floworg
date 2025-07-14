@@ -42,7 +42,7 @@ const Integrationpage: React.FC = () => {
 
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
       </div>
     </>

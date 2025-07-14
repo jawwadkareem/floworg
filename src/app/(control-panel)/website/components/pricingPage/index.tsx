@@ -614,7 +614,7 @@ const PricingPage: React.FC = () => {
       </section>
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </>
   );

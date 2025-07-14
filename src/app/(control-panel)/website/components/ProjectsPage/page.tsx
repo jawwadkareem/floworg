@@ -372,7 +372,7 @@ const ProjectsPage: React.FC = () => {
 
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </main>
   );

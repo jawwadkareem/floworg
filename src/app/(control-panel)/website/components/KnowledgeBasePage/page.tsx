@@ -36,7 +36,7 @@ const KnowledgeBasepage: React.FC = () => {
 
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
       </div>
     </>

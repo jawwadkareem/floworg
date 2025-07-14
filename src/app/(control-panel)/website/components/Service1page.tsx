@@ -260,7 +260,7 @@ const Service1page: React.FC = () => {
       <NewsSection />
     
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
 
       <Footer />
     </>

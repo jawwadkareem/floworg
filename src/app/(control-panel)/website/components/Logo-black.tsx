@@ -1,6 +1,6 @@
 // Logo.tsx or any name you prefer
 import React from 'react';
-import logo from "../../../../../public/assets/images/Asset 4.svg"
+import logo from "../../../../../src/assets/dark-logo.svg"
 
 const Logo1 = () => (
   <img

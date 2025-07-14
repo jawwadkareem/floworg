@@ -39,7 +39,7 @@ const Academypage: React.FC = () => {
 
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
       </div>
     </>

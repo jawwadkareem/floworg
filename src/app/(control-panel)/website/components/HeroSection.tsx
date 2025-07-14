@@ -395,9 +395,7 @@ const HeroSection: React.FC = () => {
   const socialIcons = ["🎵", "📘", "📷", "💬", "📺"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden">
-      {/* Navigation Header */}
-     <Navbar/>
+    <div className="min-h-auto bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden">
       {/* Main Hero Content */}
       <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

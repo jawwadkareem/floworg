@@ -18,7 +18,7 @@ const BlogArticlepage: React.FC = () => {
       <LeadsForumSection />
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </>
   );

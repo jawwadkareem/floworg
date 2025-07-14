@@ -23,7 +23,7 @@ const Blogpage: React.FC = () => {
       <LeadsForumSection />
       <NewsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </>
   );

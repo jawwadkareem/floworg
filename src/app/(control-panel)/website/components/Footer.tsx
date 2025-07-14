@@ -184,6 +184,7 @@
 
 import type React from "react"
 import { useState } from "react"
+import Logo1 from "./Logo-black"
 
 interface FooterLink {
   text: string
@@ -305,6 +306,12 @@ const Footer: React.FC = () => {
             </button>
           </div>
         </div>
+
+                {/* Floworg Logo Section */}
+                <div className="flex justify-center mb-12">
+          <Logo1 />
+        </div>
+
 
         {/* Footer links */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
