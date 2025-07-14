@@ -6,13 +6,12 @@ import AppstoreBadge from './Applestore Badge';
 const Navbar: React.FC = () => {
   const navItems = ["Home", "Services", "Pricing", "Projects", "Academy", "Blog", "Support"];
   const socialIcons = [
-    { name: 'tiktok', src: '/icons/tiktok.svg' },
-    { name: 'linkedin', src: '/icons/linkedin.svg' },
-    { name: 'facebook', src: '/icons/facebook.svg' },
-    { name: 'instagram', src: '/icons/instagram.svg' },
-    { name: 'whatsapp', src: '/icons/whatsapp.svg' },
-    { name: 'youtube', src: '/icons/youtube.svg' },
-  ];
+    { "name": "tiktok", "src": "https://cdn.simpleicons.org/tiktok" },
+    { "name": "facebook", "src": "https://cdn.simpleicons.org/facebook" },
+    { "name": "instagram", "src": "https://cdn.simpleicons.org/instagram" },
+    { "name": "whatsapp", "src": "https://cdn.simpleicons.org/whatsapp" },
+    { "name": "youtube", "src": "https://cdn.simpleicons.org/youtube" }
+  ]
 
   return (
     <nav className="bg-gray-800 py-3 px-4 w-full shadow-md">
