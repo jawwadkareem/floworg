@@ -71,7 +71,7 @@ const IntegrationsSection: React.FC = () => {
         </div>
 
         {/* Rotating Logo Image */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
@@ -94,7 +94,31 @@ const IntegrationsSection: React.FC = () => {
 </div>
 
           </div>
-        </motion.div>
+        </motion.div> */}
+        {/* Rotating Logo Image */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1, delay: 0.4 }}
+  viewport={{ once: true }}
+>
+  <div className="relative flex items-start justify-center overflow-hidden h-[300px] md:h-[300px]">
+    <div
+      ref={orbitRef}
+      className="w-[600px] h-[600px] max-w-full"
+      style={{
+        animation: 'rotateLogo 25s linear infinite',
+      }}
+    >
+      <img
+        src="https://softivus.com/wp/upsoft/wp-content/uploads/2025/04/logo-circle.png"
+        alt="Rotating Logo"
+        className="w-full h-full object-contain"
+      />
+    </div>
+  </div>
+</motion.div>
+
       </div>
     </section>
   );
