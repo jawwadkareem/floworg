@@ -1,5 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
+import PlaystoreBadge from './PlaystoreBadge';
+import AppstoreBadge from './Applestore Badge';
 
 const Navbar: React.FC = () => {
   const navItems = ["Home", "Services", "Pricing", "Projects", "Academy", "Blog", "Support"];
@@ -28,41 +30,33 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-         {/* Center Nav Floating */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20">
-        <div className="bg-gray-700 px-6 py-3 rounded-lg flex items-center gap-6 shadow-xl">
-          {/* Logo */}
-          <div className="text-white font-bold text-lg flex flex-col items-start">
-            <Logo/>
-          </div>
+        {/* Center Nav Floating */}
+        <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20">
+          <div className="bg-gray-700 px-6 py-3 rounded-lg flex items-center gap-6 shadow-xl">
+            {/* Logo */}
+            <div className="text-white font-bold text-lg flex flex-col items-start">
+              <Logo />
+            </div>
 
-          {/* Nav Items */}
-          <div className="hidden md:flex gap-4 ml-8">
-            {navItems.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-white text-sm font-medium no-underline hover:text-teal-400 transition"
+            {/* Nav Items */}
+            <div className="hidden md:flex gap-4 ml-8">
+              {navItems.map((item) => (
+                <a
+                  key={item}
+                  href="#"
+                  className="text-white text-sm font-medium no-underline hover:text-teal-400 transition"
                 >
-                {item}
-              </a>
-            ))}
+                  {item}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
         {/* Right: App Badges */}
         <div className="flex items-center gap-3">
-          <img
-            src="/badges/google-play-badge.png"
-            alt="Google Play"
-            className="w-24 h-auto"
-          />
-          <img
-            src="/badges/app-store-badge.png"
-            alt="App Store"
-            className="w-24 h-auto"
-          />
+          <PlaystoreBadge />
+          <AppstoreBadge />
         </div>
       </div>
     </nav>

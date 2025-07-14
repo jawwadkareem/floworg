@@ -185,6 +185,7 @@
 import type React from "react"
 import { useState } from "react"
 import Logo1 from "./Logo-black"
+import Logo from "./Logo"
 
 interface FooterLink {
   text: string
@@ -307,8 +308,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-                {/* Floworg Logo Section */}
-                <div className="flex justify-center mb-12">
+        {/* Floworg Logo Section */}
+        <div className="flex justify-center mb-12">
           <Logo1 />
         </div>
 
@@ -377,13 +378,9 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="flex flex-col lg:flex-row justify-between items-center">
             {/* Left - Logo and tagline */}
-            <div className="mb-6 lg:mb-0">
-              <div className="flex items-center mb-2">
-                <h1 className="text-3xl font-bold text-white">
-                  Flo<span className="text-emerald-400">✓</span>org
-                </h1>
-              </div>
-              <p className="text-sm text-gray-300">Automate your Success</p>
+            <div className="lg:mb-0">
+              <Logo />
+
             </div>
 
             {/* Center - Service badges */}
