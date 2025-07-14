@@ -45,11 +45,11 @@
 //       <Ring ref={ring1Ref} args={[3, 3.1, 64]} rotation={[Math.PI / 2, 0, 0]}>
 //         <meshStandardMaterial color="#00D4AA" transparent opacity={0.6} />
 //       </Ring>
-      
+
 //       <Ring ref={ring2Ref} args={[3.5, 3.6, 64]} rotation={[0, Math.PI / 3, Math.PI / 4]}>
 //         <meshStandardMaterial color="#4ECDC4" transparent opacity={0.4} />
 //       </Ring>
-      
+
 //       <Ring ref={ring3Ref} args={[4, 4.1, 64]} rotation={[Math.PI / 4, 0, Math.PI / 6]}>
 //         <meshStandardMaterial color="#45B7D1" transparent opacity={0.3} />
 //       </Ring>
@@ -569,15 +569,15 @@ const hotspots = [
     left: "27.1%",
   },
   {
-    title:"",
-    description:"",
+    title: "Business Management",
+    description: "Smart BI tools, dashboards, and automation elevate decision-making and operational insight.",
     top: "23.5%",
-    left : "34.2%",
+    left: "34.2%",
   },
 
   {
-    title: "",
-    description: "",
+    title: "HR & Operations",
+    description: "Smart automation frees up employees to focus on high-impact tasks, reducing manual overhead.",
     top: "74.5%",
     left: "64%",
   }
@@ -587,16 +587,22 @@ const GlobalAutomationSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden">
+    <section className="relative w-full min-h-screen overflow-hidden bg-[#0b1320] text-white">
+      <div className="absolute top-0 w-full text-center py-12 px-4 z-30">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6">
+          Floworg AI Powers Global Automation – Across Channels, Devices & Data
+        </h2>
+        <p className="text-base sm:text-lg max-w-3xl mx-auto text-gray-300">
+          Floworg 360 powers global automation – connecting systems, channels, and data in one secure platform.
+        </p>
+      </div>
+
       {/* Background Image */}
       <img
         src="https://floworg360.com/wp-content/uploads/2025/03/website-circle-01.png"
         alt="Globe Background"
         className="w-full h-auto object-cover"
-        style={{
-          minHeight: "100vh",
-          display: "block",
-        }}
+        style={{ minHeight: "100vh", display: "block" }}
       />
 
       {/* Hotspots */}
@@ -604,34 +610,34 @@ const GlobalAutomationSection: React.FC = () => {
         <div
           key={index}
           className="absolute z-20"
-          style={{ top: spot.top, left: spot.left}}
+          style={{ top: spot.top, left: spot.left }}
         >
           <div
-  className="relative w-6 h-6"
-  onMouseEnter={() => setActiveIndex(index)}
-  onMouseLeave={() => setActiveIndex(null)}
->
-  {/* Outer pulsing effect */}
-  <div
-    className="absolute inset-0 rounded-full animate-ping opacity-60"
-    style={{
-      backgroundColor: "rgb(22, 215, 173)",
-      boxShadow: "inset 100px 100px transparent",
-    }}
-  ></div>
+            className="relative w-6 h-6"
+            onMouseEnter={() => setActiveIndex(index)}
+            onMouseLeave={() => setActiveIndex(null)}
+          >
+            {/* Outer pulsing effect */}
+            <div
+              className="absolute inset-0 rounded-full animate-ping opacity-60"
+              style={{
+                backgroundColor: "rgb(22, 215, 173)",
+                boxShadow: "inset 100px 100px transparent",
+              }}
+            ></div>
 
-  {/* Middle green solid dot (no white border) */}
-  <div
-    className="relative w-6 h-6 rounded-full shadow-md flex items-center justify-center z-10"
-    style={{
-      backgroundColor: "rgb(22, 215, 173)",
-      boxShadow: "inset 100px 100px transparent",
-    }}
-  >
-    {/* Inner white center dot */}
-    <div className="w-2 h-2 bg-white rounded-full" />
-  </div>
-</div>
+            {/* Middle green solid dot (no white border) */}
+            <div
+              className="relative w-6 h-6 rounded-full shadow-md flex items-center justify-center z-10"
+              style={{
+                backgroundColor: "rgb(22, 215, 173)",
+                boxShadow: "inset 100px 100px transparent",
+              }}
+            >
+              {/* Inner white center dot */}
+              <div className="w-2 h-2 bg-white rounded-full" />
+            </div>
+          </div>
 
 
 
@@ -649,6 +655,13 @@ const GlobalAutomationSection: React.FC = () => {
           )}
         </div>
       ))}
+            {/* CTA Button at Bottom */}
+            <div className="absolute bottom-10 w-full text-center z-30">
+        <button className="px-6 py-3 bg-[#1ad7ad  ] text-white text-sm font-semibold rounded-full shadow-lg hover:bg-[#13b49a] transition-all duration-300">
+          Start Automating Now
+        </button>
+      </div>
+
     </section>
   );
 };
