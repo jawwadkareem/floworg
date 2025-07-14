@@ -91,7 +91,7 @@ const PricingTiersSection: React.FC<PricingTiersSectionProps> = ({
               viewport={{ once: true }}
               className={`border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 ${
                 tier.bgColor
-              } ${enabledTiers.has(tier.id) ? "ring-2 ring-blue-500 ring-opacity-50" : ""}`}
+              } ${enabledTiers.has(tier.id) ? "ring-2 ring-[#1ad7ad] ring-opacity-50" : ""}`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div
@@ -117,7 +117,7 @@ const PricingTiersSection: React.FC<PricingTiersSectionProps> = ({
                       onClick={() => handleToggle(tier.id)}
                       className={`w-10 h-6 rounded-full cursor-pointer transition-colors duration-300 ${
                         enabledTiers.has(tier.id)
-                          ? "bg-blue-500"
+                          ? "bg-[#1ad7ad]"
                           : "bg-gray-300"
                       }`}
                     >
@@ -152,7 +152,7 @@ const PricingTiersSection: React.FC<PricingTiersSectionProps> = ({
                 <span className="text-xs text-gray-500">{tier.period}</span>
                 <button
                   onClick={() => handleLearnMore(tier.id)}
-                  className="text-blue-500 hover:text-blue-600 text-sm font-medium transition-colors flex items-center gap-1"
+                  className="text-[#1ad7ad] hover:text-[#1ad7ad] text-sm font-medium transition-colors flex items-center gap-1"
                 >
                   Learn More
                   <Info className="w-3 h-3" />
@@ -171,7 +171,7 @@ const PricingTiersSection: React.FC<PricingTiersSectionProps> = ({
                     <span className="text-sm text-green-600 font-medium">
                       ✓ Active
                     </span>
-                    <button className="text-xs text-blue-500 hover:text-blue-600">
+                    <button className="text-xs text-[#1ad7ad] hover:text-[#1ad7ad]">
                       Configure
                     </button>
                   </div>

@@ -106,7 +106,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
           className="text-center mb-12"
         >
           {subtitle && (
-            <span className="text-teal-500 font-semibold text-sm uppercase tracking-wide mb-2 block">
+            <span className="text-[#1ad7ad] font-semibold text-sm uppercase tracking-wide mb-2 block">
               {subtitle}
             </span>
           )}
@@ -137,7 +137,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                   placeholder="Search integrations..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1ad7ad] focus:border-transparent"
                 />
               </div>
             )}
@@ -149,7 +149,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                 <select
                   value={selectedCategory}
                   onChange={(e) => handleCategoryChange(e.target.value)}
-                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1ad7ad] focus:border-transparent"
                 >
                   {categories.map((category) => (
                     <option key={category} value={category}>
@@ -180,7 +180,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
               viewport={{ once: true }}
               className={`bg-white rounded-lg p-4 shadow-sm border transition-all duration-300 cursor-pointer ${
                 enabledIntegrations.has(integration.id)
-                  ? "border-teal-300 shadow-md bg-teal-50"
+                  ? "border-[#1ad7ad] shadow-md bg-teal-50"
                   : "border-gray-200 hover:shadow-md hover:border-gray-300"
               }`}
               onClick={() => handleToggle(integration.id)}
@@ -200,7 +200,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                     <h3
                       className={`font-semibold text-sm leading-tight truncate ${
                         enabledIntegrations.has(integration.id)
-                          ? "text-teal-800"
+                          ? "text-[#1ad7ad]"
                           : "text-gray-800"
                       }`}
                     >
@@ -219,7 +219,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                       checked={enabledIntegrations.has(integration.id)}
                       onChange={() => handleToggle(integration.id)}
                     />
-                    <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-teal-500"></div>
+                    <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#1ad7ad]"></div>
                   </label>
                 </div>
               </div>
@@ -251,7 +251,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                 setSearchTerm("");
                 setSelectedCategory("all");
               }}
-              className="mt-4 text-teal-500 hover:text-teal-600 font-medium"
+              className="mt-4 text-[#1ad7ad] hover:text-[#1ad7ad] font-medium"
             >
               Clear filters
             </button>
@@ -268,7 +268,7 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
         >
           <button
             onClick={handleExploreClick}
-            className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            className="bg-[#1ad7ad] hover:bg-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
             {ctaButtonText}
           </button>
