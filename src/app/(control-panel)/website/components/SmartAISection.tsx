@@ -389,13 +389,13 @@ const SmartAISection: React.FC = () => {
         >
           <div className="flex-1 mb-8 lg:mb-0">
             {/* Features Tag */}
-            <div className="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <div className="inline-block bg-teal-50 text-teal-600 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
               Features
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight">
               Excellent Response with{" "}
-              <span className="text-blue-600">Smart AI</span>
+              <span className="text-teal-500">Smart AI</span>
             </h2>
 
             <p className="text-gray-600 max-w-lg text-base leading-relaxed">
@@ -404,7 +404,7 @@ const SmartAISection: React.FC = () => {
           </div>
 
           {/* Explore Features Button */}
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mt-8 lg:mt-16">
+          <button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mt-8 lg:mt-16">
             Explore Features
           </button>
         </motion.div>
@@ -420,12 +420,12 @@ const SmartAISection: React.FC = () => {
             whileHover={{ y: -5 }}
             className="h-full"
           >
-            <div className="bg-white rounded-2xl border border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+            <div className="bg-white rounded-2xl border border-teal-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
               <div className="p-6">
                 {/* Chat Interface Mockup */}
                 <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200 relative">
                   {/* AI Icon */}
-                  <div className="absolute top-3 right-3 bg-blue-600 rounded px-2 py-1 flex items-center justify-center">
+                  <div className="absolute top-3 right-3 bg-teal-600 rounded px-2 py-1 flex items-center justify-center">
                     <span className="text-white text-xs font-semibold">AI</span>
                   </div>
 
@@ -444,7 +444,7 @@ const SmartAISection: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">
+                <h3 className="text-xl font-semibold text-teal-600 mb-3">
                   Multi-Language Support
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -464,7 +464,7 @@ const SmartAISection: React.FC = () => {
             whileHover={{ y: -5 }}
             className="h-full"
           >
-            <div className="bg-white rounded-2xl border border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+            <div className="bg-white rounded-2xl border border-teal-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
               <div className="p-6">
                 {/* Training Interface Mockup */}
                 <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
@@ -484,7 +484,7 @@ const SmartAISection: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">
+                <h3 className="text-xl font-semibold text-teal-600 mb-3">
                   AI Training Center
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -504,7 +504,7 @@ const SmartAISection: React.FC = () => {
             whileHover={{ y: -5 }}
             className="h-full"
           >
-            <div className="bg-white rounded-2xl border border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+            <div className="bg-white rounded-2xl border border-teal-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
               <div className="p-6">
                 {/* Customer Insights Mockup */}
                 <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
@@ -526,7 +526,7 @@ const SmartAISection: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">
+                <h3 className="text-xl font-semibold text-teal-600 mb-3">
                   Personal Customer Insights
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">

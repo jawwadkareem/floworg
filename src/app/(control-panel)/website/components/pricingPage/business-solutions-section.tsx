@@ -160,7 +160,7 @@ const BusinessSolutionsSection: React.FC<BusinessSolutionsSectionProps> = ({
                 onClick={() => handleSolutionClick(option.id)}
                 className={`w-full px-6 py-4 rounded-lg font-semibold text-left transition-all duration-300 hover:shadow-md ${
                   option.type === "primary"
-                    ? "bg-blue-500 hover:bg-blue-600 text-white"
+                    ? "bg-teal-500 hover:bg-teal-500 text-white"
                     : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                 }`}
               >
@@ -180,12 +180,12 @@ const BusinessSolutionsSection: React.FC<BusinessSolutionsSectionProps> = ({
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-blue-500 font-semibold text-sm uppercase tracking-wide">
+            <span className="text-teal-500 font-semibold text-sm uppercase tracking-wide">
               {aiServicesSubtitle}
             </span>
             <h3 className="text-4xl font-bold mb-6 text-gray-900">
               It's Time to Hire <br />
-              <span className="text-blue-500">
+              <span className="text-teal-500">
                 {aiServicesTitle.split(" ").slice(-3).join(" ")}
               </span>
             </h3>
@@ -196,13 +196,13 @@ const BusinessSolutionsSection: React.FC<BusinessSolutionsSectionProps> = ({
             <div className="flex gap-4">
               <button
                 onClick={handleAiServicesPrimaryClick}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 {aiServicesPrimaryButtonText}
               </button>
               <button
                 onClick={handleAiServicesSecondaryClick}
-                className="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg font-semibold transition-colors"
+                className="border border-teal-500 text-teal-500 hover:bg-teal-50 px-6 py-3 rounded-lg font-semibold transition-colors"
               >
                 {aiServicesSecondaryButtonText}
               </button>
@@ -225,7 +225,7 @@ const BusinessSolutionsSection: React.FC<BusinessSolutionsSectionProps> = ({
                 viewport={{ once: true }}
                 className="flex items-center gap-4 bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="w-12 h-12 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
+                <div className="w-12 h-12 bg-teal-500 text-white rounded-lg flex items-center justify-center font-bold">
                   {step.number}
                 </div>
                 <div>
