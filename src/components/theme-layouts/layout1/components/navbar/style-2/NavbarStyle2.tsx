@@ -10,11 +10,13 @@ import {
 import { useAppDispatch, useAppSelector } from 'src/store/hooks';
 
 import { Theme } from '@mui/system';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import useFuseLayoutSettings from '@fuse/core/FuseLayout/useFuseLayoutSettings';
 import useThemeMediaQuery from '@fuse/hooks/useThemeMediaQuery';
 import NavbarStyle2Content from './NavbarStyle2Content';
 import { Layout1ConfigDefaultsType } from '@/components/theme-layouts/layout1/Layout1Config';
+import useFuseSettings from '@fuse/core/FuseSettings/hooks/useFuseSettings';
+import _ from 'lodash';
 
 const navbarWidth = 280;
 
@@ -173,6 +175,7 @@ const StyledNavbarMobile = styled(SwipeableDrawer)<StyledNavBarProps>(({ theme }
  */
 function NavbarStyle2() {
 	const dispatch = useAppDispatch();
+	const { setSettings } = useFuseSettings();
 
 	const settings = useFuseLayoutSettings();
 	const config = settings.config as Layout1ConfigDefaultsType;
@@ -184,6 +187,16 @@ function NavbarStyle2() {
 	const foldedandclosed = folded && !navbar.foldedOpen;
 	const foldedandopened = folded && navbar.foldedOpen;
 
+	// ✅ Only set folded ONCE on mount
+	const hasInitialized = useRef(false);
+	useEffect(() => {
+		if (!hasInitialized.current) {
+			setSettings(_.set({}, 'layout.config.navbar.folded', !config?.navbar?.folded));
+			hasInitialized.current = true;
+		}
+	}, [setSettings]);
+
+	// ✅ Reset on unmount
 	useEffect(() => {
 		return () => {
 			dispatch(resetNavbar());
@@ -227,7 +240,7 @@ function NavbarStyle2() {
 					onOpen={() => {}}
 					disableSwipeToOpen
 					ModalProps={{
-						keepMounted: true // Better open performance on mobile.
+						keepMounted: true
 					}}
 				>
 					<NavbarStyle2Content className="NavbarStyle2-content" />
