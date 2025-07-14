@@ -14,8 +14,9 @@ const Blogpage: React.FC = () => {
   return (
     <>
     <Header />
+    
     <Navbar />
-  
+    <BlogHeroSection />
     {/* Wrapper to add spacing after Navbar */}
     <div className="mt-8"> {/* Tailwind: mt-8 = margin-top: 2rem */}
       <BlogNavigationSection />
