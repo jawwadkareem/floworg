@@ -455,6 +455,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import WaveCircle from './WaveLogo';
 
 const ConnectSection: React.FC = () => {
   return (
@@ -562,9 +563,10 @@ const ConnectSection: React.FC = () => {
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
                 >
                   <div className="flex flex-col items-center">
-                    <div className="w-18 h-18 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-xl">
+                    {/* <div className="w-18 h-18 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-xl">
                       ✓
-                    </div>
+                    </div> */}
+                    <WaveCircle/>
                   </div>
                 </motion.div>
 

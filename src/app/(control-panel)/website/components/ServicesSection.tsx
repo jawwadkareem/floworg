@@ -323,8 +323,8 @@ const ServicesSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6">
-            <span className="text-teal-500">Floworg</span> Services
+          <h2 className="text-3xl md:text-6xl font-semibold text-gray-800 mb-6">
+            <span className="text-[#1ad7ad]">Floworg</span> Services
           </h2>
         </motion.div>
 

@@ -655,9 +655,9 @@ const GlobalAutomationSection: React.FC = () => {
           )}
         </div>
       ))}
-            {/* CTA Button at Bottom */}
-            <div className="absolute bottom-10 w-full text-center z-30">
-        <button className="px-6 py-3 bg-[#1ad7ad] text-white text-sm font-semibold rounded-full shadow-lg hover:bg-[#13b49a] transition-all duration-300">
+      {/* CTA Button at Bottom */}
+      <div className="absolute bottom-10 w-full text-center z-30">
+        <button className="px-6 py-3 bg-[#1ad7ad] text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-[#13b49a] transition-all duration-300">
           Start Automating Now
         </button>
       </div>
