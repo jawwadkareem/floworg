@@ -35,10 +35,9 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-[#414655] py-3 px-4 w-full shadow-md">
-      <div className="container mx-auto flex items-center justify-between gap-4">
-
+      <div className="relative w-full h-16">
         {/* Left: Social Icons */}
-        <div className="flex items-center gap-2">
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
           {socialIcons.map(({ name, src }) => (
             <div
               key={name}
@@ -48,6 +47,7 @@ const Navbar: React.FC = () => {
             </div>
           ))}
         </div>
+
 
         {/* Center Nav Floating */}
         <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 w-2/4">
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
                   <div key={item.name} className="relative group">
                     <button className="text-white text-lg font-medium hover:text-teal-400 transition flex gap-2">
                       {item.name}
-                      {item.dropdown && <ChevronDown className='w-5'/>}
+                      {item.dropdown && <ChevronDown className='w-5' />}
                     </button>
                     <div className="absolute left-0 mt-2 w-60 bg-[#292f3d] rounded-lg shadow-lg hidden group-hover:block z-50">
                       {item.dropdown.map((subItem) => (
@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Right: App Badges */}
-        <div className="flex items-center gap-3">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
           <PlaystoreBadge />
           <AppstoreBadge />
         </div>
