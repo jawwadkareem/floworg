@@ -342,10 +342,10 @@ const Homepage: React.FC = () => {
      <Navbar/>
       <HeroSection />
       <ScalableSolutionsSection />
-      <StatsSection/>
-      <GlobalAutomationSection />/
       <AutomateSuccessSection />
       <ServicesSection />
+      <StatsSection/>
+      <GlobalAutomationSection />/
       <ConnectSection />
       <SmartAISection />
       <IntegrationsSection />
