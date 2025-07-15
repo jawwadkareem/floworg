@@ -338,7 +338,7 @@ const Homepage: React.FC = () => {
   };
   return (
     <>
-      <Header />
+      {/* <Header /> */}
      <Navbar/>
       <HeroSection />
       <ScalableSolutionsSection />

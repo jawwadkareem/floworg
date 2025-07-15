@@ -6,7 +6,7 @@ const Logo = () => (
   <img
   src="/assets/icons/Asset 5.svg"
   alt="Logo"
-  className="w-32 h-auto filter drop-shadow-md"
+  className="w-36 h-auto filter drop-shadow-md"
 />
 );
 

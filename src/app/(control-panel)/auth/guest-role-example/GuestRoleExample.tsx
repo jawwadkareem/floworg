@@ -58,7 +58,7 @@ function GuestRoleExample() {
 						className="language-json"
 					>
 						{`
-						export const fuseNavigationConfig = [
+						export const fuse = [
 						{
 								'id'   : 'only-staff-navigation-item',
 								'title': 'Nav item only for Guest',

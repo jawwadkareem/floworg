@@ -10,7 +10,7 @@ i18n.addResourceBundle('tr', 'navigation', tr);
 i18n.addResourceBundle('ar', 'navigation', ar);
 
 /**
- * The navigationConfig object is an array of navigation items for the Fuse application.
+ * The x object is an array of navigation items for the Fuse application.
  */
 const navigationConfig: FuseNavItemType[] = [
 	
