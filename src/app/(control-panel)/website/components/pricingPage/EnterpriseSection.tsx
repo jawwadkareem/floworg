@@ -136,9 +136,9 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl p-8 shadow-lg mb-12 border border-gray-200 hover:shadow-xl transition-shadow duration-300"
+          className="bg-white rounded-2xl p-8 shadow-lg mb-4 border border-gray-200 hover:shadow-xl transition-shadow duration-300"
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-3 gap-8 items-center">
             <div>
               <span className="inline-flex items-center gap-2 text-blue-500 font-semibold text-sm bg-blue-50 px-3 py-1 rounded-full mb-4">
                 {plan.badge}
@@ -163,6 +163,8 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
                 {plan.trialInfo}
               </p>
 
+
+            </div>
               <div className="space-y-3">
                 {plan.features.map((feature, index) => (
                   <motion.div
@@ -192,8 +194,6 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
                   </motion.div>
                 ))}
               </div>
-            </div>
-
             <div className="text-center lg:text-right">
               <motion.button
                 whileHover={{
@@ -223,13 +223,13 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
             </div>
           </div>
 
-          {plan.disclaimer && (
-            <p className="text-xs text-gray-500 text-right mt-6 border-t border-gray-100 pt-4">
+
+        </motion.div>
+        {plan.disclaimer && (
+            <p className="text-xs text-gray-500 text-right border-t border-gray-100 mb-4">
               {plan.disclaimer}
             </p>
           )}
-        </motion.div>
-
         {/* Compare Plans Button */}
         {showComparePlans && (
           <motion.div
