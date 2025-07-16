@@ -178,12 +178,12 @@ const SolutionsSection: React.FC<SolutionsSectionProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.02 }}
               viewport={{ once: true }}
-              className={`bg-white rounded-lg p-4 shadow-sm border transition-all duration-300 cursor-pointer ${
+              className={`bg-white rounded-lg p-4 shadow-sm border transition-all duration-300 ${
                 enabledIntegrations.has(integration.id)
                   ? "border-[#1ad7ad] shadow-md bg-teal-50"
                   : "border-gray-200 hover:shadow-md hover:border-gray-300"
               }`}
-              onClick={() => handleToggle(integration.id)}
+              // onClick={() => handleToggle(integration.id)}
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3 flex-1">

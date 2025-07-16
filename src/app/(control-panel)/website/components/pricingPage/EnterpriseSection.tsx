@@ -90,11 +90,16 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
   showComparePlans = true,
   className = "",
 }) => {
-  const [selectedTierIndex, setSelectedTierIndex] = useState(1); // Default to second tier
+  const [sliderIndices, setSliderIndices] = useState([0, 0, 0]);
   const [isCalculating, setIsCalculating] = useState(false);
 
-  const currentTier = pricingTiers[selectedTierIndex];
-  const estimatedPrice = Math.round(basePrice * currentTier.priceMultiplier);
+  const totalUsers = sliderIndices.reduce(
+    (sum, index) => sum + pricingTiers[index].users,
+    0
+  );
+  const estimatedPrice = Math.round(
+    basePrice * sliderIndices.reduce((sum, index) => sum + pricingTiers[index].priceMultiplier, 0)
+  );
 
   const handleContactSales = () => {
     onContactSales?.(plan.id);
@@ -105,27 +110,27 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
     onComparePlans?.();
     console.log("Compare plans clicked");
   };
+  const handleSliderChange = (sliderIdx: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newIndex = Number(event.target.value);
+    const newSliderIndices = [...sliderIndices];
+    newSliderIndices[sliderIdx] = newIndex;
+    setSliderIndices(newSliderIndices);
+    setIsCalculating(true);
 
-  const handleSliderChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      const newIndex = Number.parseInt(event.target.value);
-      setSelectedTierIndex(newIndex);
-      setIsCalculating(true);
-
-      // Simulate calculation delay
-      setTimeout(() => {
-        setIsCalculating(false);
-        const tier = pricingTiers[newIndex];
-        const price = Math.round(basePrice * tier.priceMultiplier);
-        onCalculatePrice?.(tier.users, price);
-      }, 300);
-    },
-    [pricingTiers, basePrice, onCalculatePrice]
-  );
-
-  const getSliderPosition = () => {
-    return (selectedTierIndex / (pricingTiers.length - 1)) * 100;
+    setTimeout(() => {
+      setIsCalculating(false);
+      const updatedUsers = newSliderIndices.reduce((sum, index) => sum + pricingTiers[index].users, 0);
+      const updatedPrice = Math.round(
+        basePrice * newSliderIndices.reduce((sum, index) => sum + pricingTiers[index].priceMultiplier, 0)
+      );
+      onCalculatePrice?.(updatedUsers, updatedPrice);
+    }, 300);
   };
+
+  const getSliderPosition = (index: number) => {
+    return (sliderIndices[index] / (pricingTiers.length - 1)) * 100;
+  };
+
 
   return (
     <section className={`py-16 bg-gray-50 ${className}`}>
@@ -165,35 +170,33 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
 
 
             </div>
-              <div className="space-y-3">
-                {plan.features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-3"
-                  >
-                    <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        feature.included ? "bg-green-500" : "bg-gray-300"
+            <div className="space-y-3">
+              {plan.features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-3"
+                >
+                  <div
+                    className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${feature.included ? "bg-green-500" : "bg-gray-300"
                       }`}
-                    >
-                      {feature.included && (
-                        <Check className="w-3 h-3 text-white" />
-                      )}
-                    </div>
-                    <span
-                      className={`text-sm ${
-                        feature.included ? "text-gray-800" : "text-gray-400"
+                  >
+                    {feature.included && (
+                      <Check className="w-3 h-3 text-white" />
+                    )}
+                  </div>
+                  <span
+                    className={`text-sm ${feature.included ? "text-gray-800" : "text-gray-400"
                       } ${index === 0 ? "font-semibold" : ""}`}
-                    >
-                      {feature.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
+                  >
+                    {feature.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
             <div className="text-center lg:text-right">
               <motion.button
                 whileHover={{
@@ -226,10 +229,10 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
 
         </motion.div>
         {plan.disclaimer && (
-            <p className="text-xs text-gray-500 text-right border-t border-gray-100 mb-4">
-              {plan.disclaimer}
-            </p>
-          )}
+          <p className="text-xs text-gray-500 text-right border-t border-gray-100 mb-4">
+            {plan.disclaimer}
+          </p>
+        )}
         {/* Compare Plans Button */}
         {showComparePlans && (
           <motion.div
@@ -243,7 +246,7 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleComparePlans}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-[#1ad7ad]/95 hover:bg-[#1ad7ad] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Compare Plans
             </motion.button>
@@ -267,23 +270,19 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-              {/* Current Selection Display */}
+              {/* Summary */}
               <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl">
                 <div className="grid md:grid-cols-3 gap-4 text-center">
                   <div>
-                    <p className="text-sm text-gray-600 mb-1">Selected Users</p>
+                    <p className="text-sm text-gray-600 mb-1">Total Users</p>
                     <p className="text-2xl font-bold text-blue-600">
-                      {currentTier.label}
+                      {sliderIndices.reduce((sum, index) => sum + pricingTiers[index].users, 0).toLocaleString()}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-600 mb-1">
-                      Estimated Price
-                    </p>
+                    <p className="text-sm text-gray-600 mb-1">Estimated Price</p>
                     <p className="text-2xl font-bold text-green-600">
-                      {isCalculating
-                        ? "..."
-                        : `${plan.currency}${estimatedPrice.toLocaleString()}`}
+                      {isCalculating ? "..." : `${plan.currency}${estimatedPrice.toLocaleString()}`}
                     </p>
                   </div>
                   <div>
@@ -291,71 +290,68 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
                     <p className="text-2xl font-bold text-purple-600">
                       {isCalculating
                         ? "..."
-                        : `${plan.currency}${(estimatedPrice / currentTier.users).toFixed(2)}`}
+                        : `${plan.currency}${(estimatedPrice / totalUsers).toFixed(2)}`}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Slider */}
-              <div className="relative mb-6">
-                {/* Labels */}
-                <div className="flex justify-between text-sm text-gray-600 mb-4">
-                  {pricingTiers.map((tier, index) => (
-                    <span
-                      key={index}
-                      className={`transition-colors duration-300 ${
-                        index === selectedTierIndex
-                          ? "text-blue-600 font-semibold"
-                          : ""
-                      }`}
-                    >
-                      {tier.label}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Slider Track */}
-                <div className="relative h-3 bg-gray-200 rounded-full">
-                  {/* Progress Fill */}
-                  <div
-                    className="absolute left-0 top-0 h-full bg-gradient-to-r from-teal-400 to-blue-500 rounded-full transition-all duration-300"
-                    style={{ width: `${getSliderPosition()}%` }}
-                  />
-
-                  {/* Slider Handle */}
-                  <div
-                    className="absolute w-6 h-6 bg-gray-900 rounded-full -top-1.5 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110"
-                    style={{ left: `calc(${getSliderPosition()}% - 12px)` }}
-                  >
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+              {/* Sliders */}
+              {["Bots", "Users", "Contacts"].map((label, sliderIdx) => (
+                <div className="mb-6" key={sliderIdx}>
+                  <div className="flex items-center mb-2">
+                    <div className="w-24 text-left font-semibold text-gray-700">
+                      {label}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between text-sm text-gray-600 mb-2">
+                        {pricingTiers.map((tier, index) => (
+                          <span
+                            key={index}
+                            className={`transition-colors duration-300 ${index === sliderIndices[sliderIdx]
+                                ? "text-blue-600 font-semibold"
+                                : ""
+                              }`}
+                          >
+                            {tier.label}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="relative h-3 bg-gray-200 rounded-full">
+                        <div
+                          className="absolute left-0 top-0 h-full bg-gradient-to-r from-teal-400 to-blue-500 rounded-full transition-all duration-300"
+                          style={{ width: `${getSliderPosition(sliderIdx)}%` }}
+                        />
+                        <div
+                          className="absolute w-6 h-6 bg-gray-900 rounded-full -top-1.5 flex items-center justify-center transition-all duration-300 cursor-pointer hover:scale-110"
+                          style={{ left: `calc(${getSliderPosition(sliderIdx)}% - 12px)` }}
+                        >
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        <input
+                          type="range"
+                          min="0"
+                          max={pricingTiers.length - 1}
+                          value={sliderIndices[sliderIdx]}
+                          onChange={handleSliderChange(sliderIdx)}
+                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        />
+                      </div>
+                    </div>
                   </div>
-
-                  {/* Hidden Range Input */}
-                  <input
-                    type="range"
-                    min="0"
-                    max={pricingTiers.length - 1}
-                    value={selectedTierIndex}
-                    onChange={handleSliderChange}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  />
                 </div>
-              </div>
+              ))}
 
-              {/* Additional Info */}
-              <div className="text-center">
+              {/* CTA */}
+              <div className="text-center mt-8">
                 <p className="text-sm text-gray-600 mb-4">
-                  Pricing scales based on your organization size and usage
-                  requirements
+                  Pricing scales based on your organization size and usage requirements
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() =>
-                    onCalculatePrice?.(currentTier.users, estimatedPrice)
-                  }
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
+                  onClick={() => onCalculatePrice?.(totalUsers, estimatedPrice)}
+                  className="bg-[#1ad7ad]/95 hover:bg-[#1ad7ad] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
                 >
                   Get Custom Quote
                 </motion.button>
@@ -363,6 +359,7 @@ const EnterpriseSection: React.FC<EnterpriseSectionProps> = ({
             </div>
           </motion.div>
         )}
+
       </div>
     </section>
   );
