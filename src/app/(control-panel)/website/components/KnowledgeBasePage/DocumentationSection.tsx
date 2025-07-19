@@ -103,7 +103,7 @@ const DocumentationSection: React.FC = () => {
   };
 
   return (
-    <section className="py-8 bg-gray-50">
+    <section className="bg-gray-50">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Knowledge Base Navbar Header */}
         <KnowledgeBaseNavbarHeader
