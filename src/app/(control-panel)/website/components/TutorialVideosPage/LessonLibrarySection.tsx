@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronRight, Play } from 'lucide-react';
+import TutorialVideosNavbarHeader from './TutorialVideosNavbarHeader';
 
 const LessonLibrarySection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('Tutorial Videos');
+  const [activeTab, setActiveTab] = useState('tutorial-videos');
   const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
     'Playlists': true,
     'Channels': false,
@@ -13,16 +14,9 @@ const LessonLibrarySection: React.FC = () => {
     'Integration': false
   });
 
-  const tabs = [
-    'Support',
-    'Tutorial Videos',
-    'KnowledgeBase', 
-    'Features',
-    'Integrations',
-    'API',
-    'Developers',
-    'Forum'
-  ];
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+  };
 
   const sidebarSections = [
     {
@@ -120,28 +114,14 @@ const LessonLibrarySection: React.FC = () => {
   return (
     <section className="py-8 bg-gray-50 min-h-screen">
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Navigation Tabs */}
-        <div className="flex gap-2 mb-8 overflow-x-auto">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                activeTab === tab
-                  ? 'bg-teal-500 text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-300'
-              } ${tab === 'Tutorial Videos' ? 'relative' : ''}`}
-            >
-              {tab}
-              {tab === 'Tutorial Videos' && (
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-teal-400 rounded-full"></div>
-              )}
-            </button>
-          ))}
-        </div>
+        {/* Tutorial Videos Navbar Header */}
+        <TutorialVideosNavbarHeader
+          onTabChange={handleTabChange}
+          defaultActiveTab={activeTab}
+        />
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-12 gap-8">
+        <div className="grid lg:grid-cols-12 gap-8 mt-8">
           {/* Left Sidebar */}
           <div className="lg:col-span-3">
             {/* Lesson Library Header */}

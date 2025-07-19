@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import SupportBlogSection from "../support-blog-section"
+import FeatureNavbarHeader from "./FeatureNavbarHeader";
 import SlackIntegrationSection from "./SlackIntegrationSection";
 import RelatedIntegrationsSection from "./RelatedIntegration";
 import GetStartedSection from "../GetStartedSection";
@@ -31,6 +32,7 @@ const Featurepage: React.FC = () => {
           </div>
         </div>
       </div>
+      <FeatureNavbarHeader />
       <SlackIntegrationSection />
       <RelatedIntegrationsSection />
       <GetStartedSection />

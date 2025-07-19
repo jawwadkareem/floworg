@@ -9,6 +9,7 @@ import NewsSection from "../NewsSection"
 import NewsletterSection from "../NewsletterSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
+import AcademyNavbarHeader from "./AcademyNavbarHeader"
 
 const Academypage: React.FC = () => {
   return (
@@ -30,8 +31,7 @@ const Academypage: React.FC = () => {
           </div>
         </div>
       </div>
-      
-      <BlogNavigationSection />
+      <AcademyNavbarHeader />
       <BlogGridSection />
       <AcademyNewsletterSection />
 

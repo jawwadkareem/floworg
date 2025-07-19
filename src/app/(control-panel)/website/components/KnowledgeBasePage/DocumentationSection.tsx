@@ -14,21 +14,15 @@ import {
   Search,
   ExternalLink
 } from 'lucide-react';
+import KnowledgeBaseNavbarHeader from './KnowldegeBaseNavbarHeader';
 
 const DocumentationSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('KnowledgeBase');
+  const [activeTab, setActiveTab] = useState('knowledgebase');
   const [expandedItems, setExpandedItems] = useState<string[]>(['getting-started']);
 
-  const navigationTabs = [
-    'Support',
-    'Tutorial Videos', 
-    'KnowledgeBase',
-    'Features',
-    'Integrations',
-    'API',
-    'Developers',
-    'Forum'
-  ];
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+  };
 
   const sidebarItems = [
     {
@@ -109,34 +103,13 @@ const DocumentationSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 bg-gray-50">
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Top Navigation */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-0"
-        >
-          <div className="bg-white border-b border-gray-200">
-            <div className="flex overflow-x-auto">
-              {navigationTabs.map((tab, index) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-4 text-sm font-medium whitespace-nowrap transition-all duration-300 border-b-2 ${
-                    activeTab === tab
-                      ? 'border-blue-500 text-blue-600 bg-blue-50'
-                      : 'border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+        {/* Knowledge Base Navbar Header */}
+        <KnowledgeBaseNavbarHeader
+          onTabChange={handleTabChange}
+          defaultActiveTab={activeTab}
+        />
 
         {/* Main Content */}
         <motion.div

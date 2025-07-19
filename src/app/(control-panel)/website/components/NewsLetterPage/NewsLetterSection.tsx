@@ -4,10 +4,16 @@ import type React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
+import NewsletterNavbarHeader from "./NewsletterNavbarHeader"
 
 const NewsownSection: React.FC = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [activeTab, setActiveTab] = useState("all")
+
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId)
+  }
 
   const newsletterTypes = [
     {
@@ -68,33 +74,12 @@ const NewsownSection: React.FC = () => {
   }
 
   return (
-    <section className="py-16">
-      {/* Top Navigation Tabs */}
-      <div className="bg-white py-4">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex gap-2 flex-wrap">
-            {[
-              { name: "All", active: true },
-              { name: "Business & Tech", active: false },
-              { name: "Academy", active: false },
-              { name: "Partners", active: false },
-              { name: "Developers", active: false },
-              { name: "Support", active: false },
-              { name: "Career", active: false },
-              { name: "Tenders", active: false },
-            ].map((tab, index) => (
-              <button
-                key={index}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  tab.active ? "bg-gray-800 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {tab.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+    <section>
+      {/* Newsletter Navbar Header */}
+      <NewsletterNavbarHeader
+        onTabChange={handleTabChange}
+        defaultActiveTab={activeTab}
+      />
 
       {/* Three Benefit Points */}
       <div className="bg-white py-8">

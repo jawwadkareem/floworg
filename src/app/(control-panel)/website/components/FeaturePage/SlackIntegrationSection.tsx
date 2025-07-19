@@ -90,28 +90,10 @@ const SlackIntegrationSection: React.FC = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Navigation */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex space-x-8">
-            {navigationTabs.map((tab, index) => (
-              <button
-                key={tab}
-                className={`py-4 px-2 text-sm font-medium border-b-2 transition-colors ${
-                  tab === "Integrations" 
-                    ? "border-blue-500 text-blue-600" 
-                    : "border-transparent text-gray-500 hover:text-gray-700"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
