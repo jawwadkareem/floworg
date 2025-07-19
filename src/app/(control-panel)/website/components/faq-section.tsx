@@ -1,11 +1,11 @@
-"use client";
-
-import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+"use client"
+import type React from "react"
+import { useState } from "react"
+import { ChevronDown, ChevronUp } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
 
 const FAQSection: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const faqs = [
     {
@@ -28,11 +28,11 @@ const FAQSection: React.FC = () => {
       answer:
         "We provide 24/7 support through multiple channels including live chat, email, phone support, and comprehensive documentation.",
     },
-  ];
+  ]
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(prev => (prev === index ? null : index));
-  };
+    setOpenIndex((prev) => (prev === index ? null : index))
+  }
 
   return (
     <section className="py-16 bg-gray-50">
@@ -49,26 +49,21 @@ const FAQSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 👇 Main Flex Layout instead of Grid 👇 */}
-        <div className="flex flex-wrap -mx-3">
+        {/* Masonry-like layout for independent heights */}
+        <div className="columns-1 md:columns-2 gap-6 space-y-6">
           {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-
+            const isOpen = openIndex === index
             return (
-              <div key={index} className="w-full md:w-1/2 px-3 mb-6">
+              <div key={index} className="break-inside-avoid mb-6">
                 <div className="bg-white rounded-2xl shadow-lg transition-all duration-300 overflow-hidden">
                   {/* Question Button */}
                   <button
                     onClick={() => toggleFAQ(index)}
                     className={`w-full p-6 text-left flex items-center justify-between transition-colors duration-300 ${
-                      isOpen
-                        ? "bg-teal-500 text-white"
-                        : "hover:bg-gray-50 text-gray-800"
+                      isOpen ? "bg-teal-500 text-white" : "hover:bg-gray-50 text-gray-800"
                     }`}
                   >
-                    <h3 className="font-semibold text-lg pr-4">
-                      {faq.question}
-                    </h3>
+                    <h3 className="font-semibold text-lg pr-4">{faq.question}</h3>
                     {isOpen ? (
                       <ChevronUp className="w-5 h-5 flex-shrink-0" />
                     ) : (
@@ -86,20 +81,18 @@ const FAQSection: React.FC = () => {
                         transition={{ duration: 0.3 }}
                         className="px-6 pb-4"
                       >
-                        <p className="text-gray-600 leading-relaxed">
-                          {faq.answer}
-                        </p>
+                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default FAQSection;
+export default FAQSection
