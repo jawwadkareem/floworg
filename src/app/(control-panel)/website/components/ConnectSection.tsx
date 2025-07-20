@@ -452,12 +452,223 @@
 // }
 
 // export default ConnectSection
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import WaveCircle from './WaveLogo';
+// import React from 'react';
+// import { motion } from 'framer-motion';
+// import { ArrowRight } from 'lucide-react';
+// import WaveCircle from './WaveLogo';
+
+// const ConnectSection: React.FC = () => {
+//   return (
+//     <section className="py-16 bg-gray-50 relative overflow-hidden">
+//       <div className="container mx-auto px-4 max-w-7xl">
+//         <div className="grid lg:grid-cols-2 gap-12 items-center">
+//           <div>
+//             <motion.div
+//               initial={{ opacity: 0, x: -50 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.8 }}
+//               viewport={{ once: true }}
+//             >
+//               <span className="text-pink-500 text-sm font-medium tracking-wide uppercase mb-4 block">
+//                 Talkie Tools
+//               </span>
+
+//               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+//                 Connect Anytime,{" "}
+//                 <span className="block">Anywhere</span>
+//               </h2>
+
+//               <p className="text-gray-600 mb-8 text-base leading-relaxed max-w-lg">
+//                 It is a long established fact that a reader will be distracted by the readable content of a page when
+//                 looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+//               </p>
+
+//               <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded text-sm font-semibold uppercase tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-2">
+//                 Read More
+//                 <ArrowRight className="w-4 h-4" />
+//               </button>
+//             </motion.div>
+//           </div>
+
+//           <div>
+//             <motion.div
+//               initial={{ opacity: 0, x: 50 }}
+//               whileInView={{ opacity: 1, x: 0 }}
+//               transition={{ duration: 0.8 }}
+//               viewport={{ once: true }}
+//             >
+//               <div className="relative h-96 w-full mt-8">
+//                 {/* Decorative Elements */}
+//                 <div className="absolute top-1/3 right-1/5 w-2 h-2 bg-blue-300 rounded-full"></div>
+//                 <div className="absolute top-3/5 right-2/5 w-1.5 h-1.5 bg-pink-300 rounded-full"></div>
+
+//                 {/* Facebook - Top Center */}
+//                 <motion.div
+//                   initial={{ opacity: 0, scale: 0, y: 20 }}
+//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
+//                   transition={{ duration: 0.6, delay: 0.1 }}
+//                   viewport={{ once: true }}
+//                   whileHover={{ scale: 1.1, y: -5 }}
+//                   className="absolute top-2 left-1/2 transform -translate-x-1/2 cursor-pointer"
+//                 >
+//                   <div className="flex flex-col items-center">
+//                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
+//                       f
+//                     </div>
+//                     <span className="text-gray-800 font-medium text-sm">Facebook</span>
+//                   </div>
+//                 </motion.div>
+
+//                 {/* Calendar - Left */}
+//                 <motion.div
+//                   initial={{ opacity: 0, scale: 0, y: 20 }}
+//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
+//                   transition={{ duration: 0.6, delay: 0.2 }}
+//                   viewport={{ once: true }}
+//                   whileHover={{ scale: 1.1, y: -5 }}
+//                   className="absolute top-1/4 left-4 cursor-pointer"
+//                 >
+//                   <div className="flex flex-col items-center">
+//                     <div className="w-12 h-12 bg-cyan-400 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
+//                       📅
+//                     </div>
+//                     <span className="text-gray-800 font-medium text-sm">Calendar</span>
+//                   </div>
+//                 </motion.div>
+
+//                 {/* Messenger - Right */}
+//                 <motion.div
+//                   initial={{ opacity: 0, scale: 0, y: 20 }}
+//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
+//                   transition={{ duration: 0.6, delay: 0.3 }}
+//                   viewport={{ once: true }}
+//                   whileHover={{ scale: 1.1, y: -5 }}
+//                   className="absolute top-1/4 right-4 cursor-pointer"
+//                 >
+//                   <div className="flex flex-col items-center">
+//                     <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
+//                       💬
+//                     </div>
+//                     <span className="text-gray-800 font-medium text-sm">Messenger</span>
+//                   </div>
+//                 </motion.div>
+
+//                 {/* WhatsApp - Center (Prominent) */}
+//                 <motion.div
+//                   initial={{ opacity: 0, scale: 0, y: 20 }}
+//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
+//                   transition={{ duration: 0.6, delay: 0.4 }}
+//                   viewport={{ once: true }}
+//                   whileHover={{ scale: 1.1, y: -5 }}
+//                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+//                 >
+//                   <div className="flex flex-col items-center">
+//                     {/* <div className="w-18 h-18 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-xl">
+//                       ✓
+//                     </div> */}
+//                     <WaveCircle/>
+//                   </div>
+//                 </motion.div>
+
+//                 {/* LinkedIn - Bottom Left */}
+//                 <motion.div
+//                   initial={{ opacity: 0, scale: 0, y: 20 }}
+//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
+//                   transition={{ duration: 0.6, delay: 0.5 }}
+//                   viewport={{ once: true }}
+//                   whileHover={{ scale: 1.1, y: -5 }}
+//                   className="absolute bottom-1/4 left-4 cursor-pointer"
+//                 >
+//                   <div className="flex flex-col items-center">
+//                     <div className="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg mb-2">
+//                       in
+//                     </div>
+//                     <span className="text-gray-800 font-medium text-sm">LinkedIn</span>
+//                   </div>
+//                 </motion.div>
+
+//                 {/* Twitter - Bottom Right */}
+//                 <motion.div
+//                   initial={{ opacity: 0, scale: 0, y: 20 }}
+//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
+//                   transition={{ duration: 0.6, delay: 0.6 }}
+//                   viewport={{ once: true }}
+//                   whileHover={{ scale: 1.1, y: -5 }}
+//                   className="absolute bottom-1/4 right-4 cursor-pointer"
+//                 >
+//                   <div className="flex flex-col items-center">
+//                     <div className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
+//                       🐦
+//                     </div>
+//                     <span className="text-gray-800 font-medium text-sm">Twitter</span>
+//                   </div>
+//                 </motion.div>
+
+//                 {/* Skype - Bottom Center */}
+//                 <motion.div
+//                   initial={{ opacity: 0, scale: 0, y: 20 }}
+//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
+//                   transition={{ duration: 0.6, delay: 0.7 }}
+//                   viewport={{ once: true }}
+//                   whileHover={{ scale: 1.1, y: -5 }}
+//                   className="absolute bottom-2 left-1/2 transform -translate-x-1/2 cursor-pointer"
+//                 >
+//                   <div className="flex flex-col items-center">
+//                     <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
+//                       S
+//                     </div>
+//                     <span className="text-gray-800 font-medium text-sm">Skype</span>
+//                   </div>
+//                 </motion.div>
+//               </div>
+//             </motion.div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default ConnectSection;
+"use client"
+
+import type React from "react"
+import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
+import WaveCircle from "./WaveLogo"
 
 const ConnectSection: React.FC = () => {
+  const outerIcons = [
+    { icon: "f", color: "bg-blue-600", angle: 0 },
+    { icon: "📷", color: "bg-pink-500", angle: 30 },
+    { icon: "▶️", color: "bg-red-600", angle: 60 },
+    { icon: "🎵", color: "bg-black", angle: 90 },
+    { icon: "👻", color: "bg-yellow-400", angle: 120 },
+    { icon: "P", color: "bg-red-500", angle: 150 },
+    { icon: "🎮", color: "bg-indigo-600", angle: 180 },
+    { icon: "✈️", color: "bg-blue-400", angle: 210 },
+    { icon: "💬", color: "bg-green-600", angle: 240 },
+    { icon: "V", color: "bg-purple-600", angle: 270 },
+    { icon: "🔒", color: "bg-blue-700", angle: 300 },
+    { icon: "Z", color: "bg-blue-500", angle: 330 },
+  ]
+
+  const innerIcons = [
+    { icon: "✓", color: "bg-green-500", angle: 0 },
+    { icon: "💬", color: "bg-blue-500", angle: 60 },
+    { icon: "🐦", color: "bg-blue-400", angle: 120 },
+    { icon: "in", color: "bg-blue-700", angle: 180 },
+    { icon: "S", color: "bg-cyan-500", angle: 240 },
+    { icon: "📅", color: "bg-cyan-400", angle: 300 },
+  ]
+
+  const getCirclePosition = (angle: number, radius: number) => {
+    const radian = (angle * Math.PI) / 180
+    const x = Math.cos(radian) * radius
+    const y = Math.sin(radian) * radius
+    return { x, y }
+  }
+
   return (
     <section className="py-16 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -469,20 +680,14 @@ const ConnectSection: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <span className="text-pink-500 text-sm font-medium tracking-wide uppercase mb-4 block">
-                Talkie Tools
-              </span>
-
+              <span className="text-pink-500 text-sm font-medium tracking-wide uppercase mb-4 block">Talkie Tools</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-                Connect Anytime,{" "}
-                <span className="block">Anywhere</span>
+                Connect Anytime, <span className="block">Anywhere</span>
               </h2>
-
               <p className="text-gray-600 mb-8 text-base leading-relaxed max-w-lg">
                 It is a long established fact that a reader will be distracted by the readable content of a page when
                 looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
               </p>
-
               <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded text-sm font-semibold uppercase tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-2">
                 Read More
                 <ArrowRight className="w-4 h-4" />
@@ -497,136 +702,96 @@ const ConnectSection: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-96 w-full mt-8">
+              <div className="relative h-[500px] w-full mt-8 flex items-center justify-center">
                 {/* Decorative Elements */}
-                <div className="absolute top-1/3 right-1/5 w-2 h-2 bg-blue-300 rounded-full"></div>
-                <div className="absolute top-3/5 right-2/5 w-1.5 h-1.5 bg-pink-300 rounded-full"></div>
+                <div className="absolute top-1/4 right-1/6 w-2 h-2 bg-blue-300 rounded-full"></div>
+                <div className="absolute top-3/5 right-1/5 w-1.5 h-1.5 bg-pink-300 rounded-full"></div>
+                <div className="absolute bottom-1/4 left-1/6 w-1 h-1 bg-purple-300 rounded-full"></div>
 
-                {/* Facebook - Top Center */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="absolute top-2 left-1/2 transform -translate-x-1/2 cursor-pointer"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-                      f
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {/* Outer Rotating Icons */}
+                  <motion.div
+                    className="absolute w-full h-full"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  >
+                    {outerIcons.map((item, index) => {
+                      const pos = getCirclePosition(item.angle, 200)
+                      return (
+                        <div
+                          key={`outer-${index}`}
+                          className="absolute"
+                          style={{
+                            left: `calc(50% + ${pos.x}px)`,
+                            top: `calc(50% + ${pos.y}px)`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <div
+                            className={`w-10 h-10 ${item.color} rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg`}
+                          >
+                            {item.icon}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </motion.div>
+
+                  {/* Inner Rotating Icons */}
+                  <motion.div
+                    className="absolute w-full h-full"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  >
+                    {innerIcons.map((item, index) => {
+                      const pos = getCirclePosition(item.angle, 120)
+                      return (
+                        <div
+                          key={`inner-${index}`}
+                          className="absolute"
+                          style={{
+                            left: `calc(50% + ${pos.x}px)`,
+                            top: `calc(50% + ${pos.y}px)`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <div
+                            className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+                          >
+                            {item.icon}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </motion.div>
+
+                  {/* Center Logo */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 z-10"
+                  >
+                    <div className="flex items-center justify-center">
+                      <WaveCircle />
                     </div>
-                    <span className="text-gray-800 font-medium text-sm">Facebook</span>
-                  </div>
-                </motion.div>
+                  </motion.div>
 
-                {/* Calendar - Left */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="absolute top-1/4 left-4 cursor-pointer"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-cyan-400 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-                      📅
-                    </div>
-                    <span className="text-gray-800 font-medium text-sm">Calendar</span>
+                  {/* Static Circle Guides */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                    <div className="w-80 h-80 border border-gray-200 rounded-full opacity-20"></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-gray-300 rounded-full opacity-30"></div>
                   </div>
-                </motion.div>
-
-                {/* Messenger - Right */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="absolute top-1/4 right-4 cursor-pointer"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-                      💬
-                    </div>
-                    <span className="text-gray-800 font-medium text-sm">Messenger</span>
-                  </div>
-                </motion.div>
-
-                {/* WhatsApp - Center (Prominent) */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-                >
-                  <div className="flex flex-col items-center">
-                    {/* <div className="w-18 h-18 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-xl">
-                      ✓
-                    </div> */}
-                    <WaveCircle/>
-                  </div>
-                </motion.div>
-
-                {/* LinkedIn - Bottom Left */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="absolute bottom-1/4 left-4 cursor-pointer"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg mb-2">
-                      in
-                    </div>
-                    <span className="text-gray-800 font-medium text-sm">LinkedIn</span>
-                  </div>
-                </motion.div>
-
-                {/* Twitter - Bottom Right */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="absolute bottom-1/4 right-4 cursor-pointer"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-                      🐦
-                    </div>
-                    <span className="text-gray-800 font-medium text-sm">Twitter</span>
-                  </div>
-                </motion.div>
-
-                {/* Skype - Bottom Center */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="absolute bottom-2 left-1/2 transform -translate-x-1/2 cursor-pointer"
-                >
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-                      S
-                    </div>
-                    <span className="text-gray-800 font-medium text-sm">Skype</span>
-                  </div>
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ConnectSection;
+export default ConnectSection
