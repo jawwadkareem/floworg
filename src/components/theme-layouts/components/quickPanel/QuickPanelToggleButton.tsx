@@ -18,8 +18,16 @@ function QuickPanelToggleButton(props: QuickPanelToggleButtonProps) {
 
 	return (
 		<IconButton
+		sx={(theme) => ({
+			border: '1px solid',
+			borderColor: "#ffffff", // or any specific color like '#ccc'
+			display: 'flex',
+			alignItems: 'center',
+			color:"#ffffff",
+			padding: '4px 12px',
+		})}	
 			onClick={() => dispatch(toggleQuickPanel())}
-			className={clsx('border border-divider', className)}
+			className={clsx(className)}
 		>
 			{children}
 		</IconButton>

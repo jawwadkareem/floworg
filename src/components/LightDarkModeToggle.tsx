@@ -63,7 +63,15 @@ function LightDarkModeToggle(props: LightDarkModeToggleProps) {
 				aria-controls="light-dark-toggle-menu"
 				aria-haspopup="true"
 				onClick={handleClick}
-				className={clsx('border border-divider', className)}
+				sx={(theme) => ({
+					border: '1px solid',
+					borderColor: "#ffffff", // or any specific color like '#ccc'
+					display: 'flex',
+					alignItems: 'center',
+					color:"#ffffff",
+					padding: '4px 12px',
+				})}	
+				className={clsx(className)}
 			>
 				{mainTheme.palette.mode === 'light' && <FuseSvgIcon>heroicons-outline:sun</FuseSvgIcon>}
 				{mainTheme.palette.mode === 'dark' && <FuseSvgIcon>heroicons-outline:moon</FuseSvgIcon>}

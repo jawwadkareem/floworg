@@ -122,8 +122,16 @@ function HeaderFullScreenToggle(props: HeaderFullScreenToggleProps) {
 			placement="bottom"
 		>
 			<IconButton
+				sx={(theme) => ({
+					border: '1px solid',
+					borderColor: "#ffffff", 
+					display: 'flex',
+					alignItems: 'center',
+					color:"#ffffff",
+					padding: '4px 12px',
+				})}	
 				onClick={toggleFullScreen}
-				className={clsx('border border-divider', className, isFullScreen && 'text-red-500')}
+				className={clsx(className, isFullScreen && 'text-red-500')}
 			>
 				<FuseSvgIcon size={20}>heroicons-outline:arrows-pointing-out</FuseSvgIcon>
 			</IconButton>

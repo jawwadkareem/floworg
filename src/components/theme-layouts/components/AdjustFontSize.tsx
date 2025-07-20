@@ -45,7 +45,14 @@ function AdjustFontSize(props: AdjustFontSizeProps) {
 	return (
 		<div>
 			<IconButton
-				className={clsx('border border-divider', className)}
+				sx={(theme) => ({
+					border: '1px solid',
+					borderColor: "#ffffff", // or any specific color like '#ccc'
+					display: 'flex',
+					alignItems: 'center',
+					color:"#1ad7ad",
+					padding: '4px 12px',
+				})}		
 				aria-controls="font-size-menu"
 				aria-haspopup="true"
 				onClick={handleClick}

@@ -282,7 +282,15 @@ function FuseSearch(props: FuseSearchProps) {
 		placeholder = 'Search',
 		noResults = 'No results..',
 		trigger = (
-			<IconButton className="border border-divider">
+			<IconButton 
+			sx={(theme) => ({
+				border: '1px solid',
+				borderColor: "#ffffff", // or any specific color like '#ccc'
+				display: 'flex',
+				alignItems: 'center',
+				color:"#ffffff",
+				padding: '4px 12px',
+			})}	>
 				<FuseSvgIcon size={20}>heroicons-outline:magnifying-glass</FuseSvgIcon>
 			</IconButton>
 		)
@@ -433,7 +441,8 @@ function FuseSearch(props: FuseSearchProps) {
 		}
 		case 'full': {
 			return (
-				<Root className={clsx('flex', className)}>
+				<Root 
+				className={clsx('flex', className)}>
 					<Tooltip
 						title="Click to search"
 						placement="bottom"
@@ -519,6 +528,7 @@ function FuseSearch(props: FuseSearchProps) {
 										}}
 									/>
 									<IconButton
+										
 										onClick={hideSearch}
 										className="mx-2"
 										size="large"

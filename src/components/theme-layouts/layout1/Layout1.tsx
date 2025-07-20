@@ -66,7 +66,8 @@ function Layout1(props: Layout1Props) {
 					className="relative z-10 flex min-h-full min-w-0 flex-auto flex-col"
 				>
 					{config.toolbar.display && (
-						<ToolbarLayout1 className={config.toolbar.style === 'fixed' ? 'sticky top-0' : ''} />
+						<ToolbarLayout1 className="sticky top-0 z-30" />
+						
 					)}
 
 					<div className="sticky top-0 z-99">

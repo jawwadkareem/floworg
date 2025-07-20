@@ -47,7 +47,7 @@ function ToolbarLayout1(props: ToolbarLayout1Props) {
 				sx={(theme) => ({
 					backgroundColor: toolbarTheme.palette.background.default,
 					...theme.applyStyles('light', {
-						backgroundColor: "#1ad7ad"
+						backgroundColor: "#20242F"
 					})
 				})}
 				position="static"

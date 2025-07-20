@@ -34,8 +34,14 @@ function LanguageSwitcher() {
 	return (
 		<>
 			<Button
-				className="border border-divider"
+				sx={(theme) => ({
+					border: '1px solid',
+					borderColor: "#ffffff", // or any specific color like '#ccc'
+					display: 'flex',
+					alignItems: 'center',
+					padding: '4px 12px',				})}
 				onClick={langMenuClick}
+
 			>
 				<img
 					className="mx-1 min-w-5"
@@ -46,7 +52,7 @@ function LanguageSwitcher() {
 				<Typography
 					className="mx-1 font-semibold text-md uppercase"
 					sx={(theme) => ({
-						color: theme.vars.palette.text.secondary,
+						color: "#ffffff",
 						...theme.applyStyles('dark', {
 							color: theme.vars.palette.text.primary
 						})

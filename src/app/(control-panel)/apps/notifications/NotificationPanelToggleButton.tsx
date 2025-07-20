@@ -25,7 +25,7 @@ function NotificationPanelToggleButton(props: NotificationPanelToggleButtonProps
 			<FuseSvgIcon
 				size={20}
 				sx={(theme) => ({
-					color: theme.vars.palette.text.secondary,
+					color: "#ffffff",
 					...theme.applyStyles('dark', {
 						color: theme.vars.palette.text.primary
 					})
@@ -73,13 +73,26 @@ function NotificationPanelToggleButton(props: NotificationPanelToggleButtonProps
 
 	return (
 		<IconButton
+		sx={(theme) => ({
+			border: '1px solid',
+			borderColor: "#ffffff", // or any specific color like '#ccc'
+			display: 'flex',
+			alignItems: 'center',
+			color:"#ffffff",
+			padding: '4px 12px',
+		})}	
 			onClick={() => dispatch(toggleNotificationPanel())}
-			className={clsx('border border-divider', className)}
+			className={clsx(className)}
 		>
 			<Badge
 				color="secondary"
 				variant="dot"
 				invisible={notifications?.length === 0}
+				sx={{
+					'& .MuiBadge-dot': {
+						backgroundColor: '#1ad7ad', // or any specific color like '#ccc'
+					}
+				}}
 			>
 				<motion.div animate={controls}>{children}</motion.div>
 			</Badge>
