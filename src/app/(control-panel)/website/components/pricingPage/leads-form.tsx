@@ -3,6 +3,8 @@
 import type React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 export interface LeadsFormData {
   fullName: string;
@@ -108,15 +110,17 @@ const LeadsForm: React.FC<LeadsFormProps> = ({ onSubmit, className = "" }) => {
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
             required
           />
-          <input
-            type="tel"
-            name="mobile"
-            placeholder="Mobile + code area"
-            value={formData.mobile}
-            onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
-            required
-          />
+                <PhoneInput
+        international
+        defaultCountry="PK"
+        value={formData.mobile}
+        onChange={(value) =>
+          setFormData((prev) => ({ ...prev, mobile: value || "" }))
+        }
+        className="react-phone-input w-full"
+        required
+      />
+
           <input
             type="email"
             name="email"
