@@ -380,14 +380,37 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import DarkLogo from './DarkLogo';
+import BACKEND_URL from '../constants';
 
 const NewsletterSection: React.FC = () => {
   const [email, setEmail] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [modalError, setModalError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Newsletter subscription:", email);
-    setEmail("");
+    try {
+      const res = await fetch(BACKEND_URL + '/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.status === 200) {
+        setModalMessage('Subscription email sent successfully!');
+        setModalError(false);
+        setEmail(''); // Clear the input field
+      } else {
+        setModalMessage('Failed to subscribe. Please try again later.');
+        setModalError(true);
+      }
+    } catch (error) {
+      setModalMessage('An error occurred while connecting to the server.');
+      setModalError(true);
+    }
+
+    setShowModal(true);
   };
 
   return (
@@ -445,6 +468,23 @@ const NewsletterSection: React.FC = () => {
               </button>
             </form>
           </div>
+
+          {/* Modal */}
+        {showModal && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md text-center">
+              <h2 className={`text-lg font-semibold mb-4 ${modalError ? 'text-red-600' : 'text-green-600'}`}>
+                {modalMessage}
+              </h2>
+              <button
+                onClick={() => setShowModal(false)}
+                className="mt-4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
         </div>
 
         {/* Floworg Logo Section */}
