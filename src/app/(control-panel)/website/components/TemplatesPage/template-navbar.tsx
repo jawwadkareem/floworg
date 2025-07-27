@@ -3,40 +3,37 @@ import type React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-export interface FeatureTab {
+export interface TemplateTab {
   id: string
   name: string
-  description?: string
   active?: boolean
 }
 
-export interface AccessibilityNavbarProps {
-  tabs?: FeatureTab[]
+export interface TemplateNavbarProps {
+  tabs?: TemplateTab[]
   onTabChange?: (tabId: string) => void
   defaultActiveTab?: string
   className?: string
 }
 
-const AccessibilityNavbar: React.FC<AccessibilityNavbarProps> = ({
+const TemplateNavbar: React.FC<TemplateNavbarProps> = ({
   tabs = [
-    { id: "introduction", name: "Introduction" },
-    { id: "website-use", name: "Website Use" },
-    { id: "privacy-ip", name: "Privacy & IP" },
-    { id: "payments", name: "Payments" },
-    { id: "liability-updates", name: "Liability & Updates" },
-    { id: "contact-law", name: "Contact & Law" },
+    { id: "home", name: "Overview" },
+    { id: "about", name: "Templates" },
+    { id: "services", name: "Mini-Apps" },
+    { id: "contact", name: "Contact" },
     { id: "faq", name: "FAQ" },
   ],
   onTabChange,
-  defaultActiveTab,
+  defaultActiveTab = "home",
   className = "",
 }) => {
-  const [activeTab, setActiveTab] = useState<string>(defaultActiveTab || tabs[0]?.id || "")
+  const [activeTab, setActiveTab] = useState<string>(defaultActiveTab)
 
   const handleTabChange = (tabId: string) => {
     setActiveTab(tabId)
     onTabChange?.(tabId)
-    console.log(`Active accessibility tab changed to: ${tabId}`)
+    console.log(`Active template tab changed to: ${tabId}`)
   }
 
   return (
@@ -69,7 +66,7 @@ const AccessibilityNavbar: React.FC<AccessibilityNavbarProps> = ({
               </motion.span>
               {activeTab === tab.id && (
                 <motion.div
-                  layoutId="activeAccessibilityTabIndicator"
+                  layoutId="activeTemplateTabIndicator"
                   className="absolute inset-0 bg-white border-gray-400 rounded-full -z-10"
                   initial={false}
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
@@ -83,4 +80,4 @@ const AccessibilityNavbar: React.FC<AccessibilityNavbarProps> = ({
   )
 }
 
-export default AccessibilityNavbar
+export default TemplateNavbar

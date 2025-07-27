@@ -90,6 +90,19 @@ const TermsSection: React.FC = () => {
                 functionality of the Site shall be subject to these Terms. All copyright and other proprietary notices
                 on the Site (or on any content displayed on the Site) must be retained on all copies thereof.
               </p>
+
+              <p>
+                Company reserves the right, at any time, to modify, suspend, or discontinue the Site (in whole or in part) with or without notice to you. You agree that Company will not be liable to you or to any third party for any modification, suspension, or discontinuation of the Site or any part thereof.
+              </p>
+              <p>
+                <b>No Support or Maintenance.</b> You acknowledge and agree that Company will have no obligation to provide you with any support or maintenance in connection with the Site.
+              </p>
+              <p>
+                Excluding any User Content that you may provide (defined below), you acknowledge that all the intellectual property rights, including copyrights, patents, trade marks, and trade secrets, in the Site and its content are owned by Company or Company’s suppliers. Neither these Terms (nor your access to the Site) transfers to you or any third party any rights, title or interest in or to such intellectual property rights, except for the limited access rights expressly set forth in Section 2.1. Company and its suppliers reserve all rights not granted in these Terms. There are no implied licenses granted under these Terms.
+              </p>
+              <p>
+                If you provide Company with any feedback or suggestions regarding the Site (<b>"Feedback"</b>), you hereby assign to Company all rights in such Feedback and agree that Company shall have the right to use and fully exploit such Feedback and related information in any manner it deems appropriate. Company will treat any Feedback you provide to Company as non-confidential and non-proprietary. You agree that you will not submit to Company any information or ideas that you consider to be confidential or proprietary.
+              </p>
             </div>
           </div>
 
