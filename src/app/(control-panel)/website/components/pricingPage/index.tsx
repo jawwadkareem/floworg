@@ -14,6 +14,7 @@ import BusinessSolutionsSection, {
 import SolutionsSection, { Integration } from "../SolutionsSection";
 import PricingPageSection from "./pricing-page";
 import Navbar from "../Navbar";
+import BACKEND_URL from "../../constants";
 
 const faqCategories: FAQCategory[] = [
   {
@@ -471,10 +472,30 @@ const enterprisePlan: EnterprisePlan = {
 };
 
 const PricingPage: React.FC = () => {
-  const handleLeadsSubmit = (data: LeadsFormData) => {
+  const [showModal, setShowModal] = React.useState(false);
+  const [modalMessage, setModalMessage] = React.useState("");
+  const [modalError, setModalError] = React.useState(false);
+
+  const handleLeadsSubmit = async (data: LeadsFormData) => {
     console.log("Form submitted:", data);
-    // Handle form submission here
-    alert("Thank you for your interest! We'll contact you soon.");
+    const response = await fetch(BACKEND_URL + "/api/submit-leads-forum", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    console.log(response);
+    if (response.status == 200){
+      setModalMessage("Thank you for your submission! We will contact you soon.");
+      setShowModal(true);
+      setModalError(false);
+    }
+    else {
+      setModalMessage("An error occurred while submitting your form. Please try again.");
+      setShowModal(true);
+      setModalError(true);
+    }
   };
 
   const handleSolutionOptionClick = (optionId: string) => {
@@ -610,6 +631,21 @@ const PricingPage: React.FC = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
           <LeadsForm onSubmit={handleLeadsSubmit} />
+          {showModal && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md text-center">
+              <h2 className={`text-lg font-semibold mb-4 ${modalError ? 'text-red-600' : 'text-green-600'}`}>
+                {modalMessage}
+              </h2>
+              <button
+                onClick={() => setShowModal(false)}
+                className="mt-4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
         </div>
       </section>
       <NewsSection />

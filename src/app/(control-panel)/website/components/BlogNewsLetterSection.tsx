@@ -1,13 +1,36 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import BACKEND_URL from '../constants';
 
 const BlogNewsletterSection: React.FC = () => {
   const [email, setEmail] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [modalError, setModalError] = useState(false);
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Newsletter subscription:', email);
-    setEmail('');
+    try {
+      const res = await fetch(BACKEND_URL + '/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.status === 200) {
+        setModalMessage('Subscription email sent successfully!');
+        setModalError(false);
+        setEmail(''); // Clear the input field
+      } else {
+        setModalMessage('Failed to subscribe. Please try again later.');
+        setModalError(true);
+      }
+    } catch (error) {
+      setModalMessage('An error occurred while connecting to the server.');
+      setModalError(true);
+    }
+
+    setShowModal(true);
   };
 
   return (
@@ -28,12 +51,12 @@ const BlogNewsletterSection: React.FC = () => {
                 </div>
                 <span className="text-teal-400 font-semibold">Floworg Newsletter</span>
               </div>
-
+  
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                 Stay updated on <span className="text-teal-400">Floworg</span> News,<br />
                 Join the <span className="text-teal-400">Floworg</span> newsletter now.
               </h2>
-
+  
               <form onSubmit={handleSubmit} className="flex gap-3 max-w-md">
                 <input
                   type="email"
@@ -51,8 +74,25 @@ const BlogNewsletterSection: React.FC = () => {
                 </button>
               </form>
             </motion.div>
-          </div>
 
+            {/* Modal */}
+        {showModal && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md text-center">
+              <h2 className={`text-lg font-semibold mb-4 ${modalError ? 'text-red-600' : 'text-green-600'}`}>
+                {modalMessage}
+              </h2>
+              <button
+                onClick={() => setShowModal(false)}
+                className="mt-4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+          </div>
+  
           {/* Right Side - Profile Image */}
           <div>
             <motion.div
@@ -66,29 +106,30 @@ const BlogNewsletterSection: React.FC = () => {
                 <div className="w-full h-full bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full p-1">
                   <div className="w-full h-full bg-white rounded-full p-4">
                     <img
-                      src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400"
-                      alt="Newsletter Representative"
+                      src="#"
                       className="w-full h-full object-cover rounded-full"
+                      alt="Profile"
                     />
                   </div>
                 </div>
               </div>
-
+  
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-teal-400 rounded-full opacity-20"></div>
-              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-cyan-400 rounded-full opacity-15"></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-teal-400 rounded-full opacity-20 pointer-events-none"></div>
+              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-cyan-400 rounded-full opacity-15 pointer-events-none"></div>
             </motion.div>
           </div>
         </div>
       </div>
-
+  
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-teal-400 rounded-full"></div>
         <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-cyan-400 rounded-full"></div>
       </div>
     </section>
   );
+  
 };
 
 export default BlogNewsletterSection;

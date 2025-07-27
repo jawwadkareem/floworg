@@ -9,6 +9,7 @@ import TestimonialsSection from './TestimonialsSection';
 import NewsletterSection from './NewsletterSection';
 import Footer from './Footer';
 import LeadsForumSection from './LeadsForumSection';
+import LeadsForm from './pricingPage/leads-form';
 import Navbar from './Navbar';
 const Blogpage: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const Blogpage: React.FC = () => {
       <BlogNavigationSection />
       <BlogGridSection />
       <BlogNewsletterSection />
-      <LeadsForumSection />
+      <LeadsForm />
       <NewsSection />
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
