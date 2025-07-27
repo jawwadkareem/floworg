@@ -186,7 +186,7 @@ import type React from "react"
 import { useState } from "react"
 import Logo1 from "./Logo-black"
 import Logo from "./Logo"
-
+import BACKEND_URL from "../constants"
 interface FooterLink {
   text: string
   url: string
@@ -200,6 +200,11 @@ interface FooterColumn {
 
 const Footer: React.FC = () => {
   // State to track which columns are expanded
+  const [email, setEmail] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [modalError, setModalError] = useState(false);
+
   const [expandedColumns, setExpandedColumns] = useState<{ [key: string]: boolean }>({
     Floworg: false,
     Explore: false,
@@ -207,6 +212,30 @@ const Footer: React.FC = () => {
     Services: false,
   })
 
+  const handleSubmit = async () => {
+    try {
+      const res = await fetch(BACKEND_URL + '/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.status === 200) {
+        setModalMessage('Subscription email sent successfully!');
+        setModalError(false);
+        setEmail(''); // Clear the input field
+      } else {
+        setModalMessage('Failed to subscribe. Please try again later.');
+        setModalError(true);
+      }
+    } catch (error) {
+      setModalMessage('An error occurred while connecting to the server.');
+      setModalError(true);
+    }
+
+    setShowModal(true);
+  };
+  
   // Toggle expanded state for a column
   const toggleColumn = (columnTitle: string) => {
     setExpandedColumns((prev) => ({
@@ -290,10 +319,13 @@ const Footer: React.FC = () => {
           <div className="flex">
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Email address"
               className="w-72 px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
             />
-            <button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-r-lg transition-colors duration-300 flex items-center text-sm font-medium">
+            <button onClick={handleSubmit}
+            className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-r-lg transition-colors duration-300 flex items-center text-sm font-medium">
               Submit
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -307,6 +339,23 @@ const Footer: React.FC = () => {
             </button>
           </div>
         </div>
+
+        {/* Modal */}
+        {showModal && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md text-center">
+              <h2 className={`text-lg font-semibold mb-4 ${modalError ? 'text-red-600' : 'text-green-600'}`}>
+                {modalMessage}
+              </h2>
+              <button
+                onClick={() => setShowModal(false)}
+                className="mt-4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Floworg Logo Section */}
         <div className="flex justify-center mb-12">
