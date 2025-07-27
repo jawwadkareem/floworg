@@ -137,7 +137,7 @@ const navigationConfig: FuseNavItemType[] = [
 						id:'dashboards.personal_area.my_courses',
 						title:'My Courses',
 						type:'item',
-						url:'/home'
+						url:'/course'
 					},
 					{
 						id:'dashboards.personal_area.my_knowledge_base',
@@ -149,7 +149,7 @@ const navigationConfig: FuseNavItemType[] = [
 						id:'dashboards.personal_area.my_tutorial_videos',
 						title:'My Tutorial Videos',
 						type:'item',
-						url:'/home'
+						url:'/tutorial-videos'
 					},
 					{
 						id:'dashboards.personal_area.my_blogs',
@@ -211,7 +211,7 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'dashboards.timeline',
 				title: 'Timeline',
 				type: 'item',
-				url: '/home'
+				url: '/timeline'
 			},
 			{
 				id: 'dashboards.activities',
@@ -240,13 +240,13 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'pages.maintenance',
 				title: 'Affliate Program',
 				type: 'item',
-				url: '/pages/maintenance'
+				url: '/affiliate'
 			},
 			{
 			id: 'pages.developers',
 			title: 'Developers Program',
 			type: 'item',
-			url: '/home'
+			url: '/developer'
 		},
 
 		
@@ -271,13 +271,13 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'story.timeline',
 				title: 'Timeline',
 				type: 'item',
-				url: '/home'
+				url: '/timeline'
 			},
 			{
 			id: 'story.contact',
 			title: 'Contact Us',
 			type: 'item',
-			url: '/home'
+			url: '/contact'
 		},
 
 		
@@ -298,7 +298,7 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'careers.careers',
 				title: 'Careers',
 				type: 'item',
-				url: '/home'
+				url: '/career'
 			},
 			
 			
@@ -307,7 +307,7 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'careers.tenders',
 				title: 'Tenders',
 				type: 'item',
-				url: '/home'
+				url: '/tender-articles'
 			},
 			{
 			id: 'careers.employee',
@@ -329,7 +329,7 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'terms.website',
 				title: 'Website Terms',
 				type: 'item',
-				url: '/home'
+				url: '/terms'
 			},
 			
 			
@@ -338,7 +338,7 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'terms.refund',
 				title: 'Refund Policy',
 				type: 'item',
-				url: '/home'
+				url: '/refund-policy'
 			},
 			{
 			id: 'terms.privacy',
@@ -351,7 +351,7 @@ const navigationConfig: FuseNavItemType[] = [
 			id:'terms.accessiblity_statement',
 			title:'Accessibility Statement',
 			type:'item',
-			url:'/home'
+			url:'/accessibility-statement'
 		}
 
 		
