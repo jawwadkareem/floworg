@@ -152,7 +152,7 @@ const Services = () => {
         </div>
       </div>
 
-     <NewsletterSection/>
+     {/* <NewsletterSection/> */}
 
 <Footer/>
      
