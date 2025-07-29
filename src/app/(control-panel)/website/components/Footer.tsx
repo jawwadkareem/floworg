@@ -184,7 +184,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import Logo1 from "./Logo-black"
+import footerBg from '../../../../assets/footer-bg.jpeg'; 
 import Logo from "./Logo"
 import BACKEND_URL from "../constants"
 interface FooterLink {
@@ -305,7 +305,10 @@ const Footer: React.FC = () => {
   ]
 
   return (
-    <footer className="bg-gray-100">
+<footer
+  className="bg-cover bg-center"
+  style={{ backgroundImage: `url(${footerBg})` }}
+>
       {/* Newsletter subscription */}
       <div className="container mx-auto px-6 py-12 max-w-6xl">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16">
@@ -356,12 +359,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
         )}
-
-        {/* Floworg Logo Section */}
-        <div className="flex justify-center mb-12">
-          <Logo1 />
-        </div>
-
 
         {/* Footer links */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
