@@ -24,6 +24,7 @@ import BusinessSolutionsSection, { ProcessStep, SolutionOption } from "./pricing
 import SupportBlogSection from "./support-blog-section";
 import Navbar from "./Navbar";
 import StatsSection from "./StatsSection";
+import LeadsForm from "./pricingPage/leads-form";
 
 // Sample integrations data
 const integrations: Integration[] = [
@@ -385,6 +386,7 @@ const Homepage: React.FC = () => {
         currency="$"
       />
       <NewsSection />
+      <LeadsForm/>  
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

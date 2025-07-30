@@ -3,6 +3,7 @@ import Logo from './Logo';
 import PlaystoreBadge from './PlaystoreBadge';
 import AppstoreBadge from './Applestore Badge';
 import { ChevronDown } from 'lucide-react';
+import ytIcon from "../../../../assets/Yt.png"
 
 const Navbar: React.FC = () => {
   // const navItems = ["Home", "Services", "Pricing", "Projects", "Academy", "Blog", "Support"];
@@ -30,7 +31,7 @@ const Navbar: React.FC = () => {
     { "name": "facebook", "src": "https://cdn.simpleicons.org/facebook" },
     { "name": "instagram", "src": "https://cdn.simpleicons.org/instagram" },
     { "name": "whatsapp", "src": "https://cdn.simpleicons.org/whatsapp" },
-    { "name": "youtube", "src": "https://cdn.simpleicons.org/youtube" }
+    { "name": "youtube", "src": ytIcon }
   ]
 
   return (
@@ -41,9 +42,9 @@ const Navbar: React.FC = () => {
           {socialIcons.map(({ name, src }) => (
             <div
               key={name}
-              className="bg-white p-1 rounded-full hover:opacity-80 cursor-pointer transition"
+              className="bg-white p-1 rounded-lg hover:opacity-80 cursor-pointer transition"
             >
-              <img src={src} alt={name} className="w-4 h-4" />
+              <img src={src} alt={name} className="w-6 h-4" />
             </div>
           ))}
         </div>

@@ -1,12 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import footerBg from "../../../../assets/footer-bg.jpeg"
 
 const GetStartedSection: React.FC = () => {
   const handleGetStartedClick = () => {
     console.log("Get Started clicked");
   };
   return (
-    <section className="py-16 bg-purple-50 relative overflow-hidden min-h-96">
+    <section className="py-16 bg-cover bg-center relative overflow-hidden min-h-96"
+    style={{ backgroundImage: `url(${footerBg})` }}
+  >
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Main Content */}
         <motion.div

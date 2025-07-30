@@ -688,7 +688,7 @@ const ConnectSection: React.FC = () => {
                 It is a long established fact that a reader will be distracted by the readable content of a page when
                 looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
               </p>
-              <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded text-sm font-semibold uppercase tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-2">
+              <button className="bg-[#1ad7ad] hover:bg-teal-600 text-white px-8 py-4 rounded text-sm font-semibold uppercase tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-2">
                 Read More
                 <ArrowRight className="w-4 h-4" />
               </button>

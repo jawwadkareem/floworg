@@ -170,7 +170,7 @@ const BusinessSolutionsSection: React.FC<BusinessSolutionsSectionProps> = ({
           </motion.div>
         </div>
 
-        <GetStartedSection />
+        {/* <GetStartedSection /> */}
 
         {/* AI Customer Services Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mt-20">
