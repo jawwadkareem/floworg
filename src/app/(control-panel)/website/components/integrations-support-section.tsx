@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { motion } from "framer-motion"
+import IntegrationsSection from "./IntegrationsSection"
 
 const IntegrationsSupportSection: React.FC = () => {
   const integrationIcons = [
@@ -25,8 +26,8 @@ const IntegrationsSupportSection: React.FC = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <motion.div
+      <div className="mx-auto px-4 w-full">
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -43,7 +44,6 @@ const IntegrationsSupportSection: React.FC = () => {
           </button>
         </motion.div>
 
-        {/* Integration Circle */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -52,13 +52,11 @@ const IntegrationsSupportSection: React.FC = () => {
           className="relative max-w-2xl mx-auto"
         >
           <div className="relative w-96 h-96 mx-auto">
-            {/* Center */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
               <div className="bg-gray-800 text-white px-6 py-3 rounded-full font-semibold text-sm">Get Started</div>
               <div className="bg-blue-500 text-white px-6 py-3 rounded-full font-semibold text-sm mt-2">Customize</div>
             </div>
 
-            {/* Integration Icons in Circle */}
             {integrationIcons.map((icon, index) => {
               const angle = (index * 360) / integrationIcons.length
               const radius = 180
@@ -83,8 +81,8 @@ const IntegrationsSupportSection: React.FC = () => {
               )
             })}
           </div>
-        </motion.div>
-
+        </motion.div> */}
+<IntegrationsSection/>
         {/* Remote Connection App */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

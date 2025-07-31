@@ -28,7 +28,7 @@ const IntegrationsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-gray-50 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
