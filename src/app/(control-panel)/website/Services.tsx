@@ -20,6 +20,7 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import GlobalAutomationSection from "./components/GlobalAutomationSection";
+import LeadsForm from "./components/pricingPage/leads-form";
 
 const Services = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -132,7 +133,7 @@ const Services = () => {
       {/* AI Automation Section */}
       <GlobalAutomationSection/>
 
-      <LeadsForumSection/>
+      <LeadsForm/>
 
       <LatestArticlesSection/>
 

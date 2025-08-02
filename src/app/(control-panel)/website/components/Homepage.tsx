@@ -345,7 +345,6 @@ const Homepage: React.FC = () => {
       <ScalableSolutionsSection />
       <AutomateSuccessSection />
       <ServicesSection />
-      <StatsSection/>
       <GlobalAutomationSection />/
       <ConnectSection />
       <SmartAISection />
