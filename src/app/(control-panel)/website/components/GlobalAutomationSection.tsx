@@ -530,6 +530,7 @@ import { left } from "@popperjs/core";
 // }
 
 import React, { useState } from "react";
+import StatsSection from "./StatsSection";
 
 const hotspots = [
   {
@@ -587,6 +588,8 @@ const GlobalAutomationSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
+    <>
+    <StatsSection></StatsSection>
     <section className="relative w-full min-h-screen overflow-hidden bg-[#0b1320] text-white">
       <div className="absolute top-0 w-full text-center py-12 px-4 z-30">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-6">
@@ -663,6 +666,7 @@ const GlobalAutomationSection: React.FC = () => {
       </div>
 
     </section>
+    </>
   );
 };
 
