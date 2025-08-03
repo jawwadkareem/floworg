@@ -27,9 +27,9 @@ const BlogNavigationSection: React.FC = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-gray-600">
+            {/* <p className="text-gray-600">
               Currently viewing: <span className="font-semibold text-teal-600">{activeCategory}</span>
-            </p>
+            </p> */}
           </motion.div>
         </div>
       </section>

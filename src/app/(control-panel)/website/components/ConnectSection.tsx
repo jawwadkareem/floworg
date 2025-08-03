@@ -2,462 +2,42 @@
 // "use client"
 
 // import type React from "react"
-// import { Box, Typography, Container, Grid, Button } from "@mui/material"
 // import { motion } from "framer-motion"
+// import { ArrowRight } from "lucide-react"
+// import WaveCircle from "./WaveLogo"
 
 // const ConnectSection: React.FC = () => {
-//   const channels = [
-//     {
-//       name: "Facebook",
-//       color: "#1877F2",
-//       icon: "📘",
-//       position: { top: "10%", right: "15%" },
-//     },
-//     {
-//       name: "Calender",
-//       color: "#4FC3F7",
-//       icon: "📅",
-//       position: { top: "25%", right: "35%" },
-//     },
-//     {
-//       name: "Messenger",
-//       color: "#0084FF",
-//       icon: "💬",
-//       position: { top: "15%", right: "5%" },
-//     },
-//     {
-//       name: "WhatsApp",
-//       color: "#25D366",
-//       icon: "✓",
-//       position: { top: "45%", right: "25%" },
-//       isCenter: true,
-//     },
-//     {
-//       name: "Linked In",
-//       color: "#0A66C2",
-//       icon: "💼",
-//       position: { top: "60%", right: "45%" },
-//     },
-//     {
-//       name: "Twitter",
-//       color: "#1DA1F2",
-//       icon: "🐦",
-//       position: { top: "70%", right: "10%" },
-//     },
-//     {
-//       name: "Skype",
-//       color: "#00AFF0",
-//       icon: "S",
-//       position: { bottom: "15%", right: "30%" },
-//     },
+//   const outerIcons = [
+//     { icon: "f", color: "bg-blue-600", angle: 0 },
+//     { icon: "📷", color: "bg-pink-500", angle: 30 },
+//     { icon: "▶️", color: "bg-red-600", angle: 60 },
+//     { icon: "🎵", color: "bg-black", angle: 90 },
+//     { icon: "👻", color: "bg-yellow-400", angle: 120 },
+//     { icon: "P", color: "bg-red-500", angle: 150 },
+//     { icon: "🎮", color: "bg-indigo-600", angle: 180 },
+//     { icon: "✈️", color: "bg-blue-400", angle: 210 },
+//     { icon: "💬", color: "bg-green-600", angle: 240 },
+//     { icon: "V", color: "bg-purple-600", angle: 270 },
+//     { icon: "🔒", color: "bg-blue-700", angle: 300 },
+//     { icon: "Z", color: "bg-blue-500", angle: 330 },
 //   ]
 
-//   const decorativeElements = [
-//     { color: "#FFB6C1", size: 8, position: { top: "20%", right: "50%" } },
-//     { color: "#87CEEB", size: 6, position: { top: "35%", right: "15%" } },
-//     { color: "#FFB6C1", size: 10, position: { top: "55%", right: "5%" } },
-//     { color: "#87CEEB", size: 4, position: { bottom: "25%", right: "40%" } },
-//     { color: "#FFB6C1", size: 6, position: { bottom: "10%", right: "20%" } },
+//   const innerIcons = [
+//     { icon: "✓", color: "bg-green-500", angle: 0 },
+//     { icon: "💬", color: "bg-blue-500", angle: 60 },
+//     { icon: "🐦", color: "bg-blue-400", angle: 120 },
+//     { icon: "in", color: "bg-blue-700", angle: 180 },
+//     { icon: "S", color: "bg-cyan-500", angle: 240 },
+//     { icon: "📅", color: "bg-cyan-400", angle: 300 },
 //   ]
 
-//   return (
-//     <Box sx={{ py: 8, backgroundColor: "#f8f9fa", position: "relative", overflow: "hidden" }}>
-//       <Container maxWidth="lg">
-//         <Grid container spacing={6} alignItems="center">
-//           <Grid item xs={12} md={6} {...({} as any)}>
-//             <motion.div
-//               initial={{ opacity: 0, x: -50 }}
-//               whileInView={{ opacity: 1, x: 0 }}
-//               transition={{ duration: 0.8 }}
-//               viewport={{ once: true }}
-//             >
-//               <Typography
-//                 variant="overline"
-//                 sx={{
-//                   color: "#FF8A95",
-//                   fontSize: "0.875rem",
-//                   fontWeight: 500,
-//                   letterSpacing: 1,
-//                   mb: 2,
-//                   display: "block",
-//                 }}
-//               >
-//                 Talkie Tools
-//               </Typography>
+//   const getCirclePosition = (angle: number, radius: number) => {
+//     const radian = (angle * Math.PI) / 180
+//     const x = Math.cos(radian) * radius
+//     const y = Math.sin(radian) * radius
+//     return { x, y }
+//   }
 
-//               <Typography
-//                 variant="h2"
-//                 sx={{
-//                   mb: 3,
-//                   fontSize: { xs: "2.5rem", md: "3.5rem" },
-//                   fontWeight: 700,
-//                   color: "#2C3E50",
-//                   lineHeight: 1.2,
-//                 }}
-//               >
-//                 Connect Anytime,{" "}
-//                 <Box component="span" sx={{ display: "block" }}>
-//                   Anywhere
-//                 </Box>
-//               </Typography>
-
-//               <Typography
-//                 variant="body1"
-//                 sx={{
-//                   mb: 4,
-//                   color: "#6C757D",
-//                   lineHeight: 1.7,
-//                   fontSize: "1rem",
-//                   maxWidth: "90%",
-//                 }}
-//               >
-//                 It is a long established fact that a reader will be distracted by the readable content of a page when
-//                 looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-//               </Typography>
-
-//               <Button
-//                 variant="contained"
-//                 size="large"
-//                 endIcon={<span>→</span>}
-//                 sx={{
-//                   backgroundColor: "#6366F1",
-//                   color: "white",
-//                   px: 4,
-//                   py: 1.5,
-//                   fontSize: "0.875rem",
-//                   fontWeight: 600,
-//                   textTransform: "uppercase",
-//                   letterSpacing: 1,
-//                   borderRadius: 1,
-//                   boxShadow: "0 4px 14px rgba(99, 102, 241, 0.3)",
-//                   "&:hover": {
-//                     backgroundColor: "#5B5FE8",
-//                     boxShadow: "0 6px 20px rgba(99, 102, 241, 0.4)",
-//                     transform: "translateY(-2px)",
-//                   },
-//                   transition: "all 0.3s ease",
-//                 }}
-//               >
-//                 Read More
-//               </Button>
-//             </motion.div>
-//           </Grid>
-
-//           <Grid item xs={12} md={6} {...({} as any)}>
-//             <motion.div
-//               initial={{ opacity: 0, x: 50 }}
-//               whileInView={{ opacity: 1, x: 0 }}
-//               transition={{ duration: 0.8 }}
-//               viewport={{ once: true }}
-//             >
-//               <Box sx={{ position: "relative", height: "400px", width: "100%", mt: 4 }}>
-//                 {/* Decorative Elements */}
-//                 <Box
-//                   sx={{
-//                     position: "absolute",
-//                     top: "30%",
-//                     right: "20%",
-//                     width: 8,
-//                     height: 8,
-//                     backgroundColor: "#87CEEB",
-//                     borderRadius: "50%",
-//                   }}
-//                 />
-//                 <Box
-//                   sx={{
-//                     position: "absolute",
-//                     top: "60%",
-//                     right: "45%",
-//                     width: 6,
-//                     height: 6,
-//                     backgroundColor: "#FFB6C1",
-//                     borderRadius: "50%",
-//                   }}
-//                 />
-
-//                 {/* Facebook - Top Center */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.1 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   style={{
-//                     position: "absolute",
-//                     top: "5%",
-//                     left: "50%",
-//                     transform: "translateX(-50%)",
-//                   }}
-//                 >
-//                   <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
-//                     <Box
-//                       sx={{
-//                         width: 50,
-//                         height: 50,
-//                         backgroundColor: "#1877F2",
-//                         borderRadius: "50%",
-//                         display: "flex",
-//                         alignItems: "center",
-//                         justifyContent: "center",
-//                         fontSize: "1.2rem",
-//                         color: "white",
-//                         fontWeight: "bold",
-//                         boxShadow: "0 4px 15px rgba(24, 119, 242, 0.3)",
-//                         mb: 1,
-//                       }}
-//                     >
-//                       f
-//                     </Box>
-//                     <Typography variant="body2" sx={{ color: "#2C3E50", fontWeight: 500, fontSize: "0.875rem" }}>
-//                       Facebook
-//                     </Typography>
-//                   </Box>
-//                 </motion.div>
-
-//                 {/* Calendar - Left */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.2 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   style={{
-//                     position: "absolute",
-//                     top: "25%",
-//                     left: "15%",
-//                   }}
-//                 >
-//                   <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
-//                     <Box
-//                       sx={{
-//                         width: 50,
-//                         height: 50,
-//                         backgroundColor: "#4FC3F7",
-//                         borderRadius: "50%",
-//                         display: "flex",
-//                         alignItems: "center",
-//                         justifyContent: "center",
-//                         fontSize: "1.2rem",
-//                         color: "white",
-//                         fontWeight: "bold",
-//                         boxShadow: "0 4px 15px rgba(79, 195, 247, 0.3)",
-//                         mb: 1,
-//                       }}
-//                     >
-//                       📅
-//                     </Box>
-//                     <Typography variant="body2" sx={{ color: "#2C3E50", fontWeight: 500, fontSize: "0.875rem" }}>
-//                       Calender
-//                     </Typography>
-//                   </Box>
-//                 </motion.div>
-
-//                 {/* Messenger - Right */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.3 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   style={{
-//                     position: "absolute",
-//                     top: "25%",
-//                     right: "15%",
-//                   }}
-//                 >
-//                   <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
-//                     <Box
-//                       sx={{
-//                         width: 50,
-//                         height: 50,
-//                         backgroundColor: "#0084FF",
-//                         borderRadius: "50%",
-//                         display: "flex",
-//                         alignItems: "center",
-//                         justifyContent: "center",
-//                         fontSize: "1.2rem",
-//                         color: "white",
-//                         fontWeight: "bold",
-//                         boxShadow: "0 4px 15px rgba(0, 132, 255, 0.3)",
-//                         mb: 1,
-//                       }}
-//                     >
-//                       💬
-//                     </Box>
-//                     <Typography variant="body2" sx={{ color: "#2C3E50", fontWeight: 500, fontSize: "0.875rem" }}>
-//                       Messenger
-//                     </Typography>
-//                   </Box>
-//                 </motion.div>
-
-//                 {/* WhatsApp - Center (Prominent) */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.4 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   style={{
-//                     position: "absolute",
-//                     top: "45%",
-//                     left: "50%",
-//                     transform: "translate(-50%, -50%)",
-//                   }}
-//                 >
-//                   <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
-//                     <Box
-//                       sx={{
-//                         width: 70,
-//                         height: 70,
-//                         backgroundColor: "#25D366",
-//                         borderRadius: "50%",
-//                         display: "flex",
-//                         alignItems: "center",
-//                         justifyContent: "center",
-//                         fontSize: "2rem",
-//                         color: "white",
-//                         fontWeight: "bold",
-//                         boxShadow: "0 6px 20px rgba(37, 211, 102, 0.4)",
-//                         mb: 1,
-//                       }}
-//                     >
-//                       ✓
-//                     </Box>
-//                   </Box>
-//                 </motion.div>
-
-//                 {/* LinkedIn - Bottom Left */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.5 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   style={{
-//                     position: "absolute",
-//                     bottom: "25%",
-//                     left: "15%",
-//                   }}
-//                 >
-//                   <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
-//                     <Box
-//                       sx={{
-//                         width: 50,
-//                         height: 50,
-//                         backgroundColor: "#0A66C2",
-//                         borderRadius: "50%",
-//                         display: "flex",
-//                         alignItems: "center",
-//                         justifyContent: "center",
-//                         fontSize: "1.2rem",
-//                         color: "white",
-//                         fontWeight: "bold",
-//                         boxShadow: "0 4px 15px rgba(10, 102, 194, 0.3)",
-//                         mb: 1,
-//                       }}
-//                     >
-//                       in
-//                     </Box>
-//                     <Typography variant="body2" sx={{ color: "#2C3E50", fontWeight: 500, fontSize: "0.875rem" }}>
-//                       Linked In
-//                     </Typography>
-//                   </Box>
-//                 </motion.div>
-
-//                 {/* Twitter - Bottom Right */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.6 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   style={{
-//                     position: "absolute",
-//                     bottom: "25%",
-//                     right: "15%",
-//                   }}
-//                 >
-//                   <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
-//                     <Box
-//                       sx={{
-//                         width: 50,
-//                         height: 50,
-//                         backgroundColor: "#1DA1F2",
-//                         borderRadius: "50%",
-//                         display: "flex",
-//                         alignItems: "center",
-//                         justifyContent: "center",
-//                         fontSize: "1.2rem",
-//                         color: "white",
-//                         fontWeight: "bold",
-//                         boxShadow: "0 4px 15px rgba(29, 161, 242, 0.3)",
-//                         mb: 1,
-//                       }}
-//                     >
-//                       🐦
-//                     </Box>
-//                     <Typography variant="body2" sx={{ color: "#2C3E50", fontWeight: 500, fontSize: "0.875rem" }}>
-//                       Twitter
-//                     </Typography>
-//                   </Box>
-//                 </motion.div>
-
-//                 {/* Skype - Bottom Center */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.7 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   style={{
-//                     position: "absolute",
-//                     bottom: "5%",
-//                     left: "50%",
-//                     transform: "translateX(-50%)",
-//                   }}
-//                 >
-//                   <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
-//                     <Box
-//                       sx={{
-//                         width: 50,
-//                         height: 50,
-//                         backgroundColor: "#00AFF0",
-//                         borderRadius: "50%",
-//                         display: "flex",
-//                         alignItems: "center",
-//                         justifyContent: "center",
-//                         fontSize: "1.2rem",
-//                         color: "white",
-//                         fontWeight: "bold",
-//                         boxShadow: "0 4px 15px rgba(0, 175, 240, 0.3)",
-//                         mb: 1,
-//                       }}
-//                     >
-//                       S
-//                     </Box>
-//                     <Typography variant="body2" sx={{ color: "#2C3E50", fontWeight: 500, fontSize: "0.875rem" }}>
-//                       Skype
-//                     </Typography>
-//                   </Box>
-//                 </motion.div>
-//               </Box>
-//             </motion.div>
-//           </Grid>
-//         </Grid>
-
-        
-//       </Container>
-//     </Box>
-//   )
-// }
-
-// export default ConnectSection
-// import React from 'react';
-// import { motion } from 'framer-motion';
-// import { ArrowRight } from 'lucide-react';
-// import WaveCircle from './WaveLogo';
-
-// const ConnectSection: React.FC = () => {
 //   return (
 //     <section className="py-16 bg-gray-50 relative overflow-hidden">
 //       <div className="container mx-auto px-4 max-w-7xl">
@@ -469,21 +49,15 @@
 //               transition={{ duration: 0.8 }}
 //               viewport={{ once: true }}
 //             >
-//               <span className="text-pink-500 text-sm font-medium tracking-wide uppercase mb-4 block">
-//                 Talkie Tools
-//               </span>
-
+//               <span className="text-pink-500 text-sm font-medium tracking-wide uppercase mb-4 block">Talkie Tools</span>
 //               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-//                 Connect Anytime,{" "}
-//                 <span className="block">Anywhere</span>
+//                 Connect Anytime, <span className="block">Anywhere</span>
 //               </h2>
-
 //               <p className="text-gray-600 mb-8 text-base leading-relaxed max-w-lg">
 //                 It is a long established fact that a reader will be distracted by the readable content of a page when
 //                 looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
 //               </p>
-
-//               <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded text-sm font-semibold uppercase tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-2">
+//               <button className="bg-[#1ad7ad] hover:bg-teal-600 text-white px-8 py-4 rounded text-sm font-semibold uppercase tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center gap-2">
 //                 Read More
 //                 <ArrowRight className="w-4 h-4" />
 //               </button>
@@ -497,176 +71,153 @@
 //               transition={{ duration: 0.8 }}
 //               viewport={{ once: true }}
 //             >
-//               <div className="relative h-96 w-full mt-8">
+//               <div className="relative h-[500px] w-full mt-8 flex items-center justify-center">
 //                 {/* Decorative Elements */}
-//                 <div className="absolute top-1/3 right-1/5 w-2 h-2 bg-blue-300 rounded-full"></div>
-//                 <div className="absolute top-3/5 right-2/5 w-1.5 h-1.5 bg-pink-300 rounded-full"></div>
+//                 <div className="absolute top-1/4 right-1/6 w-2 h-2 bg-blue-300 rounded-full"></div>
+//                 <div className="absolute top-3/5 right-1/5 w-1.5 h-1.5 bg-pink-300 rounded-full"></div>
+//                 <div className="absolute bottom-1/4 left-1/6 w-1 h-1 bg-purple-300 rounded-full"></div>
 
-//                 {/* Facebook - Top Center */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.1 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   className="absolute top-2 left-1/2 transform -translate-x-1/2 cursor-pointer"
-//                 >
-//                   <div className="flex flex-col items-center">
-//                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-//                       f
+//                 <div className="relative w-full h-full flex items-center justify-center">
+//                   {/* Outer Rotating Icons */}
+//                   <motion.div
+//                     className="absolute w-full h-full"
+//                     animate={{ rotate: 360 }}
+//                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+//                   >
+//                     {outerIcons.map((item, index) => {
+//                       const pos = getCirclePosition(item.angle, 200)
+//                       return (
+//                         <div
+//                           key={`outer-${index}`}
+//                           className="absolute"
+//                           style={{
+//                             left: `calc(50% + ${pos.x}px)`,
+//                             top: `calc(50% + ${pos.y}px)`,
+//                             transform: "translate(-50%, -50%)",
+//                           }}
+//                         >
+//                           <div
+//                             className={`w-10 h-10 ${item.color} rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg`}
+//                           >
+//                             {item.icon}
+//                           </div>
+//                         </div>
+//                       )
+//                     })}
+//                   </motion.div>
+
+//                   {/* Inner Rotating Icons */}
+//                   <motion.div
+//                     className="absolute w-full h-full"
+//                     animate={{ rotate: -360 }}
+//                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+//                   >
+//                     {innerIcons.map((item, index) => {
+//                       const pos = getCirclePosition(item.angle, 120)
+//                       return (
+//                         <div
+//                           key={`inner-${index}`}
+//                           className="absolute"
+//                           style={{
+//                             left: `calc(50% + ${pos.x}px)`,
+//                             top: `calc(50% + ${pos.y}px)`,
+//                             transform: "translate(-50%, -50%)",
+//                           }}
+//                         >
+//                           <div
+//                             className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+//                           >
+//                             {item.icon}
+//                           </div>
+//                         </div>
+//                       )
+//                     })}
+//                   </motion.div>
+
+//                   {/* Center Logo */}
+//                   <motion.div
+//                     initial={{ opacity: 0, scale: 0 }}
+//                     whileInView={{ opacity: 1, scale: 1 }}
+//                     transition={{ duration: 0.8, delay: 0.8 }}
+//                     viewport={{ once: true }}
+//                     whileHover={{ scale: 1.05 }}
+//                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 z-10"
+//                   >
+//                     <div className="flex items-center justify-center">
+//                       <WaveCircle />
 //                     </div>
-//                     <span className="text-gray-800 font-medium text-sm">Facebook</span>
-//                   </div>
-//                 </motion.div>
+//                   </motion.div>
 
-//                 {/* Calendar - Left */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.2 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   className="absolute top-1/4 left-4 cursor-pointer"
-//                 >
-//                   <div className="flex flex-col items-center">
-//                     <div className="w-12 h-12 bg-cyan-400 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-//                       📅
-//                     </div>
-//                     <span className="text-gray-800 font-medium text-sm">Calendar</span>
+//                   {/* Static Circle Guides */}
+//                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+//                     <div className="w-80 h-80 border border-gray-200 rounded-full opacity-20"></div>
+//                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-gray-300 rounded-full opacity-30"></div>
 //                   </div>
-//                 </motion.div>
-
-//                 {/* Messenger - Right */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.3 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   className="absolute top-1/4 right-4 cursor-pointer"
-//                 >
-//                   <div className="flex flex-col items-center">
-//                     <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-//                       💬
-//                     </div>
-//                     <span className="text-gray-800 font-medium text-sm">Messenger</span>
-//                   </div>
-//                 </motion.div>
-
-//                 {/* WhatsApp - Center (Prominent) */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.4 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-//                 >
-//                   <div className="flex flex-col items-center">
-//                     {/* <div className="w-18 h-18 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-xl">
-//                       ✓
-//                     </div> */}
-//                     <WaveCircle/>
-//                   </div>
-//                 </motion.div>
-
-//                 {/* LinkedIn - Bottom Left */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.5 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   className="absolute bottom-1/4 left-4 cursor-pointer"
-//                 >
-//                   <div className="flex flex-col items-center">
-//                     <div className="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg mb-2">
-//                       in
-//                     </div>
-//                     <span className="text-gray-800 font-medium text-sm">LinkedIn</span>
-//                   </div>
-//                 </motion.div>
-
-//                 {/* Twitter - Bottom Right */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.6 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   className="absolute bottom-1/4 right-4 cursor-pointer"
-//                 >
-//                   <div className="flex flex-col items-center">
-//                     <div className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-//                       🐦
-//                     </div>
-//                     <span className="text-gray-800 font-medium text-sm">Twitter</span>
-//                   </div>
-//                 </motion.div>
-
-//                 {/* Skype - Bottom Center */}
-//                 <motion.div
-//                   initial={{ opacity: 0, scale: 0, y: 20 }}
-//                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
-//                   transition={{ duration: 0.6, delay: 0.7 }}
-//                   viewport={{ once: true }}
-//                   whileHover={{ scale: 1.1, y: -5 }}
-//                   className="absolute bottom-2 left-1/2 transform -translate-x-1/2 cursor-pointer"
-//                 >
-//                   <div className="flex flex-col items-center">
-//                     <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg mb-2">
-//                       S
-//                     </div>
-//                     <span className="text-gray-800 font-medium text-sm">Skype</span>
-//                   </div>
-//                 </motion.div>
+//                 </div>
 //               </div>
 //             </motion.div>
 //           </div>
 //         </div>
 //       </div>
 //     </section>
-//   );
-// };
+//   )
+// }
 
-// export default ConnectSection;
+// export default ConnectSection
 "use client"
 
 import type React from "react"
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import WaveCircle from "./WaveLogo"
 
 const ConnectSection: React.FC = () => {
   const outerIcons = [
-    { icon: "f", color: "bg-blue-600", angle: 0 },
-    { icon: "📷", color: "bg-pink-500", angle: 30 },
-    { icon: "▶️", color: "bg-red-600", angle: 60 },
-    { icon: "🎵", color: "bg-black", angle: 90 },
-    { icon: "👻", color: "bg-yellow-400", angle: 120 },
-    { icon: "P", color: "bg-red-500", angle: 150 },
-    { icon: "🎮", color: "bg-indigo-600", angle: 180 },
-    { icon: "✈️", color: "bg-blue-400", angle: 210 },
-    { icon: "💬", color: "bg-green-600", angle: 240 },
-    { icon: "V", color: "bg-purple-600", angle: 270 },
-    { icon: "🔒", color: "bg-blue-700", angle: 300 },
-    { icon: "Z", color: "bg-blue-500", angle: 330 },
+    { icon: "f", color: "bg-blue-600", angle: 0, link: "/channels/facebook" },
+    { icon: "📷", color: "bg-pink-500", angle: 30, link: "/channels/instagram" },
+    { icon: "▶️", color: "bg-red-600", angle: 60, link: "/channels/youtube" },
+    { icon: "🎵", color: "bg-black", angle: 90, link: "/channels/spotify" },
+    { icon: "👻", color: "bg-yellow-400", angle: 120, link: "/channels/snapchat" },
+    { icon: "P", color: "bg-red-500", angle: 150, link: "/channels/pinterest" },
+    { icon: "🎮", color: "bg-indigo-600", angle: 180, link: "/channels/twitch" },
+    { icon: "✈️", color: "bg-blue-400", angle: 210, link: "/channels/telegram" },
+    { icon: "💬", color: "bg-green-600", angle: 240, link: "/channels/whatsapp" },
+    { icon: "V", color: "bg-purple-600", angle: 270, link: "/channels/vimeo" },
+    { icon: "🔒", color: "bg-blue-700", angle: 300, link: "/channels/signal" },
+    { icon: "Z", color: "bg-blue-500", angle: 330, link: "/channels/zoom" },
   ]
 
   const innerIcons = [
-    { icon: "✓", color: "bg-green-500", angle: 0 },
-    { icon: "💬", color: "bg-blue-500", angle: 60 },
-    { icon: "🐦", color: "bg-blue-400", angle: 120 },
-    { icon: "in", color: "bg-blue-700", angle: 180 },
-    { icon: "S", color: "bg-cyan-500", angle: 240 },
-    { icon: "📅", color: "bg-cyan-400", angle: 300 },
+    { icon: "✓", color: "bg-green-500", angle: 0, link: "/channels/tick" },
+    { icon: "💬", color: "bg-blue-500", angle: 60, link: "/channels/messenger" },
+    { icon: "🐦", color: "bg-blue-400", angle: 120, link: "/channels/twitter" },
+    { icon: "in", color: "bg-blue-700", angle: 180, link: "/channels/linkedin" },
+    { icon: "S", color: "bg-cyan-500", angle: 240, link: "/channels/slack" },
+    { icon: "📅", color: "bg-cyan-400", angle: 300, link: "/channels/calendar" },
   ]
+
+  const outerControls = useAnimation()
+  const innerControls = useAnimation()
 
   const getCirclePosition = (angle: number, radius: number) => {
     const radian = (angle * Math.PI) / 180
     const x = Math.cos(radian) * radius
     const y = Math.sin(radian) * radius
     return { x, y }
+  }
+
+  const handleHoverStart = async () => {
+    await Promise.all([
+      outerControls.start({ rotate: 360, transition: { duration: 30, repeat: Infinity, ease: "linear" } }),
+      innerControls.start({ rotate: -360, transition: { duration: 30, repeat: Infinity, ease: "linear" } }),
+    ])
+  }
+
+  const handleHoverEnd = async () => {
+    await Promise.all([
+      outerControls.start({ rotate: 360, transition: { duration: 20, repeat: Infinity, ease: "linear" } }),
+      innerControls.start({ rotate: -360, transition: { duration: 20, repeat: Infinity, ease: "linear" } }),
+    ])
   }
 
   return (
@@ -712,27 +263,32 @@ const ConnectSection: React.FC = () => {
                   {/* Outer Rotating Icons */}
                   <motion.div
                     className="absolute w-full h-full"
-                    animate={{ rotate: 360 }}
+                    animate={outerControls}
+                    initial={{ rotate: 0 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   >
                     {outerIcons.map((item, index) => {
                       const pos = getCirclePosition(item.angle, 200)
                       return (
-                        <div
+                        <a
                           key={`outer-${index}`}
+                          href={item.link}
                           className="absolute"
                           style={{
                             left: `calc(50% + ${pos.x}px)`,
                             top: `calc(50% + ${pos.y}px)`,
                             transform: "translate(-50%, -50%)",
                           }}
+                          onMouseEnter={handleHoverStart}
+                          onMouseLeave={handleHoverEnd}
                         >
-                          <div
-                            className={`w-10 h-10 ${item.color} rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg`}
+                          <motion.div
+                            className={`w-10 h-10 ${item.color} rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg cursor-pointer`}
+                            whileHover={{ scale: 1.1 }}
                           >
                             {item.icon}
-                          </div>
-                        </div>
+                          </motion.div>
+                        </a>
                       )
                     })}
                   </motion.div>
@@ -740,27 +296,32 @@ const ConnectSection: React.FC = () => {
                   {/* Inner Rotating Icons */}
                   <motion.div
                     className="absolute w-full h-full"
-                    animate={{ rotate: -360 }}
+                    animate={innerControls}
+                    initial={{ rotate: 0 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   >
                     {innerIcons.map((item, index) => {
                       const pos = getCirclePosition(item.angle, 120)
                       return (
-                        <div
+                        <a
                           key={`inner-${index}`}
+                          href={item.link}
                           className="absolute"
                           style={{
                             left: `calc(50% + ${pos.x}px)`,
                             top: `calc(50% + ${pos.y}px)`,
                             transform: "translate(-50%, -50%)",
                           }}
+                          onMouseEnter={handleHoverStart}
+                          onMouseLeave={handleHoverEnd}
                         >
-                          <div
-                            className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}
+                          <motion.div
+                            className={`w-12 h-12 ${item.color} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg cursor-pointer`}
+                            whileHover={{ scale: 1.1 }}
                           >
                             {item.icon}
-                          </div>
-                        </div>
+                          </motion.div>
+                        </a>
                       )
                     })}
                   </motion.div>
@@ -781,8 +342,8 @@ const ConnectSection: React.FC = () => {
 
                   {/* Static Circle Guides */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                    <div className="w-80 h-80 border border-gray-200 rounded-full opacity-20"></div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-gray-300 rounded-full opacity-30"></div>
+                    <div className="w-80 h-80 border border-gray-400 rounded-full opacity-20"></div>
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-gray-400 rounded-full opacity-30"></div>
                   </div>
                 </div>
               </div>

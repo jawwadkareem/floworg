@@ -84,6 +84,26 @@ const NewsletterNavbarHeader: React.FC<NewsletterNavbarHeaderProps> = ({
           </motion.div>
         </div>
       </div>
+
+      {/* Active Tab Content Indicator */}
+      <div className="bg-white py-2">
+        <div className="container mx-auto px-4">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-center"
+          >
+            <span className="text-sm text-gray-500">
+              Currently viewing:{" "}
+              <span className="font-semibold text-teal-600">
+                {tabs.find((tab) => tab.id === activeTab)?.name}
+              </span>
+            </span>
+          </motion.div>
+        </div>
+      </div>
     </header>
   );
 };

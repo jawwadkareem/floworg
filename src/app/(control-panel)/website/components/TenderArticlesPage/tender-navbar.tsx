@@ -38,39 +38,37 @@ const TenderNavbar: React.FC<TenderNavbarProps> = ({
   }
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {/* Navigation Header */}
-      <header className="relative overflow-hidden bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4">
+    <header className={`relative overflow-hidden ${className}`}>
+      {/* Service Tabs */}
+      <div className="bg-gray-100 border-b border-gray-200">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-2"
+            className="flex flex-wrap justify-center gap-0"
           >
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
-                className={`relative px-6 py-3 font-medium text-sm transition-all duration-300 rounded-full border ${
+                className={`px-6 py-4 font-medium text-sm md:text-base transition-all duration-300 border-b-2 hover:bg-white/50 ${
                   activeTab === tab.id
-                    ? "bg-white text-gray-700 border-gray-400 shadow-sm"
-                    : "bg-white text-gray-600 border-gray-300 hover:border-gray-400 hover:text-gray-700"
+                    ? "bg-white text-teal-600 border-teal-500 shadow-sm"
+                    : "bg-transparent text-gray-600 border-transparent hover:text-gray-800"
                 }`}
               >
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex items-center gap-2"
                 >
                   {tab.name}
-                  {activeTab === tab.id && <span className="w-2 h-2 bg-teal-500 rounded-full"></span>}
                 </motion.span>
                 {activeTab === tab.id && (
                   <motion.div
                     layoutId="activeTenderTabIndicator"
-                    className="absolute inset-0 bg-white border-gray-400 rounded-full -z-10"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-500"
                     initial={false}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   />
@@ -79,8 +77,28 @@ const TenderNavbar: React.FC<TenderNavbarProps> = ({
             ))}
           </motion.div>
         </div>
-      </header>
-    </div>
+      </div>
+
+      {/* Active Tab Content Indicator */}
+      <div className="bg-white py-2">
+        <div className="container mx-auto px-4">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-center"
+          >
+            <span className="text-sm text-gray-500">
+              Currently viewing:{" "}
+              <span className="font-semibold text-teal-600">
+                {tabs.find((tab) => tab.id === activeTab)?.name}
+              </span>
+            </span>
+          </motion.div>
+        </div>
+      </div>
+    </header>
   )
 }
 

@@ -55,7 +55,7 @@ const AcademyNavbarHeader: React.FC<AcademyNavbarHeaderProps> = ({
               <button
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
-                className={`px-6 py-4 font-medium text-sm md:text-base transition-all duration-300 border-b-2 hover:bg-white/50 relative ${
+                className={`px-6 py-4 font-medium text-sm md:text-base transition-all duration-300 border-b-2 hover:bg-white/50 ${
                   activeTab === tab.id
                     ? "bg-white text-teal-600 border-teal-500 shadow-sm"
                     : "bg-transparent text-gray-600 border-transparent hover:text-gray-800"
@@ -78,6 +78,26 @@ const AcademyNavbarHeader: React.FC<AcademyNavbarHeaderProps> = ({
                 )}
               </button>
             ))}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Active Tab Content Indicator */}
+      <div className="bg-white py-2">
+        <div className="container mx-auto px-4">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-center"
+          >
+            <span className="text-sm text-gray-500">
+              Currently viewing:{" "}
+              <span className="font-semibold text-teal-600">
+                {tabs.find((tab) => tab.id === activeTab)?.name}
+              </span>
+            </span>
           </motion.div>
         </div>
       </div>

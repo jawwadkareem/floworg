@@ -38,53 +38,65 @@ const AffiliateNavbar: React.FC<AffiliateNavbarProps> = ({
   }
 
   return (
-    <header className={`relative overflow-hidden bg-white border-b border-gray-200 ${className}`}>
+    <header className={`relative overflow-hidden ${className}`}>
       {/* Affiliate Navigation Tabs */}
-      <div className="container mx-auto px-4 py-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-2"
-        >
-          {tabs.map((tab, index) => (
-            <button
-              key={tab.id}
-              onClick={() => handleTabChange(tab.id)}
-              className={`px-6 py-3 font-medium text-sm transition-all duration-300 rounded-full border relative ${
-                activeTab === tab.id
-                  ? "bg-teal-500 text-white border-teal-500 shadow-md"
-                  : "bg-white text-gray-600 border-gray-300 hover:border-teal-300 hover:text-teal-600"
-              }`}
-            >
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="flex items-center gap-2"
+      <div className="bg-gray-100 border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-wrap justify-center gap-0"
+          >
+            {tabs.map((tab, index) => (
+              <button
+                key={tab.id}
+                onClick={() => handleTabChange(tab.id)}
+                className={`px-6 py-4 font-medium text-sm md:text-base transition-all duration-300 border-b-2 hover:bg-white/50 ${
+                  activeTab === tab.id
+                    ? "bg-white text-teal-600 border-teal-500 shadow-sm"
+                    : "bg-transparent text-gray-600 border-transparent hover:text-gray-800"
+                }`}
               >
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  {tab.name}
+                </motion.span>
                 {activeTab === tab.id && (
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  <motion.div
+                    layoutId="activeAffiliateTabIndicator"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-500"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  />
                 )}
-                {tab.name}
-              </motion.span>
-              {activeTab === tab.id && (
-                <motion.div
-                  layoutId="activeAffiliateTabIndicator"
-                  className="absolute inset-0 bg-teal-500 rounded-full -z-10"
-                  initial={false}
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                />
-              )}
-            </button>
-          ))}
-        </motion.div>
+              </button>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Active Tab Content Indicator */}
+      <div className="bg-white py-2">
+        <div className="container mx-auto px-4">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="text-center"
+          >
+            <span className="text-sm text-gray-500">
+              Currently viewing:{" "}
+              <span className="font-semibold text-teal-600">
+                {tabs.find((tab) => tab.id === activeTab)?.name}
+              </span>
+            </span>
+          </motion.div>
+        </div>
       </div>
     </header>
   )
