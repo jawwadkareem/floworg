@@ -12,6 +12,7 @@ import TestimonialsSection from "./TestimonialsSection"
 import NewsletterSection from "./NewsletterSection"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
+import { SUPPORT_TAG } from "../constants"
 
 const Supportpage: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ const Supportpage: React.FC = () => {
       <SupportBlogSection />
       <IntegrationsSupportSection />
       <FAQSection />
-      <NewsSection />
+      <NewsSection tag={SUPPORT_TAG}/>
 
       {/* <LatestArticlesSection /> */}
       <TestimonialsSection />

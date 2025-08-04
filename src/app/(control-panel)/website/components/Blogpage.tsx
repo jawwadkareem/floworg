@@ -11,6 +11,7 @@ import Footer from './Footer';
 import LeadsForumSection from './LeadsForumSection';
 import LeadsForm from './pricingPage/leads-form';
 import Navbar from './Navbar';
+import { BLOG_TAG } from '../constants';
 const Blogpage: React.FC = () => {
   return (
     <>
@@ -24,7 +25,7 @@ const Blogpage: React.FC = () => {
       <BlogGridSection />
       <BlogNewsletterSection />
       <LeadsForm />
-      <NewsSection />
+      <NewsSection tag={BLOG_TAG}/>
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

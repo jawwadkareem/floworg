@@ -22,6 +22,7 @@ import PricingComparisonSection from "./PricingComparisonSection"
 import ProBuilderSection from "./ProBuilderSection"
 import EnterpriseSection from "./pricingPage/EnterpriseSection"
 import Navbar from "./Navbar"
+import { SERVICES1_TAG } from "../constants"
 
 const integrations: Integration[] = [
   {
@@ -257,7 +258,7 @@ const Service1page: React.FC = () => {
     <ProcessTimelineSection />
 
       <EnterpriseSection />
-      <NewsSection />
+      <NewsSection tag={SERVICES1_TAG}/>
     
       <TestimonialsSection />
       {/* <NewsletterSection /> */}

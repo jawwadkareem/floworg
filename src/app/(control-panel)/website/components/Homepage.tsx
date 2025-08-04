@@ -7,7 +7,7 @@ import ServicesSection from "./ServicesSection";
 import ConnectSection from "./ConnectSection";
 import SmartAISection from "./SmartAISection";
 import IntegrationsSection from "./IntegrationsSection";
-
+import {HOMEPAGE_TAG} from '../constants';
 import FeaturesSection from "./FeatureSection";
 import BenefitsSection from "./BenefitsSection";
 import SolutionsSection, { Integration } from "./SolutionsSection";
@@ -384,10 +384,9 @@ const Homepage: React.FC = () => {
         showYearlyToggle={true}
         currency="$"
       />
-      <NewsSection />
-      <LeadsForm/>  
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
-      {/* <NewsletterSection /> */}
+      <TestimonialsSection />
       <Footer />
     </>
   );

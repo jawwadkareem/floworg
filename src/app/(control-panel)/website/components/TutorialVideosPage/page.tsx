@@ -9,6 +9,7 @@ import TestimonialsSection from "../TestimonialsSection"
 
 import Footer from "../Footer"
 import SupportBlogSection from "../support-blog-section";
+import { TUTORIALS_TAG } from "../../constants";
 
 const TutorialVideospage: React.FC = () => {
    
@@ -35,7 +36,7 @@ const TutorialVideospage: React.FC = () => {
       <LessonLibrarySection />
       <SupportBlogSection />
 
-      <NewsSection />
+      <NewsSection tag={TUTORIALS_TAG}/>
       <TestimonialsSection />
       <NewsletterSection />
       <Footer />

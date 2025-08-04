@@ -21,10 +21,10 @@ export interface AcademyNavbarHeaderProps {
 const AcademyNavbarHeader: React.FC<AcademyNavbarHeaderProps> = ({
   tabs = [
     { id: "show-all", name: "SHOW ALL" },
-    { id: "business", name: "BUSINESS" },
+    { id: "health", name: "HEALTH" },
     { id: "coaching", name: "COACHING" },
     { id: "life", name: "LIFE" },
-    { id: "web", name: "WEB" },
+    { id: "sports", name: "SPORTS" },
   ],
   onTabChange,
   defaultActiveTab,

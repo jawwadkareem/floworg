@@ -10,6 +10,7 @@ import NewsletterSection from "../NewsletterSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 import AcademyNavbarHeader from "./AcademyNavbarHeader"
+import { ACADEMY_TAG } from "../../constants"
 
 const Academypage: React.FC = () => {
   return (
@@ -37,7 +38,7 @@ const Academypage: React.FC = () => {
 
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={ACADEMY_TAG}/>
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />
