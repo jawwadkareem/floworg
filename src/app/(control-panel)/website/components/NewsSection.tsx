@@ -205,39 +205,50 @@
 
 // export default NewsSection
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import BACKEND_URL from '../constants';
 
-const NewsSection: React.FC = () => {
-  const articles = [
-    {
-      title: "Pre and post launch mobile app marketing pitfalls to avoid",
-      excerpt:
-        "There are many variations of passages of available but majority have alteration in some by inject humour or random words.",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400",
-      date: "30 April, 2019",
-      author: "ADMIN",
-      comments: "2 COMMENTS",
-    },
-    {
-      title: "Social currency high performance keywords or",
-      excerpt:
-        "There are many variations of passages of available but majority have alteration in some by inject humour or random words.",
-      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=400",
-      date: "30 April, 2019",
-      author: "ADMIN",
-      comments: "2 COMMENTS",
-    },
-    {
-      title: "Prioritize these line items quarterly sales are at",
-      excerpt:
-        "There are many variations of passages of available but majority have alteration in some by inject humour or random words.",
-      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400",
-      date: "30 April, 2019",
-      author: "ADMIN",
-      comments: "2 COMMENTS",
-    },
-  ];
+interface NewsSectionProps {
+  tag: string;
+}
+
+interface Article {
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  author: string;
+  comments: string;
+}
+
+const NewsSection: React.FC<NewsSectionProps> = ({tag} : NewsSectionProps) => {
+
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch(BACKEND_URL + '/blogs'+`?tag=${tag}`);
+        const json = await res.json();
+
+        const transformed = json.map((item: any) => ({
+          title: item.Title,
+          excerpt: item.Content?.slice(0, 50) + "...",
+          image: `https://creator.zoho.com${item.Image}`,
+          date: item.Published_Date?.split(" ")[0] || "Unknown Date",
+          author: item.Author?.zc_display_value || "Unknown Author",
+          comments: `${item.Comments || 0} COMMENTS`,
+        }));
+
+        setArticles(transformed);
+      } catch (err) {
+        console.error("Error fetching blogs:", err);
+      }
+    };
+
+    fetchBlogs();
+  }, [tag]);
 
   return (
     <section className="py-16 bg-gray-50">

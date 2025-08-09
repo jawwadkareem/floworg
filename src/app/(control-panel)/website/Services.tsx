@@ -21,6 +21,8 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import GlobalAutomationSection from "./components/GlobalAutomationSection";
 import LeadsForm from "./components/pricingPage/leads-form";
+import NewsSection from "./components/NewsSection";
+import { SERVICES_TAG } from "./constants";
 
 const Services = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -135,7 +137,7 @@ const Services = () => {
 
       <LeadsForm/>
 
-      <LatestArticlesSection/>
+      <NewsSection tag={SERVICES_TAG}/>
 
     <TestimonialsSection/>
 

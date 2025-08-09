@@ -1,73 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import BACKEND_URL from '../constants';
+import { title } from 'process';
 
+interface Blog{
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  categoryColor: string;
+}
 const BlogGridSection: React.FC = () => {
-  const blogPosts = [
-    {
-      title: "Course Automation",
-      description: "A professional course for building no-code business automations easily and efficiently.",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "HEALTH",
-      categoryColor: "bg-teal-500"
-    },
-    {
-      title: "Course Automation", 
-      description: "A professional course for building no-code business automations easily and efficiently.",
-      image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "HEALTH",
-      categoryColor: "bg-teal-500"
-    },
-    {
-      title: "Course Automation",
-      description: "A professional course for building no-code business automations easily and efficiently.", 
-      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "BUSINESS",
-      categoryColor: "bg-teal-500"
-    },
-    {
-      title: "Course Automation",
-      description: "A professional course for building no-code business automations easily and efficiently.",
-      image: "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "HEALTH", 
-      categoryColor: "bg-teal-500"
-    },
-    {
-      title: "Course Automation",
-      description: "A professional course for building no-code business automations easily and efficiently.",
-      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "BUSINESS",
-      categoryColor: "bg-teal-500"
-    },
-    {
-      title: "Course Automation",
-      description: "A professional course for building no-code business automations easily and efficiently.",
-      image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "HEALTH",
-      categoryColor: "bg-teal-500"
-    },
-    {
-      title: "Course Automation",
-      description: "A professional course for building no-code business automations easily and efficiently.",
-      image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "BUSINESS",
-      categoryColor: "bg-teal-500"
-    },
-    {
-      title: "Course Automation", 
-      description: "A professional course for building no-code business automations easily and efficiently.",
-      image: "https://images.pexels.com/photos/3183164/pexels-photo-3183164.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "BUSINESS",
-      categoryColor: "bg-teal-500"
-    },
-    {
-      title: "Course Automation",
-      description: "A professional course for building no-code business automations easily and efficiently.",
-      image: "https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg?auto=compress&cs=tinysrgb&w=400",
-      category: "BUSINESS",
-      categoryColor: "bg-teal-500"
-    }
-  ];
+ const [blogPosts, setBlogPosts] = useState<Blog[]>([]);
 
+ useEffect(() => {
+
+    const fetchBlogs = async () => {
+      try{
+      const res = await fetch(BACKEND_URL + '/blogs?tag=');
+      const json = await res.json();
+
+      const transformed = json.map((item: any) => ({
+          title: item.Title,
+          description: item.Content,
+          image: item.Image,
+          category: item.Category,
+          categoryColor: 'bg-teal-500' // Default color, can be customized based on category
+      }));
+
+      setBlogPosts(transformed);
+    }catch(error){
+      console.error("Error fetching blog posts:", error);
+    }
+  }
+  fetchBlogs();
+
+ }, []);
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 max-w-7xl">

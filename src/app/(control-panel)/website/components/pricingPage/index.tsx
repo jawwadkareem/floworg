@@ -14,7 +14,7 @@ import BusinessSolutionsSection, {
 import SolutionsSection, { Integration } from "../SolutionsSection";
 import PricingPageSection from "./pricing-page";
 import Navbar from "../Navbar";
-import BACKEND_URL from "../../constants";
+import BACKEND_URL, { HOMEPAGE_TAG, PRICING_TAG } from "../../constants";
 
 const faqCategories: FAQCategory[] = [
   {
@@ -648,7 +648,7 @@ const PricingPage: React.FC = () => {
         )}
         </div>
       </section>
-      <NewsSection />
+      <NewsSection tag={PRICING_TAG}/>
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

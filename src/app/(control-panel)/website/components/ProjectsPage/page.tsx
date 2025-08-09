@@ -20,6 +20,7 @@ import TestimonialsSection from "../TestimonialsSection";
 import NewsletterSection from "../NewsletterSection";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
+import { PROJECTS_TAG } from "../../constants";
 
 const faqCategories: FAQCategory[] = [
   {
@@ -371,7 +372,7 @@ const ProjectsPage: React.FC = () => {
       />
       {/* <FAQSection/> */}
 
-      <NewsSection />
+      <NewsSection tag={PROJECTS_TAG}/>
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

@@ -7,6 +7,7 @@ import NewsownSection from "./NewsLetterSection";
 import NewsletterSection from "../NewsletterSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
+import { NEWS_TAG } from "../../constants";
 
 const NewsLetterpage: React.FC = () => {
   return (
@@ -32,7 +33,7 @@ const NewsLetterpage: React.FC = () => {
       <NewsownSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={NEWS_TAG}/>
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

@@ -8,6 +8,7 @@ import NewsSection from "../NewsSection"
 import NewsletterSection from "../NewsletterSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
+import { BOOK_A_DEMO_TAG } from "../../constants"
 
 const BookDemopage: React.FC = () => {
   return (
@@ -34,7 +35,7 @@ const BookDemopage: React.FC = () => {
       <BookingDemoSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={BOOK_A_DEMO_TAG}/>
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />
