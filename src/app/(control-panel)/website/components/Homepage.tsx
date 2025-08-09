@@ -224,6 +224,28 @@ const pricingPlans: PricingPlan[] = [
     buttonText: "Start 14 day trial",
     buttonVariant: "outlined",
   },
+  {
+    id: "premium",
+    name: "Premium Plan",
+    businessType: "Enterprise Teams",
+    monthlyPrice: 149.0,
+    yearlyPrice: 1251.6,
+    icon: "🌟",
+    color: "#F59E0B",
+    bgColor: "#FEF3C7",
+    features: [
+      { name: "Contact Management", included: true },
+      { name: "Task and Activity Tracking", included: true },
+      { name: "Automation Workflows", included: true },
+      { name: "PayPal Mass Payout", included: true },
+      { name: "Chat and Email Support", included: true },
+      { name: "Customizable Dashboards", included: true },
+      { name: "24/7 Priority Support", included: true },
+      { name: "Advanced Analytics", included: true },
+    ],
+    buttonText: "Contact Sales",
+    buttonVariant: "outlined",
+  },
 ];
 
 // Custom solution options

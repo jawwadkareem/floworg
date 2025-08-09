@@ -1,18 +1,18 @@
 import type React from "react"
 import Header from "../Header"
 import Navbar from "../Navbar"
-import MarketingToolsSection from "./marketing-tool-section"
-import PowerfulFeaturesSection from "./powerful-features-section"
+import MarketingToolsSection from "../AffiliatePage/marketing-tool-section"
+import PowerfulFeaturesSection from "../AffiliatePage/powerful-features-section"
 import RoadMapJourneySection from "../IntegrationPage/RoadmapJourneySection"
-import AffiliateNavbar from "./affiliate-navbar"
-import CreativeShowcaseSection from "./create-showcase-section"
+import AffiliateNavbar from "../AffiliatePage/affiliate-navbar"
+import CreativeShowcaseSection from "../AffiliatePage/create-showcase-section"
 import CommonNewsSection from "../CommonNewsSection"
 import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 
-const Affiliatepage: React.FC = () => {
+const ReferralProgrampage: React.FC = () => {
   return (
     <>
       <div className="min-h-screen bg-gray-50">
@@ -88,4 +88,4 @@ const Affiliatepage: React.FC = () => {
   )
 }
 
-export default Affiliatepage;
+export default ReferralProgrampage;

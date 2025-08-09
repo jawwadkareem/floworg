@@ -139,19 +139,48 @@ const Services = () => {
 
     <TestimonialsSection/>
 
-      {/* Partner Logos Section */}
-      <div className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center space-x-8 sm:space-x-12 opacity-40">
-            <span className="text-lg font-semibold text-gray-400">QUOTRAX</span>
-            <span className="text-lg font-semibold text-gray-400">Marshk</span>
-            <span className="text-lg font-semibold text-gray-400">PILOT</span>
-            <span className="text-lg font-semibold text-gray-400">UPWARE</span>
-            <span className="text-lg font-semibold text-gray-400">uprise</span>
-            <span className="text-lg font-semibold text-gray-400">Lookout</span>
-          </div>
-        </div>
-      </div>
+     {/* Partner Logos Slider Section */}
+<div className="bg-gray-100 py-10 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      className="logo-slider flex space-x-10 overflow-x-auto items-center"
+      style={{
+        scrollbarWidth: 'none',        // Firefox
+        msOverflowStyle: 'none',       // IE and Edge
+        WebkitOverflowScrolling: 'touch', // iOS smooth scrolling
+      }}
+      onWheel={(e) => {
+        if (e.deltaY !== 0) {
+          e.currentTarget.scrollLeft += e.deltaY;
+          e.preventDefault();
+        }
+      }}
+    >
+      {[
+        "QUOTRAX", "Marshk", "PILOT", "UPWARE", "uprise", "Lookout", "NovaCore", "Skyloop", "Trendify",
+        "QUOTRAX", "Marshk", "PILOT", "UPWARE", "uprise", "Lookout", "NovaCore", "Skyloop", "Trendify",
+        "QUOTRAX", "Marshk", "PILOT", "UPWARE", "uprise", "Lookout", "NovaCore", "Skyloop", "Trendify",
+      ].map((logo, idx) => (
+        <span
+          key={idx}
+          className="flex-shrink-0 text-lg md:text-xl font-semibold text-gray-500 opacity-70 hover:opacity-100 transition duration-300"
+        >
+          {logo}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  {/* Inline style to hide WebKit scrollbar */}
+  <style>
+    {`
+      .logo-slider::-webkit-scrollbar {
+        display: none;
+      }
+    `}
+  </style>
+</div>
+
 
      {/* <NewsletterSection/> */}
 
