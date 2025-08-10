@@ -8,6 +8,7 @@ import RoadMapJourneySection from "./RoadmapJourneySection"
 import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import NewsletterSection from "../NewsletterSection"
+import { HOMEPAGE_TAG } from "../../constants"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 
@@ -40,7 +41,7 @@ const Integrationpage: React.FC = () => {
       <SupportBlogSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

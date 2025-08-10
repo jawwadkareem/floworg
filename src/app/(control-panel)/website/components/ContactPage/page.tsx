@@ -6,7 +6,7 @@ import WorldMapSection from "../AboutPage/world-map-section"
 import BranchDetailsSection from "./branch-details-section"
 import ScalableSolutionsSection from "../ScalableSolutionsSection"
 import ContactSection from "./contact-section"
-import LeadsForumSection from "../LeadsForumSection"
+import LeadsForm from "../pricingPage/leads-form"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 import CommonNewsSection from "../CommonNewsSection"
@@ -40,7 +40,7 @@ const Contactpage: React.FC = () => {
       <ScalableSolutionsSection />
       <CommonNewsSection />
       <FAQSection />
-      <LeadsForumSection />
+      <LeadsForm />
 
       {/* <NewsletterSection /> */}
       <Footer />

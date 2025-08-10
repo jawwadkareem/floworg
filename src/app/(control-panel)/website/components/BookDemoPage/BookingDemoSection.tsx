@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, User, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const BookingDemoSection: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(24);
@@ -27,8 +27,8 @@ const BookingDemoSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section className="py-16 bg-gray-50 w-full">
+      <div className="w-full px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ const BookingDemoSection: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg p-6 shadow-lg"
+              className="bg-white rounded-lg p-6 shadow-lg w-full"
             >
               {/* Calendar Header */}
               <div className="flex items-center justify-between mb-6">

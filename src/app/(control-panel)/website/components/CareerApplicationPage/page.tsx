@@ -8,7 +8,7 @@ import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
-
+import { HOMEPAGE_TAG } from "../../constants"
 const CareerApplicationpage: React.FC = () => {
   return (
     <>
@@ -34,7 +34,7 @@ const CareerApplicationpage: React.FC = () => {
       <JobOpeningsSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <Footer />
       </div>

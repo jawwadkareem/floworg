@@ -15,19 +15,19 @@ const DemoShowcaseSection: React.FC = () => {
   const tabs = [
     {
       id: 'floworg-omni-360',
-      title: 'Floworg OmniAI 360',
+      name: 'Floworg OmniAI 360',
       description: 'Complete AI-powered automation platform with advanced chatbot capabilities and multi-channel integration.',
       thumbnailUrl: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
       id: 'floworg-sys-360',
-      title: 'Floworg SYS 360',
+      name: 'Floworg SYS 360',
       description: 'All-in-one business management system with CRM, project management, and analytics dashboard.',
       thumbnailUrl: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
       id: 'more-services',
-      title: 'More Services',
+      name: 'More Services',
       description: 'Explore additional services including consulting, custom development, and enterprise solutions.',
       thumbnailUrl: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600'
     }
@@ -98,9 +98,9 @@ const DemoShowcaseSection: React.FC = () => {
   const activeTabData = tabs.find(tab => tab.id === activeTab);
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <motion.div
+    <section className="bg-white w-full">
+      <div className="w-full px-4">
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -113,9 +113,9 @@ const DemoShowcaseSection: React.FC = () => {
           <p className="text-gray-600 max-w-3xl mx-auto">
             Watch live demos of our powerful automation platforms and see how they can transform your business operations.
           </p>
-        </motion.div>
+        </motion.div> */}
 
-        {/* Tab Navigation - Exact match to screenshot */}
+        {/* Tab Navigation - Updated to use AffiliateNavbar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -123,26 +123,67 @@ const DemoShowcaseSection: React.FC = () => {
           viewport={{ once: true }}
           className="mb-0"
         >
-          <div className="bg-teal-500 rounded-t-lg overflow-hidden">
-            <div className="flex">
-              {tabs.map((tab, index) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex-1 px-6 py-4 text-sm font-medium transition-all duration-300 relative ${
-                    activeTab === tab.id
-                      ? 'bg-white text-gray-800'
-                      : 'bg-teal-500 text-white hover:bg-teal-400'
-                  } ${index !== tabs.length - 1 ? 'border-r border-teal-400' : ''}`}
+          <header className="relative overflow-hidden">
+            <div className="bg-gray-100 border-b border-gray-200">
+              <div className="container mx-auto px-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="flex flex-wrap justify-center gap-0"
                 >
-                  {tab.title}
-                </button>
-              ))}
+                  {tabs.map((tab, index) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      className={`px-6 py-4 font-medium text-sm md:text-base transition-all duration-300 border-b-2 hover:bg-white/50 ${
+                        activeTab === tab.id
+                          ? "bg-white text-teal-600 border-teal-500 shadow-sm"
+                          : "bg-transparent text-gray-600 border-transparent hover:text-gray-800"
+                      }`}
+                    >
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                      >
+                        {tab.name}
+                      </motion.span>
+                      {activeTab === tab.id && (
+                        <motion.div
+                          layoutId="activeAffiliateTabIndicator"
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-500"
+                          initial={false}
+                          transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                        />
+                      )}
+                    </button>
+                  ))}
+                </motion.div>
+              </div>
             </div>
-          </div>
+            <div className="bg-white py-2">
+              <div className="container mx-auto px-4">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-center"
+                >
+                  <span className="text-sm text-gray-500">
+                    Currently viewing:{" "}
+                    <span className="font-semibold text-teal-600">
+                      {tabs.find((tab) => tab.id === activeTab)?.name}
+                    </span>
+                  </span>
+                </motion.div>
+              </div>
+            </div>
+          </header>
         </motion.div>
 
-        {/* Video Player Section - Exact match to screenshot */}
+        {/* Video Player Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -151,24 +192,16 @@ const DemoShowcaseSection: React.FC = () => {
           ref={videoContainerRef}
           className="bg-gray-900 rounded-b-lg overflow-hidden shadow-2xl"
         >
-          {/* Video Container - Matching screenshot proportions */}
           <div className="relative bg-gradient-to-br from-gray-800 to-gray-900" style={{ aspectRatio: '16/9' }}>
-            {/* Video Content - Simulated website preview matching screenshot */}
             <div className="absolute inset-0 bg-gray-100">
-              {/* Simulated Website Preview matching the screenshot */}
               <div className="h-full flex">
-                {/* Left side - Website mockup */}
                 <div className="flex-1 bg-white relative">
-                  {/* Website content matching screenshot */}
                   <div 
                     className="h-full bg-cover bg-center relative"
                     style={{ backgroundImage: `url(${activeTabData?.thumbnailUrl})` }}
                   >
                     <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-                    
-                    {/* Website mockup overlay */}
                     <div className="absolute inset-4 bg-white rounded-lg shadow-2xl overflow-hidden">
-                      {/* Header */}
                       <div className="bg-gray-50 border-b border-gray-200 p-3">
                         <div className="flex items-center gap-2">
                           <div className="w-3 h-3 bg-red-400 rounded-full"></div>
@@ -179,15 +212,11 @@ const DemoShowcaseSection: React.FC = () => {
                           </div>
                         </div>
                       </div>
-                      
-                      {/* Website content */}
                       <div className="p-4 h-full bg-gradient-to-br from-blue-50 to-purple-50">
                         <div className="text-center mb-4">
                           <h3 className="text-lg font-bold text-gray-800 mb-2">Floworg</h3>
                           <p className="text-sm text-gray-600">AI-Powered Business Automation</p>
                         </div>
-                        
-                        {/* Feature grid */}
                         <div className="grid grid-cols-2 gap-2 mb-4">
                           <div className="bg-white rounded p-2 shadow-sm">
                             <div className="w-full h-8 bg-gradient-to-r from-teal-400 to-blue-400 rounded mb-1"></div>
@@ -209,8 +238,6 @@ const DemoShowcaseSection: React.FC = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* Play Button Overlay */}
                   {!isPlaying && (
                     <div className="absolute inset-0 flex items-center justify-center z-20">
                       <button
@@ -222,8 +249,6 @@ const DemoShowcaseSection: React.FC = () => {
                     </div>
                   )}
                 </div>
-
-                {/* Right side - Description text matching screenshot */}
                 <div className="w-80 bg-gray-100 p-6 flex flex-col justify-center">
                   <div className="text-gray-700">
                     <p className="text-sm leading-relaxed mb-4">
@@ -244,10 +269,7 @@ const DemoShowcaseSection: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Video Controls Overlay - Matching screenshot style */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4">
-              {/* Progress Bar */}
               <div className="mb-3">
                 <div 
                   className="w-full bg-white bg-opacity-20 rounded-full h-1 cursor-pointer"
@@ -261,8 +283,6 @@ const DemoShowcaseSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Control Buttons - Exact match to screenshot */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <button
@@ -271,21 +291,18 @@ const DemoShowcaseSection: React.FC = () => {
                   >
                     {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                   </button>
-                  
                   <button 
                     onClick={handleRestart}
                     className="text-white hover:text-gray-300 transition-colors"
                   >
                     <RotateCcw className="w-4 h-4" />
                   </button>
-                  
                   <button 
                     onClick={handleSkipForward}
                     className="text-white hover:text-gray-300 transition-colors"
                   >
                     <SkipForward className="w-4 h-4" />
                   </button>
-                  
                   <div className="flex items-center gap-2">
                     <button 
                       onClick={handleVolumeToggle}
@@ -303,12 +320,10 @@ const DemoShowcaseSection: React.FC = () => {
                       className="w-12 h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer"
                     />
                   </div>
-                  
                   <span className="text-white text-xs">
                     {formatTime(currentTime)} / {formatTime(duration)}
                   </span>
                 </div>
-
                 <div className="flex items-center gap-3">
                   <button 
                     onClick={handleFullscreen}
@@ -320,19 +335,16 @@ const DemoShowcaseSection: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Content Description */}
           <div className="p-6 bg-gray-800">
             <div className="grid md:grid-cols-2 gap-6 items-center">
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">
-                  {activeTabData?.title}
+                  {activeTabData?.name}
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
                   {activeTabData?.description}
                 </p>
               </div>
-              
               <div className="flex gap-4">
                 <button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
                   Start Free Trial
@@ -344,8 +356,6 @@ const DemoShowcaseSection: React.FC = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* Additional Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -4,6 +4,7 @@ import Navbar from "../Navbar"
 import AccessibilityNavbar from "../AccessibilityStatementPage/accessibiliynavbar"
 import TermsSection from "../AccessibilityStatementPage/TermsSection"
 import TestimonialsSection from "../TestimonialsSection"
+import { HOMEPAGE_TAG } from "../../constants"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
@@ -33,7 +34,7 @@ const Termspage: React.FC = () => {
       <TermsSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <Footer />
       </div>

@@ -23,6 +23,9 @@ import GlobalAutomationSection from "./GlobalAutomationSection";
 import BusinessSolutionsSection, { ProcessStep, SolutionOption } from "./pricingPage/business-solutions-section";
 import SupportBlogSection from "./support-blog-section";
 import Navbar from "./Navbar";
+import ProBuilderSection from "./ProBuilderSection";
+import EnterpriseSection from "./EnterpriseSection";
+import PricingComparisonSection from "./PricingComparisonSection";
 import StatsSection from "./StatsSection";
 import LeadsForm from "./pricingPage/leads-form";
 
@@ -406,8 +409,12 @@ const Homepage: React.FC = () => {
         showYearlyToggle={true}
         currency="$"
       />
+      <EnterpriseSection />
+      <PricingComparisonSection />
+      <ProBuilderSection />
+      <LeadsForm />
+
       <NewsSection tag={HOMEPAGE_TAG} />
-      <TestimonialsSection />
       <TestimonialsSection />
       <Footer />
     </>

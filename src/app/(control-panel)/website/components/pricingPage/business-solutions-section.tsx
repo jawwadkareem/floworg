@@ -172,7 +172,11 @@ const BusinessSolutionsSection: React.FC<BusinessSolutionsSectionProps> = ({
 
         {/* <GetStartedSection /> */}
 
-        {/* AI Customer Services Section */}
+        {/*
+        ===============================
+        AI Customer Services Section
+        ===============================
+
         <div className="grid lg:grid-cols-2 gap-12 items-center mt-20">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -236,6 +240,7 @@ const BusinessSolutionsSection: React.FC<BusinessSolutionsSectionProps> = ({
             ))}
           </motion.div>
         </div>
+        */}
       </div>
     </section>
   );

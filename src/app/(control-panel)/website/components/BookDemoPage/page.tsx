@@ -24,8 +24,8 @@ const BookDemopage: React.FC = () => {
               Book A Demo
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-teal-100 max-w-4xl mx-auto animate-fade-in">
-              Discover Your Full Power – Smart Automation, Precise Optimization,
-              and Growth at the Highest International Standards
+              Discover your full power with Floworg — delivering smart automation, precise optimization, and growth at the highest international standards. Watch live demos of our powerful platforms and see how they can transform your business operations.
+
             </p>
           </div>
         </div>

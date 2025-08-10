@@ -3,7 +3,8 @@ import Header from "../Header"
 import Navbar from "../Navbar";
 import DigitalAnalysisSection from "./DigitalAnalysisSection";
 import ProjectSummarySection from "./ProjectSummarySection";
-import LeadsForumSection from "../LeadsForumSection";
+import LeadsForm from "../pricingPage/leads-form";
+import { HOMEPAGE_TAG } from "../../constants";
 import NewsSection from "../NewsSection"
 import ProcessTimelineSection from "../ProcessTimelineSection";
 import NewsletterSection from "../NewsletterSection";
@@ -35,9 +36,9 @@ const ProjectArticlepage: React.FC = () => {
       <ProcessTimelineSection />
 
       <ProjectSummarySection />
-      <LeadsForumSection />
+      <LeadsForm />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <NewsletterSection />
       <Footer />

@@ -13,7 +13,7 @@ import Footer from "./Footer"
 import NewsletterSection from "./NewsletterSection"
 import ProcessTimelineSection from "./ProcessTimelineSection"
 import FAQSection from "./faq-section"
-import LeadsForumSection from "./LeadsForumSection"
+import LeadsForm from "./pricingPage/leads-form"
 import NewsSection from "./NewsSection"
 import BusinessSolutionSection from "./BusinessSolutionSection"
 import GetStartedSection from "./GetStartedSection"
@@ -243,7 +243,7 @@ const Service1page: React.FC = () => {
       />
       
       <FAQSection />
-      <LeadsForumSection />
+      <LeadsForm />
       <BusinessSolutionSection />
       <GetStartedSection />
       <PricingSection

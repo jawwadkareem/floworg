@@ -10,7 +10,7 @@ import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
-
+import { HOMEPAGE_TAG } from "../../constants"
 const CareerArticlespage: React.FC = () => {
   return (
     <>
@@ -39,7 +39,7 @@ const CareerArticlespage: React.FC = () => {
       <CommonNewsSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <Footer />
       </div>

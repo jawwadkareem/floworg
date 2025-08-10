@@ -27,6 +27,7 @@ import FAQSection, { FAQCategory } from "../pricingPage/faq-section";
 import NewsSection from "../NewsSection";
 import TestimonialsSection from "../TestimonialsSection";
 import NewsletterSection from "../NewsletterSection";
+import { HOMEPAGE_TAG } from "../../constants";
 import Footer from "../Footer";
 
 // Sample project data based on categories
@@ -422,7 +423,7 @@ const ProjectDetailPage: React.FC = () => {
         defaultOpenFAQ={null}
       />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

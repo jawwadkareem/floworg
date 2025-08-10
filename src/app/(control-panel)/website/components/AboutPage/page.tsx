@@ -15,7 +15,8 @@ import TeamSection from "./team-section"
 import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import CommonNewsSection from "../CommonNewsSection"
-import LeadsForumSection from "../LeadsForumSection"
+import LeadsForm from "../pricingPage/leads-form"
+import { HOMEPAGE_TAG } from "../../constants"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 import { i } from "node_modules/react-router/dist/development/fog-of-war-D2zsXvum.mjs"
@@ -54,9 +55,9 @@ const Aboutpage: React.FC = () => {
       <TeamSection />
       <CommonNewsSection />
       <FAQSection />
-      <LeadsForumSection />
+      <LeadsForm />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

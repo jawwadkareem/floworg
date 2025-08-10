@@ -11,7 +11,7 @@ import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
-
+import { HOMEPAGE_TAG } from "../../constants"
 const Affiliatepage: React.FC = () => {
   return (
     <>
@@ -40,7 +40,7 @@ const Affiliatepage: React.FC = () => {
       <CommonNewsSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <div className="bg-gray-100 py-10 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

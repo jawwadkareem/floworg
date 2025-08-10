@@ -11,6 +11,7 @@ import CommonNewsSection from "../CommonNewsSection"
 import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
+import { HOMEPAGE_TAG } from "../../constants"
 import Footer from "../Footer"
 
 const Tenderspage: React.FC = () => {
@@ -43,7 +44,7 @@ const Tenderspage: React.FC = () => {
       <CommonNewsSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
        {/* Partner Logos Slider Section */}
     <div className="bg-gray-100 py-10 overflow-hidden">

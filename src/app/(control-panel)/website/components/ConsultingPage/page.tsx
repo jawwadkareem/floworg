@@ -6,7 +6,7 @@ import EnterpriseSection from "../EnterpriseSection"
 import ConsultationBookingSection from "./consulting-booking-section"
 import GetStartedSection from "../GetStartedSection"
 import ProBuilderSection from "../ProBuilderSection"
-import LeadsForumSection from "../LeadsForumSection"
+import LeadsForm from "../pricingPage/leads-form"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 
@@ -37,7 +37,7 @@ const Consultingpage: React.FC = () => {
       <GetStartedSection />
       <ProBuilderSection />
       <FAQSection />
-      <LeadsForumSection />
+      <LeadsForm />
 
       {/* <NewsletterSection /> */}
       <Footer />

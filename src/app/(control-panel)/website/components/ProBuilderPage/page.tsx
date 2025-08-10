@@ -12,8 +12,8 @@ import ProBuilderSection from "../ProBuilderSection";
 import NewsletterSection from "../NewsletterSection";
 import FAQSection from "../faq-section"
 import TestimonialsSection from "../TestimonialsSection"
-
-import LeadsForumSection from "../LeadsForumSection";
+import { HOMEPAGE_TAG } from "../../constants";
+import LeadsForm from "../pricingPage/leads-form";
 import Footer from "../Footer"
 import { use } from "react";
 
@@ -137,9 +137,9 @@ const ProBuilderpage: React.FC = () => {
       <GetStartedSection />
       <ProBuilderSection />
       <FAQSection />
-      <LeadsForumSection />
+      <LeadsForm />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

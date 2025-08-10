@@ -120,13 +120,13 @@ const navigationConfig: FuseNavItemType[] = [
 				id: 'dashboards.project',
 				title: 'My Dashboards',
 				type: 'item',
-				url: '/home'
+				url: '/dashboard'
 			},
 			{
 				id: 'dashboards.analytics',
 				title: 'Inbox',
 				type: 'item',
-				url: '/home'
+				url: '/inbox'
 			},
 			{
 				id: 'dashboards.finance',
@@ -344,7 +344,7 @@ const navigationConfig: FuseNavItemType[] = [
 			id: 'terms.privacy',
 			title: 'Privacy Policy',
 			type: 'item',
-			url: '/home'
+			url: '/privacy-policy'
 		},
 
 		{

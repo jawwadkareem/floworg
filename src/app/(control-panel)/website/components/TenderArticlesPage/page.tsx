@@ -7,6 +7,7 @@ import JobPostingSection from "../CareersArticlePage/job-posting-section"
 import TrustedCompaniesSection from "../AboutPage/trusted-companies-section"
 import CommonNewsSection from "../CommonNewsSection"
 import TestimonialsSection from "../TestimonialsSection"
+import { HOMEPAGE_TAG } from "../../constants"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
@@ -39,7 +40,7 @@ const TenderArticlespage: React.FC = () => {
       <CommonNewsSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <Footer />
       </div>

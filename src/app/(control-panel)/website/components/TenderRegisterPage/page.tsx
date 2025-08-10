@@ -6,6 +6,7 @@ import ProfileFormSection from "../CareerApplicationPage/profile-form-section"
 import JobOpeningsSection from "../CareerApplicationPage/job-openings-section"
 import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
+import { HOMEPAGE_TAG } from "../../constants"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 import TrustedCompaniesSection from "../AboutPage/trusted-companies-section"
@@ -37,7 +38,7 @@ const TenderRegisterpage: React.FC = () => {
 
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <Footer />
       </div>

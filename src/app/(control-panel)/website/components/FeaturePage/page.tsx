@@ -9,6 +9,8 @@ import SlackIntegrationSection from "./SlackIntegrationSection";
 import RelatedIntegrationsSection from "./RelatedIntegration";
 import GetStartedSection from "../GetStartedSection";
 import NewsletterSection from "../NewsletterSection"
+
+import { HOMEPAGE_TAG } from "../../constants";
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 
@@ -40,7 +42,7 @@ const Featurepage: React.FC = () => {
       <SupportBlogSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

@@ -2,10 +2,11 @@ import type React from "react"
 import Header from "../Header"
 import Navbar from "../Navbar"
 import SaaSTemplateSection from "./saas-platform-section"
-import LeadsForumSection from "../LeadsForumSection"
+import LeadsForm from "../pricingPage/leads-form"
 import CommonNewsSection from "../CommonNewsSection"
 import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
+import { HOMEPAGE_TAG } from "../../constants"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 
@@ -32,10 +33,10 @@ const Timelinepage: React.FC = () => {
 
       <SaaSTemplateSection />
       <CommonNewsSection />
-      <LeadsForumSection />
+      <LeadsForm />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <Footer />
       </div>

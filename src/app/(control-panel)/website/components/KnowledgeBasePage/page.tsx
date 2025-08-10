@@ -6,6 +6,7 @@ import NewsSection from "../NewsSection"
 import SupportBlogSection from "../support-blog-section"
 import DocumentationSection from "./DocumentationSection";
 import NewsletterSection from "../NewsletterSection"
+import { HOMEPAGE_TAG } from "../../constants";
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 
@@ -34,7 +35,7 @@ const KnowledgeBasepage: React.FC = () => {
       <SupportBlogSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
       <Footer />

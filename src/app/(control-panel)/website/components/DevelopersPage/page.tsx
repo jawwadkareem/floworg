@@ -5,7 +5,7 @@ import SupportNavbar from "./developer-navbar"
 import SupportBlogSection from "../support-blog-section"
 import DevNewsSection from "./DevNewsSection"
 import FeaturesGridSection from "./features-grid-section"
-import LeadsForumSection from "../LeadsForumSection"
+import LeadsForm from "../pricingPage/leads-form"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
 
@@ -36,7 +36,7 @@ const Developerpage: React.FC = () => {
       <DevNewsSection />
       <SupportBlogSection />
       <FAQSection />
-      <LeadsForumSection />
+      <LeadsForm />
 
       {/* <NewsletterSection /> */}
       <Footer />

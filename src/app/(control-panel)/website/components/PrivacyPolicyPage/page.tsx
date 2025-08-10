@@ -7,7 +7,7 @@ import TestimonialsSection from "../TestimonialsSection"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
-
+import { HOMEPAGE_TAG } from "../../constants"
 const PrivacyPolicypage: React.FC = () => {
   return (
     <>
@@ -33,7 +33,7 @@ const PrivacyPolicypage: React.FC = () => {
       <TermsSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
        {/* Partner Logos Slider Section */}
         <div className="bg-gray-100 py-10 overflow-hidden">

@@ -99,12 +99,14 @@ const AcademyNewsletterSection: React.FC = () => {
                 {/* Email form */}
                 <div className="flex gap-4">
                   <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-6 py-4 rounded-full border-0 focus:outline-none focus:ring-3 focus:ring-teal-400 text-gray-800 placeholder-gray-500 text-base"
-                  />
+                        type="email"
+                        aria-label="Enter your email address"
+                        placeholder="Enter your email address"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-5 py-3.5 rounded-full bg-white text-gray-800 placeholder-gray-500 shadow-md outline-none ring-2 ring-white focus:ring-4"
+                        style={{ boxShadow: "0 6px 0 rgba(0,0,0,0.1)" }}
+                      />
                   <button
                     onClick={handleSubmit}
                     className="px-8 py-4 rounded-full font-semibold text-white text-base transition-all duration-300 hover:scale-105"

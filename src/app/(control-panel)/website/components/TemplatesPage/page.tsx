@@ -8,7 +8,7 @@ import TemplateNavbar from "./template-navbar"
 import NewsSection from "../NewsSection"
 import FAQSection from "../faq-section"
 import Footer from "../Footer"
-
+import { HOMEPAGE_TAG } from "../../constants"
 const Templatespage: React.FC = () => {
   return (
     <>
@@ -36,7 +36,7 @@ const Templatespage: React.FC = () => {
       <ScalableSolutionsSection />
       <FAQSection />
 
-      <NewsSection />
+      <NewsSection tag={HOMEPAGE_TAG} />
       <TestimonialsSection />
       <Footer />
       </div>
