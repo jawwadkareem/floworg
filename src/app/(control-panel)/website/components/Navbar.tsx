@@ -3,7 +3,7 @@ import Logo from './Logo';
 import PlaystoreBadge from './PlaystoreBadge';
 import AppstoreBadge from './Applestore Badge';
 import { ChevronDown } from 'lucide-react';
-import ytIcon from "../../../../assets/Yt.png"
+// import ytIcon from "../../../../assets/Yt.png"
 
 const Navbar: React.FC = () => {
   // const navItems = ["Home", "Services", "Pricing", "Projects", "Academy", "Blog", "Support"];
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
     { "name": "facebook", "src": "https://cdn.simpleicons.org/facebook" },
     { "name": "instagram", "src": "https://cdn.simpleicons.org/instagram" },
     { "name": "whatsapp", "src": "https://cdn.simpleicons.org/whatsapp" },
-    { "name": "youtube", "src": ytIcon }
+    { "name": "youtube", "src": '../../../../assets/Yt.png' }
   ]
 
   return (
