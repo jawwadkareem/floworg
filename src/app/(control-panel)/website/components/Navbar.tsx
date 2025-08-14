@@ -5,6 +5,7 @@ import AppstoreBadge from './Applestore Badge';
 import { ChevronDown } from 'lucide-react';
 import ytIcon from "../../../../assets/yt.png"
 
+
 const Navbar: React.FC = () => {
   // const navItems = ["Home", "Services", "Pricing", "Projects", "Academy", "Blog", "Support"];
   const navItems = [
