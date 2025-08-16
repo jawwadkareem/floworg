@@ -5,7 +5,7 @@ import NewsSection from "../NewsSection";
 import TestimonialsSection from "../TestimonialsSection";
 import NewsletterSection from "../NewsletterSection";
 import Footer from "../Footer";
-import FAQSection, { FAQCategory } from "./faq-section";
+import FAQSection from "../faq-section";
 import LeadsForm, { LeadsFormData } from "./leads-form";
 import BusinessSolutionsSection, {
   ProcessStep,
@@ -15,123 +15,8 @@ import SolutionsSection, { Integration } from "../SolutionsSection";
 import PricingPageSection from "./pricing-page";
 import Navbar from "../Navbar";
 import BACKEND_URL, { HOMEPAGE_TAG, PRICING_TAG } from "../../constants";
+import LeadsForumSection from "../LeadsForumSection";
 
-const faqCategories: FAQCategory[] = [
-  {
-    id: "general",
-    name: "General",
-    faqs: [
-      {
-        question: "What is HAIchat?",
-        answer:
-          "HAIchat is an AI chatbot platform designed to automate customer interactions, streamline support, and enhance engagement across various channels.",
-      },
-      {
-        question: "How does HAIchat ensure data security?",
-        answer:
-          "We implement enterprise-grade security measures including encryption, secure data storage, and compliance with industry standards.",
-      },
-      {
-        question: "Is there a trial period for HAIchat?",
-        answer:
-          "Yes, we offer a free trial period so you can test all features before making a commitment.",
-      },
-      {
-        question: "What support options are available if I need help?",
-        answer:
-          "We provide 24/7 customer support, comprehensive documentation, video tutorials, and dedicated account managers for enterprise clients.",
-      },
-      {
-        question: "How can I measure the performance of my HAIchat bot?",
-        answer:
-          "Our platform includes detailed analytics and reporting tools to track conversations, user satisfaction, and performance metrics.",
-      },
-      {
-        question: "How customizable is the chatbot's design and functionality?",
-        answer:
-          "HAIchat offers extensive customization options for both design and functionality to match your brand and business needs.",
-      },
-    ],
-  },
-  {
-    id: "technical",
-    name: "Technical",
-    faqs: [
-      {
-        question: "What programming languages does HAIchat support?",
-        answer:
-          "HAIchat supports integration with multiple programming languages including JavaScript, Python, PHP, and more through our REST API.",
-      },
-      {
-        question: "Can I integrate HAIchat with my existing CRM?",
-        answer:
-          "Yes, HAIchat offers seamless integration with popular CRM systems like Salesforce, HubSpot, and Zendesk.",
-      },
-      {
-        question: "What are the system requirements for HAIchat?",
-        answer:
-          "HAIchat is cloud-based and works with any modern web browser. No special hardware or software installation is required.",
-      },
-      {
-        question: "How do I backup my chatbot data?",
-        answer:
-          "We provide automated daily backups and you can also export your data at any time through our dashboard.",
-      },
-    ],
-  },
-  {
-    id: "pricing",
-    name: "Pricing",
-    faqs: [
-      {
-        question: "What pricing plans are available?",
-        answer:
-          "We offer Starter, Professional, and Enterprise plans with different features and conversation limits to suit businesses of all sizes.",
-      },
-      {
-        question: "Is there a free plan available?",
-        answer:
-          "Yes, we offer a free plan with basic features and limited conversations per month, perfect for small businesses getting started.",
-      },
-      {
-        question: "Can I upgrade or downgrade my plan anytime?",
-        answer:
-          "You can change your plan at any time from your account dashboard. Changes take effect immediately.",
-      },
-      {
-        question: "Do you offer custom enterprise pricing?",
-        answer:
-          "Yes, we provide custom pricing for enterprise clients with specific requirements and high-volume usage needs.",
-      },
-    ],
-  },
-  {
-    id: "support",
-    name: "Support",
-    faqs: [
-      {
-        question: "How can I contact customer support?",
-        answer:
-          "You can reach our support team via live chat, email, or phone. We're available 24/7 to help you.",
-      },
-      {
-        question: "Do you provide training for new users?",
-        answer:
-          "Yes, we offer comprehensive onboarding sessions, video tutorials, and documentation to help you get started quickly.",
-      },
-      {
-        question: "What is your average response time for support tickets?",
-        answer:
-          "We typically respond to support tickets within 2 hours during business hours and within 24 hours on weekends.",
-      },
-      {
-        question: "Do you offer phone support?",
-        answer:
-          "Phone support is available for Professional and Enterprise plan subscribers during business hours.",
-      },
-    ],
-  },
-];
 
 // Sample integrations data
 const integrations: Integration[] = [
@@ -575,14 +460,14 @@ const PricingPage: React.FC = () => {
 
   const handleComparePlans = () => {
     console.log("Compare plans clicked");
-    alert("Redirecting to detailed plan comparison...");
+    // alert("Redirecting to detailed plan comparison...");
   };
 
   const handleCalculatePrice = (users: number, estimatedPrice: number) => {
     console.log(`Price calculated for ${users} users: $${estimatedPrice}`);
-    alert(
-      `Custom quote for ${users.toLocaleString()} users: $${estimatedPrice.toLocaleString()}/month`
-    );
+    // alert(
+    //   `Custom quote for ${users.toLocaleString()} users: $${estimatedPrice.toLocaleString()}/month`
+    // );
   };
 
   return (
@@ -623,12 +508,8 @@ const PricingPage: React.FC = () => {
         onAiServicesPrimaryClick={handleAiServicesPrimaryClick}
         onAiServicesSecondaryClick={handleAiServicesSecondaryClick}
       />
-      <FAQSection
-        categories={faqCategories}
-        defaultActiveCategory="general"
-        defaultOpenFAQ={null}
-      />
-      <section className="py-16 bg-gray-50">
+      <FAQSection/>
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
           <LeadsForm onSubmit={handleLeadsSubmit} />
           {showModal && (
@@ -647,7 +528,8 @@ const PricingPage: React.FC = () => {
           </div>
         )}
         </div>
-      </section>
+      </section> */}
+      <LeadsForumSection/>
       <NewsSection tag={PRICING_TAG}/>
       <TestimonialsSection />
       {/* <NewsletterSection /> */}
